@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+option java_package="com.common.model.protobuf";
+option java_outer_classname = "BaseData14";
+
+//核心业务指令-查询支付状态指令-请求对象
+message A114
+{
+    required int32 parkingId=1;//停车场id
+    required string clientSerial=2;//进场流水号
+}
+//核心业务指令-查询支付状态指令-应答对象
+message B114
+{
+    required int32  payCount=1;//累计支付次数
+    required int32  paySum=2;//累计支付总金额
+    required int32  onLinePaycCount=3;//线上累计支付次数
+    required int32  onLinePaySum=4;//线上累计支付总金额
+    required int32  offLinePaycCount=5;//线下累计支付次数
+    required int32  offLinePaySum=6;//线下累计支付总金额
+    optional string endTime=7;//结算截止时间
+}

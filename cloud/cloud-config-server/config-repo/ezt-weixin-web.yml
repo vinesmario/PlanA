@@ -1,0 +1,17 @@
+spring:
+    rabbitmq:
+    datasource:
+        test-on-borrow: true
+        testWhileIdle: true
+        validationQuery: SELECT 1
+        initialSize: 5
+        minIdle: 5
+        maxIdle: 100
+        maxWait: 10000
+    redis:
+        timeout: 0
+        pool:
+            max-active: 8
+            max-wait: -1
+            max-idle: 8
+            min-idle: 0

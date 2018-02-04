@@ -1,0 +1,24 @@
+syntax = "proto2";
+
+option java_package="com.common.model.protobuf";
+option java_outer_classname = "BaseData17";
+
+//核心业务指令-查询出口车辆信息指令-请求对象
+message A217
+{
+    required int32 wayNo=1; //通道编号
+    required int32 parkingId=2;//停车场编号
+}
+//核心业务指令-查询出口车辆信息指令-应答对象
+message B217{
+    required string clientSerial=1;//进场流水号
+    required int32 parkingId=2;//停车场编号
+    required string inTime=3; //入场时间
+    required int32 wayNo=4; //通道编号
+    required int32 wayNameLen=5;//通道名称长度
+    required string wayName=6;//通道名称
+    required int32 parkingFeeTotal=7;//总停车费
+    required int32 hasPayCount=8;//已交次数
+    required int32 hasPayFee=9;//已交金额
+    required string endTime=10;//结算时间
+}

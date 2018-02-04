@@ -1,0 +1,35 @@
+syntax = "proto2";
+
+option java_package="com.common.model.protobuf";
+option java_outer_classname = "BaseData11";
+
+//核心业务指令-出场汇报指令-请求对象
+message A111
+{
+    required string inSerial=1;//进场流水号
+    required string outSerial=2;//出场流水号
+    required int32 parkingId=3;//停车场id
+    required int32 wayNo=4;//出口编号
+    required string wayName=5;//出口名称
+    required string license=6;//车牌号码
+    required string inTime=7;//进场时间
+    required string outTime=8;//出场时间
+    required int32 carClass=9;//车类型
+    required int32 carType=10;//车型
+    required int32 payStatus=11;//支付状态 //0 未支付、1 免费、2 已足额支付、3 未足额支付
+    required int32 shoulePay=12;//应收金额
+    required int32 realPay=13;//实收金额
+    required int32 cashPay=14;//现金支付
+    required int32 onlinePay=15;//线上支金额
+    required int32 freeMoney=16;//减免金额
+    required int32 emtySpace=17;//空车位数
+    required int32 totalSpace=18;//总车位数
+    required int32 openType=19;//放行方式
+    optional string openSerial=20;//开闸放行流水(2和3有效)
+
+}
+//核心业务指令-出场汇报指令-应答对象
+message B111
+{
+
+}

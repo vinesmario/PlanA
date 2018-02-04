@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+option java_package="com.common.model.protobuf";
+option java_outer_classname = "BaseData00";
+
+//基础业务指令-登录指令-请求对象
+message A100
+{
+    required string username=1;
+    required string password=2;
+}
+//基础业务指令-登录指令-应答对象
+message B100
+{
+    required string token=1;
+    required string sysTime=2;
+}

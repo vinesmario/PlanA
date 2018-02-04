@@ -1,0 +1,13 @@
+spring:
+    rabbitmq:
+        host: 192.168.56.202
+        port: 5672
+        username: guest
+        password: guest
+    datasource:
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://121.41.224.240:3306/ucar?autoReconnect=true&useSSL=false&characterEncoding=utf-8
+        username: root
+        password: Meiketu@2012
+
+        

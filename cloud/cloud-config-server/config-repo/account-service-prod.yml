@@ -1,0 +1,7 @@
+spring:
+    rabbitmq:
+    datasource:
+        driverClassName: com.mysql.jdbc.Driver
+        url: 
+        username: 
+        password: 

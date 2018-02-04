@@ -1,0 +1,17 @@
+spring:
+    rabbitmq:
+    datasource:
+        primary:
+            driverClassName: com.mysql.jdbc.Driver
+            url: jdbc:mysql://rm-2zeo78t48qq63lith.mysql.rds.aliyuncs.com:3306/eztdbtest?autoReconnect=true&useSSL=false&characterEncoding=utf-8
+            username: eztweixin
+            password: eztweixin7c2af8
+        uaa:
+            driverClassName: com.mysql.jdbc.Driver
+            url: jdbc:mysql://rm-2zeo78t48qq63lith.mysql.rds.aliyuncs.com:3306/uaa?autoReconnect=true&useSSL=false&characterEncoding=utf-8
+            username: eztweixin
+            password: eztweixin7c2af8
+    redis:
+        host: r-2ze8de00eacae9c4.redis.rds.aliyuncs.com
+        port: 6379
+        password: eztr1d2i3sSSSS    

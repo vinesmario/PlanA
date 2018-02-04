@@ -1,0 +1,29 @@
+spring:
+    rabbitmq:
+        host: 192.168.56.202
+        port: 5672
+        username: guest
+        password: guest    
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://192.168.1.250:3306/eztwx?autoReconnect=true&useSSL=false
+        username: root
+        password: rootezt
+    redis:
+        host: 60.205.149.194
+        port: 6661
+        password: eztadmin54321
+    thymeleaf:
+        mode: LEGACYHTML5
+        cache: false
+        templates_root: ezt-weixin-web/src/main/resources/templates/
+        prefix: /ddd
+        
+wechat:
+    appId: wxbac569eb11e62a04
+    secret: 30dfdf3c32e44cebd78f7b269471db63
+    pay:
+        spbillCreateIp: 127.0.0.1
+        notifyUrl: http://weixin.ucar.cc/api/wxPay/notify
+        passNotifyUrl: http://192.168.1.228:8081/org.ezt.paas/api/v5/registers/confirmPay.do
+        xTokenValue: 9b48456476749dcedc03406f259b65da

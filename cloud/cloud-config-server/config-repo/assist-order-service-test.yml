@@ -1,0 +1,4 @@
+wechat:
+    pay:
+        spbillCreateIp: 127.0.0.1
+        notifyUrl: http://wx.ezths.com/api/assist-order/notify

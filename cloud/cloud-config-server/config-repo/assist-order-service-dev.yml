@@ -1,0 +1,20 @@
+spring:
+    rabbitmq:
+        host: 192.168.56.202
+        port: 5672
+        username: guest
+        password: guest
+    datasource:
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://192.168.1.250:3306/ih_assist_order?autoReconnect=true&useSSL=false&characterEncoding=utf-8
+        username: root
+        password: rootezt       
+
+wechat:
+    pay:
+        appId: wxbac569eb11e62a04
+        mchId: 1261040501
+        mchKey: AAE72891B8FF504A9793E7D9B7B66737
+        keyPath:
+        spbillCreateIp: 127.0.0.1
+        notifyUrl: http://wx.ezths.com/api/assist-order/notify

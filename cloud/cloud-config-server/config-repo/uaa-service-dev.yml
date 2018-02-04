@@ -1,0 +1,21 @@
+spring:
+    rabbitmq:
+        host: 192.168.56.202
+        port: 5672
+        username: guest
+        password: guest
+    datasource:
+        primary:
+            driverClassName: com.mysql.jdbc.Driver
+            url: jdbc:mysql://192.168.1.250:3306/eztdbtest?autoReconnect=true&useSSL=false&characterEncoding=utf-8
+            username: root
+            password: rootezt
+        uaa:
+            driverClassName: com.mysql.jdbc.Driver
+            url: jdbc:mysql://192.168.1.250:3306/uaa?autoReconnect=true&useSSL=false&characterEncoding=utf-8
+            username: root
+            password: rootezt
+    redis:
+        host: 60.205.149.194
+        port: 6661
+        password: eztadmin54321

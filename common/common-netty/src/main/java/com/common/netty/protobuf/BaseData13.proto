@@ -1,0 +1,21 @@
+syntax = "proto2";
+
+option java_package="com.common.model.protobuf";
+option java_outer_classname = "BaseData13";
+
+//核心业务指令-计算停车费指令-请求对象
+message A213
+{
+    required int32 parkingId=1;//停车场id
+    required int32 carType=2;//车型
+    required string startTime=3;//开始时间
+    required string endTime=4;//截止时间
+}
+//核心业务指令-计算停车费指令-应答对象
+message B213
+{
+    required int32 status=1;//状态值
+    required string startTime=2;//开始时间
+    required string endTime=3;//结束时间
+    required int32 fee=4;//停车费 分
+}
