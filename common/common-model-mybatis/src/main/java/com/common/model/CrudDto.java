@@ -8,7 +8,7 @@ import java.time.Instant;
 @Data
 public class CrudDto {
 
-    private String id;
+    private Integer id;
 
     private String name;
 

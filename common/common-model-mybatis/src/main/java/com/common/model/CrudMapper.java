@@ -1,9 +1,12 @@
 package com.common.model;
 
+import org.apache.ibatis.annotations.Param;
+
 import java.io.Serializable;
 import java.util.List;
 
-public interface CrudMapper<T extends CrudEntity, PK extends Serializable, EXAMPLE extends CrudEntityExample> {
+public interface CrudMapper<T extends CrudEntity, PK extends Serializable,
+        EXAMPLE extends CrudEntityExample> {
 
     List<T> selectByExample(EXAMPLE example);
 
@@ -17,6 +20,10 @@ public interface CrudMapper<T extends CrudEntity, PK extends Serializable, EXAMP
 
     void updateByPrimaryKey(T entity);
 
-    void updateByExample(EXAMPLE example);
+    void updateByPrimaryKeySelective(T entity);
+
+    void updateByExample(@Param("record") T record, @Param("example") EXAMPLE example);
+
+    void updateByExampleSelective(@Param("record") T record, @Param("example") EXAMPLE example);
 
 }

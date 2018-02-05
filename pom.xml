@@ -21,9 +21,6 @@
         <module>cloud</module>
         <module>microservice</module>
         <module>test</module>
-        <module>microservice-jpa</module>
-        <module>microservice-mybatis</module>
-        <module>microservice-mybatis</module>
     </modules>
 
     <properties>

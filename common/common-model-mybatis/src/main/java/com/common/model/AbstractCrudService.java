@@ -27,10 +27,10 @@ public abstract class AbstractCrudService<T extends CrudEntity,
             example.setOrderByClause(orderByClause);
         }
 
+        CrudEntityExample.Criteria criteria = example.createCriteria();
         if (null != queryDto) {
 
         }
-        CrudEntityExample.Criteria criteria = example.createCriteria();
 
         List<T> list = mapper.selectByExample(example);
         PageInfo<DTO> page = new PageInfo<>();
@@ -39,10 +39,16 @@ public abstract class AbstractCrudService<T extends CrudEntity,
         return page;
     }
 
-    public List<DTO> findList(DTO dto) {
+    public List<DTO> findList(QDTO queryDto) {
+        return findList(null, queryDto);
+    }
+
+    public List<DTO> findList(String orderByClause, QDTO queryDto) {
         CrudEntityExample example = new CrudEntityExample();
         CrudEntityExample.Criteria criteria = example.createCriteria();
+        if (null != queryDto) {
 
+        }
         List<T> list = mapper.selectByExample(example);
         return mapStruct.fromEntities2Dtos(list);
     }
