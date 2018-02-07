@@ -3,7 +3,7 @@ package com.common.model;
 import lombok.Data;
 
 @Data
-public class ReadVo extends AbstractAuditingVo {
+public class RetrieveVo extends AbstractReadOnlyVo {
 
     private String id;
 

@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class ResultDto {
+public class HttpResponseDto {
 
     private long timestamp = new Date().getTime();
     private int status;

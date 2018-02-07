@@ -2,7 +2,7 @@ package com.common.model;
 
 import java.util.List;
 
-public interface ReadMapStruct<VO extends ReadVo, DTO extends ReadDto> {
+public interface RetrieveMapStruct<VO extends RetrieveVo, DTO extends RetrieveDto> {
 
     DTO fromVo2Dto(VO vo);
 

@@ -3,14 +3,14 @@ package com.common.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReadVoExample {
+public class RetrieveVoExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public ReadVoExample() {
+    public RetrieveVoExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 

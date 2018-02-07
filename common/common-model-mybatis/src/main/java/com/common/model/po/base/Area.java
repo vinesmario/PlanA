@@ -4,17 +4,21 @@ import com.common.model.TreeCrudEntity;
 import lombok.Data;
 
 /**
- * 区域
+ * 行政区划，以统计局公布信息为准
  */
 @Data
 public class Area extends TreeCrudEntity<Area> {
 
     /**
-     * 行政编码（与ID同）
+     * 版本，通常是年份。
      */
-    private Integer code;
+    private String version;
     /**
-     * 区域等级（1：省级；2：地市级别；3：区县级别；4：乡镇街道）
+     * 编码
+     */
+    private String code;
+    /**
+     * 等级（1：省级；2：地市级别；3：区县级别；4：乡镇街道）
      */
     private Byte level;
     /**

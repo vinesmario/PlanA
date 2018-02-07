@@ -16,7 +16,19 @@ public interface CrudMapper<T extends CrudEntity, PK extends Serializable,
 
     void deleteByExample(EXAMPLE example);
 
+    /**
+     * xml中需要添加  useGeneratedKeys="true" keyProperty="id"
+     *
+     * @param entity
+     */
     void insert(T entity);
+
+    /**
+     * xml中需要添加 useGeneratedKeys="true" keyProperty="id"
+     *
+     * @param entity
+     */
+    void insertSelective(T entity);
 
     void updateByPrimaryKey(T entity);
 

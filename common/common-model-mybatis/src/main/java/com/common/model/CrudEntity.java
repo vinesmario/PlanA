@@ -2,8 +2,15 @@ package com.common.model;
 
 import lombok.Data;
 
+/**
+ * Base abstract class for entities which will
+ * Create new records
+ * Retrieve existing records
+ * Update existing records
+ * Delete existing records.
+ */
 @Data
-public class CrudEntity extends AbstractAuditingEntity {
+public class CrudEntity extends AbstractModifiableEntity {
 
     /**
      * ID，主键

@@ -23,7 +23,7 @@ public class Structure extends TreeCrudEntity<Structure> {
      */
     private String fax;
     /**
-     * 电子邮箱
+     * 电子邮箱，用来创建超级管理员
      */
     private String email;
     /**

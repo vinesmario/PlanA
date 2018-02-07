@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class TreeReadVo<T extends ReadVo> extends ReadVo {
+public class TreeRetrieveVo<T extends RetrieveVo> extends RetrieveVo {
 
     private String parentId;
 

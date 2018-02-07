@@ -23,7 +23,7 @@ public class Organ extends TreeCrudEntity<Organ> {
      */
     private String fax;
     /**
-     * 电子邮箱
+     * 电子邮箱，用来创建超级管理员
      */
     private String email;
     /**
@@ -38,6 +38,18 @@ public class Organ extends TreeCrudEntity<Organ> {
      * 网站主页
      */
     private String homePage;
+    /**
+     * 收藏夹图标
+     */
+    private String favicon;
+    /**
+     * logo
+     */
+    private String logo;
+    /**
+     * 地址栏域名
+     */
+    private String domain;
     /**
      * 简介
      */
