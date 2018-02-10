@@ -1,6 +1,6 @@
 package com.common.mybatis;
 
-import com.common.model.CrudEntity;
+import com.common.model.po.CrudEntity;
 import lombok.Data;
 import org.apache.ibatis.mapping.SqlCommandType;
 

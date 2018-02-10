@@ -1,6 +1,6 @@
 package com.common.model.po.uaa;
 
-import com.common.model.TreeCrudEntity;
+import com.common.model.po.TreeCrudEntity;
 import lombok.Data;
 
 /**

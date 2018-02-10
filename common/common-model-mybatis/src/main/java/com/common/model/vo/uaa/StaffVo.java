@@ -1,17 +1,17 @@
 package com.common.model.vo.uaa;
 
-import com.common.model.TreeReadVo;
 import com.common.model.po.uaa.Account;
 import com.common.model.po.uaa.Organ;
-import com.common.model.po.uaa.Structure;
+import com.common.model.po.uaa.Struct;
 import com.common.model.po.uaa.User;
+import com.common.model.vo.TreeRetrieveVo;
 import lombok.Data;
 
 /**
  * 职工及其关联
  */
 @Data
-public class StaffVo extends TreeReadVo<StaffVo> {
+public class StaffVo extends TreeRetrieveVo<StaffVo> {
 
     /**
      * 账户，可能为空
@@ -28,6 +28,6 @@ public class StaffVo extends TreeReadVo<StaffVo> {
     /**
      * 部门
      */
-    private Structure dept;
+    private Struct dept;
 
 }

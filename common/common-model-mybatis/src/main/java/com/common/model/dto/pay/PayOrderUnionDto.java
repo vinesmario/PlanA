@@ -1,7 +1,6 @@
 package com.common.model.dto.pay;
 
-import com.common.model.CrudDto;
-import com.common.model.CrudEntity;
+import com.common.model.dto.CrudDto;
 import lombok.Data;
 
 /**

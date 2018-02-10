@@ -1,6 +1,6 @@
 package com.common.model.po.uaa;
 
-import com.common.model.CrudEntity;
+import com.common.model.po.CrudEntity;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -97,7 +97,7 @@ public class User extends CrudEntity {
     /**
      * 部门列表
      */
-    private List<Structure> deptList;
+    private List<Struct> structList;
     /**
      * 企业列表
      */

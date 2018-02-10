@@ -1,12 +1,15 @@
 package com.common.model.po.uaa;
 
-import com.common.model.TreeCrudEntity;
+import com.common.model.po.TreeCrudEntity;
 import lombok.Data;
 
 import java.util.List;
 
 /**
- * 企业、机构、组织、团体等，存在上下级关系
+ * 企业（民间组织、非盈利机构......）等社团法人，
+ * 原则上是会计独立核算单位
+ * 原则上通过控制、合营、联营或法定管理制度进行上下级关联
+ * 原则上每个企业至少存在执行机关
  */
 @Data
 public class Organ extends TreeCrudEntity<Organ> {
@@ -81,7 +84,7 @@ public class Organ extends TreeCrudEntity<Organ> {
     /**
      * 部门列表
      */
-    private List<Structure> deptList;
+    private List<Struct> structList;
     /**
      * 职工列表
      */

@@ -1,7 +1,7 @@
 package com.common.model.po.uaa;
 
 
-import com.common.model.CrudEntity;
+import com.common.model.po.CrudEntity;
 import lombok.Data;
 
 import java.util.List;
@@ -23,11 +23,11 @@ public class Role extends CrudEntity {
     /**
      * 企业ID，可能为空
      */
-    private String companyId;
+    private String organId;
     /**
      * 部门ID，可能为空
      */
-    private String deptId;
+    private String structId;
     /**
      * 用户列表
      */

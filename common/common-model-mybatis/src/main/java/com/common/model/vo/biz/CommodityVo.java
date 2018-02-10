@@ -1,6 +1,6 @@
 package com.common.model.vo.biz;
 
-import com.common.model.RetrieveVo;
+import com.common.model.vo.RetrieveVo;
 import com.common.model.po.base.Color;
 import com.common.model.po.base.Size;
 import lombok.Data;

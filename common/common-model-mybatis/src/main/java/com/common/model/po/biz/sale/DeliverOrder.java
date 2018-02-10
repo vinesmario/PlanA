@@ -1,0 +1,28 @@
+package com.common.model.po.biz.sale;
+
+import com.common.model.po.CrudEntity;
+import com.common.model.po.biz.provider.LogisticsOrder;
+import lombok.Data;
+
+import java.util.List;
+
+/**
+ * 发货订单
+ */
+@Data
+public class DeliverOrder extends CrudEntity {
+
+    /**
+     * 发货状态：0-退款中；1-退款成功；2-退款失败
+     */
+    private Integer status;
+    /**
+     * 销售订单ID
+     */
+    private Integer salesOrderId;
+    /**
+     * 物流订单
+     */
+    private List<LogisticsOrder> logisticsOrderList;
+
+}

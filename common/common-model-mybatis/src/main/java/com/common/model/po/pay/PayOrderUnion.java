@@ -1,6 +1,6 @@
 package com.common.model.po.pay;
 
-import com.common.model.CrudEntity;
+import com.common.model.po.CrudEntity;
 import lombok.Data;
 
 /**
@@ -15,9 +15,9 @@ public class PayOrderUnion extends CrudEntity {
      */
     private Integer status;
     /**
-     * 交易订单ID，可能为空，视具体业务
+     * 销售订单ID，可能为空，视具体业务
      */
-    private Integer tradeOrderId;
+    private Integer salesOrderId;
     /**
      * 充值订单ID，可能为空，视具体业务
      */
