@@ -1,10 +1,10 @@
 package com.model.vo.uaa;
 
-import com.common.model.po.uaa.Account;
-import com.common.model.po.uaa.Organ;
-import com.common.model.po.uaa.Struct;
-import com.common.model.po.uaa.User;
-import com.common.model.vo.TreeRetrieveVo;
+import com.model.po.uaa.Account;
+import com.model.po.uaa.Organ;
+import com.model.po.uaa.Struct;
+import com.model.po.uaa.User;
+import com.model.vo.TreeRetrieveVo;
 import lombok.Data;
 
 /**

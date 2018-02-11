@@ -1,7 +1,7 @@
 package com.model.vo.uaa;
 
-import com.common.model.po.uaa.Organ;
-import com.common.model.vo.TreeRetrieveVo;
+import com.model.po.uaa.Organ;
+import com.model.vo.TreeRetrieveVo;
 import lombok.Data;
 
 /**

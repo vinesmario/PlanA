@@ -1,7 +1,6 @@
 package com.model.po.risk;
 
-import com.common.model.po.CrudEntity;
-import com.common.model.po.assist.Attachment;
+import com.model.po.CrudEntity;
 import com.model.po.assist.Attachment;
 import lombok.Data;
 

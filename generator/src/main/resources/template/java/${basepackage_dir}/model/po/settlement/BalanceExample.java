@@ -1,6 +1,6 @@
 package com.model.po.settlement;
 
-import com.model.po.CrudEntityExample;
+import com.common.model.po.CrudEntityExample;
 
 public class BalanceExample extends CrudEntityExample {
 }

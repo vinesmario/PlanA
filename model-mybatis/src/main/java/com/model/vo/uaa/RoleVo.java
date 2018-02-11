@@ -1,10 +1,8 @@
 package com.model.vo.uaa;
 
-import com.common.model.po.uaa.Module;
-import com.common.model.po.uaa.Organ;
-import com.common.model.po.uaa.Struct;
-import com.common.model.vo.RetrieveVo;
 import com.model.po.uaa.Module;
+import com.model.po.uaa.Organ;
+import com.model.po.uaa.Struct;
 import com.model.vo.RetrieveVo;
 import lombok.Data;
 

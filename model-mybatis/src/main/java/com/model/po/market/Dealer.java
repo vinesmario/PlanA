@@ -1,6 +1,5 @@
 package com.model.po.market;
 
-import com.common.model.po.CrudEntity;
 import com.model.po.CrudEntity;
 import lombok.Data;
 
