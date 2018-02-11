@@ -17,9 +17,12 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>common</module>
-        <module>netty</module>
         <module>cloud</module>
+        <module>model-jpa</module>
+        <module>model-mybatis</module>
         <module>microservice</module>
+        <module>netty</module>
+        <module>generator</module>
         <module>test</module>
     </modules>
 
@@ -118,5 +121,5 @@
             </plugin>
         </plugins>
     </build>
-    
+
 </project>

@@ -12,17 +12,21 @@
         <module name="cloud-api-gateway" />
         <module name="cloud-config-server" />
         <module name="cloud-eureka-server" />
-        <module name="common-client" />
         <module name="common-model-jpa" />
         <module name="common-model-mybatis" />
+        <module name="common-mycat" />
         <module name="common-netty" />
         <module name="common-utils" />
+        <module name="generator" />
         <module name="microservice-jpa" />
         <module name="model" />
+        <module name="model-jpa" />
+        <module name="model-mybatis" />
         <module name="netty" />
         <module name="test" />
         <module name="uaa-service" />
         <module name="utils" />
+        <module name="zgenerator" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -32,19 +36,24 @@
       <module name="cloud-api-gateway" target="1.8" />
       <module name="cloud-config-server" target="1.8" />
       <module name="cloud-eureka-server" target="1.8" />
+      <module name="codeFactory" target="1.8" />
       <module name="common" target="1.8" />
       <module name="common-client" target="1.8" />
       <module name="common-model" target="1.8" />
       <module name="common-model-jpa" target="1.8" />
       <module name="common-model-mybatis" target="1.8" />
+      <module name="common-mycat" target="1.8" />
       <module name="common-netty" target="1.8" />
       <module name="common-utils" target="1.8" />
+      <module name="generator" target="1.8" />
       <module name="jpa" target="1.8" />
       <module name="microservice" target="1.8" />
       <module name="microservice-jpa" target="1.8" />
       <module name="microservice-mybatis" target="1.8" />
       <module name="microservicemybatis" target="1.8" />
       <module name="model" target="1.8" />
+      <module name="model-jpa" target="1.8" />
+      <module name="model-mybatis" target="1.8" />
       <module name="mybatis" target="1.8" />
       <module name="netty" target="1.8" />
       <module name="PlanA" target="1.8" />
@@ -53,6 +62,7 @@
       <module name="uaa-service" target="1.8" />
       <module name="uaas-ervice" target="1.8" />
       <module name="utils" target="1.8" />
+      <module name="zgenerator" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

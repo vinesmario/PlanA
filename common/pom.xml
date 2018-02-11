@@ -15,10 +15,8 @@
 
     <modules>
         <module>common-utils</module>
-        <module>common-model-jpa</module>
-        <module>common-model-mybatis</module>
         <module>common-netty</module>
-        <module>common-client</module>
+        <module>common-mycat</module>
     </modules>
 
 </project>

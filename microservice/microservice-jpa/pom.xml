@@ -15,7 +15,7 @@
     <dependencies>
         <dependency>
             <groupId>com.vinesmario</groupId>
-            <artifactId>common-model-jpa</artifactId>
+            <artifactId>model-jpa</artifactId>
             <version>${project.common.version}</version>
         </dependency>
 
