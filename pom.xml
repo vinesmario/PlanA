@@ -24,6 +24,8 @@
         <module>netty</module>
         <module>generator</module>
         <module>test</module>
+        <module>model</module>
+        <module>model</module>
     </modules>
 
     <properties>

@@ -83,13 +83,13 @@ public class RC4EncryptUtil {
 		return iOutputChar;
 	}
 
-	public static void main(String[] args) {
-		String aa="aaa";
-		String key="111";
-
-		String ccc=rc4(key,aa);
-		System.out.println(ccc);
-		System.out.println(rc4(key,ccc));
-	}
+//	public static void main(String[] args) {
+//		String aa="aaa";
+//		String key="111";
+//
+//		String ccc=rc4(key,aa);
+//		System.out.println(ccc);
+//		System.out.println(rc4(key,ccc));
+//	}
 
 }

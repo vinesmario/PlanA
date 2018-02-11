@@ -54,11 +54,11 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils{
         return sb.toString();
     }
 
-    public static void main(String[] args) {
-        String line = "I_HAVE_AN_IPANG3_PIG";
-        String camel = underline2Camel(line, true);
-        System.out.println(camel);
-        System.out.println(camel2Underline(camel));
-    }
+//    public static void main(String[] args) {
+//        String line = "I_HAVE_AN_IPANG3_PIG";
+//        String camel = underline2Camel(line, true);
+//        System.out.println(camel);
+//        System.out.println(camel2Underline(camel));
+//    }
 
 }

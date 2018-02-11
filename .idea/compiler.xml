@@ -15,13 +15,12 @@
         <module name="common-model-jpa" />
         <module name="common-model-mybatis" />
         <module name="common-mycat" />
-        <module name="common-netty" />
         <module name="common-utils" />
         <module name="generator" />
         <module name="microservice-jpa" />
-        <module name="model" />
         <module name="model-jpa" />
         <module name="model-mybatis" />
+        <module name="model-netty" />
         <module name="netty" />
         <module name="test" />
         <module name="uaa-service" />
@@ -54,6 +53,7 @@
       <module name="model" target="1.8" />
       <module name="model-jpa" target="1.8" />
       <module name="model-mybatis" target="1.8" />
+      <module name="model-netty" target="1.8" />
       <module name="mybatis" target="1.8" />
       <module name="netty" target="1.8" />
       <module name="PlanA" target="1.8" />

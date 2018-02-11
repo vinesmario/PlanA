@@ -285,24 +285,25 @@ public class DateUtils {
         return dayOfWeek.getDisplayName(TextStyle.FULL, Locale.SIMPLIFIED_CHINESE);
     }
 
-    public static void main(String[] args) {
-        System.out.println(stringToTimestamp("2016-05-05T15:22:09"));
-        System.out.println(stringToTimestamp("2016-05-05 15:22:09"));
-        System.out.println(stringToTimestamp("2016-05-05"));
-        System.out.println(getMinusMonth(1));
-        System.out.println(LocalDateTime.ofEpochSecond(getMinusMonth(2), 0, ZoneOffset.ofHours(8)));
+//    public static void main(String[] args) {
+//        System.out.println(stringToTimestamp("2016-05-05T15:22:09"));
+//        System.out.println(stringToTimestamp("2016-05-05 15:22:09"));
+//        System.out.println(stringToTimestamp("2016-05-05"));
+//        System.out.println(getMinusMonth(1));
+//        System.out.println(LocalDateTime.ofEpochSecond(getMinusMonth(2), 0, ZoneOffset.ofHours(8)));
+//
+//        System.out.println(LocalDateTime.ofEpochSecond(getMinusDay(0), 0, ZoneOffset.ofHours(8)));
+//        System.out.println(LocalDateTime.ofEpochSecond(getMinusDay(1), 0, ZoneOffset.ofHours(8)));
+//
+//        LocalDate now = LocalDate.now();
+//        System.out.println(getDayOfWeek(now));
+//
+//        LocalDate ld = stringToLocalDate("2015-05-29", DatePattern.DATE_ONLY);
+//        System.out.println(ld);
+//
+//        System.out.println("defult zone Id: " + TimeZone.getDefault().toZoneId());
+//        System.out.println("timestamp to LocalDate: " + timestampToLocalDate(1462432929));
+//        System.out.println("timestamp to LocalDateTime: " + timestampToLocalDateTime(1462432929));
+//    }
 
-        System.out.println(LocalDateTime.ofEpochSecond(getMinusDay(0), 0, ZoneOffset.ofHours(8)));
-        System.out.println(LocalDateTime.ofEpochSecond(getMinusDay(1), 0, ZoneOffset.ofHours(8)));
-
-        LocalDate now = LocalDate.now();
-        System.out.println(getDayOfWeek(now));
-
-        LocalDate ld = stringToLocalDate("2015-05-29", DatePattern.DATE_ONLY);
-        System.out.println(ld);
-
-        System.out.println("defult zone Id: " + TimeZone.getDefault().toZoneId());
-        System.out.println("timestamp to LocalDate: " + timestampToLocalDate(1462432929));
-        System.out.println("timestamp to LocalDateTime: " + timestampToLocalDateTime(1462432929));
-    }
 }

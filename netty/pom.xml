@@ -15,12 +15,12 @@
     <dependencies>
         <dependency>
             <groupId>com.vinesmario</groupId>
-            <artifactId>common-model</artifactId>
+            <artifactId>common-utils</artifactId>
             <version>${parent.version}</version>
         </dependency>
         <dependency>
             <groupId>com.vinesmario</groupId>
-            <artifactId>common-utils</artifactId>
+            <artifactId>model-netty</artifactId>
             <version>${parent.version}</version>
         </dependency>
         <!-- spring cloud-->
