@@ -1,6 +1,6 @@
 package com.common.mybatis.interceptor;
 
-import com.common.uaa.po.User;
+import com.uaa.model.po.User;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.mapping.ParameterMap;

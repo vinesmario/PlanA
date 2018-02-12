@@ -1,9 +1,9 @@
 package com.uaa.model.web.rest.uaa;
 
-import com.common.uaa.dto.AccountDto;
-import com.common.uaa.dto.AccountQueryDto;
 import com.common.web.HttpResponseDto;
 import com.github.pagehelper.PageInfo;
+import com.uaa.model.dto.AccountDto;
+import com.uaa.model.dto.AccountQueryDto;
 import com.uaa.model.service.impl.AccountServiceImpl;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
