@@ -1,3 +1,3 @@
-package com.model.po.report;
+package com.common.model.po.report;
 
 // 报表

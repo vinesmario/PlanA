@@ -18,6 +18,22 @@
         <module>cloud-api-gateway</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.vinesmario</groupId>
+            <artifactId>common-utils</artifactId>
+            <version>${project.common.version}</version>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.vinesmario</groupId>-->
+            <!--<artifactId>common-model-jpa</artifactId>-->
+            <!--<version>${parent.version}</version>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>com.vinesmario</groupId>
+            <artifactId>common-model</artifactId>
+            <version>${project.common.version}</version>
+        </dependency>
 
-
+    </dependencies>
 </project>

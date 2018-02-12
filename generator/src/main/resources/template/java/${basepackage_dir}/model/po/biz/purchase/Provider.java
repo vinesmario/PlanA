@@ -1,4 +1,4 @@
-package com.model.po.biz.purchase;
+package com.common.model.po.biz.purchase;
 
 /**
  * 服务提供商

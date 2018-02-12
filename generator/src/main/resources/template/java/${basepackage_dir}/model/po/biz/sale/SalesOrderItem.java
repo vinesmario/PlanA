@@ -1,7 +1,7 @@
-package com.model.po.biz.sale;
+package com.common.model.po.biz.sale;
 
 import com.common.model.po.CrudEntity;
-import com.model.po.CrudEntity;
+import com.common.model.po.CrudEntity;
 import lombok.Data;
 
 /**

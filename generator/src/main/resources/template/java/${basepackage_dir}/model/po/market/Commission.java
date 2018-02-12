@@ -1,4 +1,4 @@
-package com.model.po.market;
+package com.common.model.po.market;
 
 /**
  * 佣金

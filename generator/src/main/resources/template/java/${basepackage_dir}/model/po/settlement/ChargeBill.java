@@ -1,4 +1,4 @@
-package com.model.po.settlement;
+package com.common.model.po.settlement;
 
 public class ChargeBill {
 }

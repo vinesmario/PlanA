@@ -1,4 +1,4 @@
-package com.model.po.settlement;
+package com.common.model.po.settlement;
 
 import com.common.model.po.CrudEntity;
 import com.common.mybatis.annotation.AuditEnable;

@@ -11,6 +11,7 @@
 
     <groupId>com.vinesmario</groupId>
     <artifactId>test</artifactId>
+    <packaging>jar</packaging>
 
     <properties>
         <jmeter.version>2.11</jmeter.version>

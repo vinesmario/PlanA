@@ -1,10 +1,10 @@
-package com.model.vo.biz;
+package com.common.model.vo.biz;
 
 import com.common.model.vo.RetrieveVo;
 import com.common.model.po.base.Color;
 import com.common.model.po.base.Size;
-import com.model.po.base.Size;
-import com.model.vo.RetrieveVo;
+import com.common.model.po.base.Size;
+import com.common.model.vo.RetrieveVo;
 import lombok.Data;
 
 /**

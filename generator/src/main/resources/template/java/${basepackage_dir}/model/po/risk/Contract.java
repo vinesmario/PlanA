@@ -1,8 +1,8 @@
-package com.model.po.risk;
+package com.common.model.po.risk;
 
 import com.common.model.po.CrudEntity;
 import com.common.model.po.assist.Attachment;
-import com.model.po.assist.Attachment;
+import com.common.model.po.assist.Attachment;
 import lombok.Data;
 
 import java.time.LocalDate;

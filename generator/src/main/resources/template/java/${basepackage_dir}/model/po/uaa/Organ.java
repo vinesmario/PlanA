@@ -1,7 +1,7 @@
-package com.model.po.uaa;
+package com.common.model.po.uaa;
 
 import com.common.model.po.TreeCrudEntity;
-import com.model.po.TreeCrudEntity;
+import com.common.model.po.TreeCrudEntity;
 import lombok.Data;
 
 import java.util.List;

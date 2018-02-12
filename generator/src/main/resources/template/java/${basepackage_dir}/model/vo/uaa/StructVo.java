@@ -1,4 +1,4 @@
-package com.model.vo.uaa;
+package com.common.model.vo.uaa;
 
 import com.common.model.po.uaa.Organ;
 import com.common.model.vo.TreeRetrieveVo;

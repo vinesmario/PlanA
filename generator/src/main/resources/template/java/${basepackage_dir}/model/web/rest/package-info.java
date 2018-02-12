@@ -1,3 +1,3 @@
-package com.model.mapstruct;
+package com.common.model.mapstruct;
 
 // resource

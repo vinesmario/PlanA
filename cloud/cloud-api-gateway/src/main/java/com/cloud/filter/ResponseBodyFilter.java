@@ -2,10 +2,10 @@ package com.cloud.filter;
 
 
 import com.common.constant.ApiResultEnum;
-import com.common.model.dto.ResultDto;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.io.CharStreams;
+import com.common.web.HttpResponseDto;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
@@ -61,17 +61,18 @@ public class ResponseBodyFilter extends ZuulFilter {
         if (accept != null && !accept.equals("application/json")) return null;  //如果不是json 直接返回
 
         int status = ctx.getResponseStatusCode();
-        if (status != 401 && status != 400 && status != 200 && status != 500) return null;
+        if (HttpStatus.OK.value() != status
+                && HttpStatus.BAD_REQUEST.value() != status
+                && HttpStatus.UNAUTHORIZED.value() != status
+                && HttpStatus.INTERNAL_SERVER_ERROR.value() != status) return null;
 
-        ResultDto re = new ResultDto();
+        HttpResponseDto re = new HttpResponseDto();
         re.setStatus(status);
 
         try {
 
             ObjectMapper objectMapper = new ObjectMapper();
-
             Object e = ctx.get("error.exception");
-
             if (e != null && e instanceof ZuulException) {
                 ZuulException zuulException = (ZuulException) e;
                 log.error("Zuul failure detected: " + zuulException.getMessage(), zuulException);
@@ -79,15 +80,14 @@ public class ResponseBodyFilter extends ZuulFilter {
                 // Remove error code to prevent further error handling in follow up filters
                 ctx.remove("error.status_code");
 
-                re.setStatus(500);
+                re.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
                 re.setCode(ApiResultEnum.API_GATEWAY_ERROR.getCode());
                 re.setMessage(ApiResultEnum.API_GATEWAY_ERROR.getMessage());
                 re.setException(((ZuulException) e).getMessage());
                 String rejson = objectMapper.writeValueAsString(re);
                 ctx.setResponseBody(rejson);
-                ctx.setResponseStatusCode(HttpStatus.OK.value());
+                ctx.setResponseStatusCode(HttpStatus.OK.value());//Can set any error code as excepted
                 ctx.getResponse().setContentType("application/json");
-                ctx.setResponseStatusCode(200); //Can set any error code as excepted
                 return null;
             }
 

@@ -1,4 +1,4 @@
-package com.model.po.uaa;
+package com.common.model.po.uaa;
 
 
 import com.common.model.po.CrudEntity;

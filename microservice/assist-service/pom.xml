@@ -11,6 +11,6 @@
 
     <groupId>com.vinesmario</groupId>
     <artifactId>assist-service</artifactId>
-
+    <packaging>jar</packaging>
 
 </project>

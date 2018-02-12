@@ -1,3 +1,3 @@
-package com.model.po.biz.sale;
+package com.common.model.po.biz.sale;
 
 // 销售、发货

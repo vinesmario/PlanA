@@ -1,9 +1,9 @@
-package com.model.mapper;
+package com.common.model.mapper;
 
 import com.common.model.vo.RetrieveVoExample;
 import com.common.model.vo.RetrieveVo;
-import com.model.vo.RetrieveVo;
-import com.model.vo.RetrieveVoExample;
+import com.common.model.vo.RetrieveVo;
+import com.common.model.vo.RetrieveVoExample;
 
 import java.io.Serializable;
 import java.util.List;

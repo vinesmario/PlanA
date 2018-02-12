@@ -1,4 +1,4 @@
-package com.model.dto.pay;
+package com.common.model.dto.pay;
 
 import com.common.model.dto.CrudDto;
 import lombok.Data;

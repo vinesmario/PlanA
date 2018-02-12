@@ -18,14 +18,10 @@
     <modules>
         <module>common</module>
         <module>cloud</module>
-        <module>model-jpa</module>
-        <module>model-mybatis</module>
         <module>microservice</module>
-        <module>netty</module>
-        <module>generator</module>
-        <module>test</module>
-        <module>model</module>
-        <module>model</module>
+        <!--<module>netty</module>-->
+        <!--<module>test</module>-->
+        <!--<module>generator</module>-->
     </modules>
 
     <properties>
@@ -117,10 +113,10 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+            <!--</plugin>-->
         </plugins>
     </build>
 

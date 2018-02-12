@@ -14,8 +14,21 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>common-model-jpa</module>
+        <module>common-model-mybatis</module>
+        <module>common-model-netty</module>
+        <module>common-mycat</module>
         <module>common-utils</module>
-        <!--<module>common-mycat</module>-->
+        <module>common-model</module>
     </modules>
 
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.20</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 </project>

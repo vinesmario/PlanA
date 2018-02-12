@@ -1,4 +1,4 @@
-package com.model.po.assist;
+package com.common.model.po.assist;
 
 import lombok.Data;
 

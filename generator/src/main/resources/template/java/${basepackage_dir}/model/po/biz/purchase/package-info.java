@@ -1,3 +1,3 @@
-package com.model.po.biz.purchase;
+package com.common.model.po.biz.purchase;
 
 // 原料供应商

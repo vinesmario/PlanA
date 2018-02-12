@@ -1,8 +1,8 @@
-package com.model.mapper;
+package com.common.model.mapper;
 
 import com.common.model.po.CrudEntity;
 import com.common.model.po.CrudEntityExample;
-import com.model.po.CrudEntity;
+import com.common.model.po.CrudEntity;
 import org.apache.ibatis.annotations.Param;
 
 import java.io.Serializable;

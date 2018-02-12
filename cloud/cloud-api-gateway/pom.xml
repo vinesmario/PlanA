@@ -13,12 +13,6 @@
     <artifactId>cloud-api-gateway</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>com.vinesmario</groupId>
-            <artifactId>common-utils</artifactId>
-            <version>${parent.version}</version>
-        </dependency>
-
         <!-- spring cloud -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -40,7 +34,6 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zuul</artifactId>
         </dependency>
-
 
 
     </dependencies>

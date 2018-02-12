@@ -1,4 +1,4 @@
-package com.model.po.biz.comodity;
+package com.common.model.po.biz.comodity;
 
 import com.common.model.po.CrudEntity;
 import lombok.Data;

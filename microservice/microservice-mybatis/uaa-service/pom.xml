@@ -12,5 +12,8 @@
     <groupId>com.vinesmario</groupId>
     <artifactId>uaa-service</artifactId>
 
+    <dependencies>
+
+    </dependencies>
 
 </project>

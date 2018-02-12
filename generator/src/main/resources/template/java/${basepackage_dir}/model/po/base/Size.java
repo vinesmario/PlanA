@@ -1,4 +1,4 @@
-package com.model.po.base;
+package com.common.model.po.base;
 
 import lombok.Data;
 

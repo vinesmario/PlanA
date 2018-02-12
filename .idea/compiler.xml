@@ -12,8 +12,10 @@
         <module name="cloud-api-gateway" />
         <module name="cloud-config-server" />
         <module name="cloud-eureka-server" />
+        <module name="common-model" />
         <module name="common-model-jpa" />
         <module name="common-model-mybatis" />
+        <module name="common-model-netty" />
         <module name="common-mycat" />
         <module name="common-utils" />
         <module name="generator" />
@@ -41,6 +43,7 @@
       <module name="common-model" target="1.8" />
       <module name="common-model-jpa" target="1.8" />
       <module name="common-model-mybatis" target="1.8" />
+      <module name="common-model-netty" target="1.8" />
       <module name="common-mycat" target="1.8" />
       <module name="common-netty" target="1.8" />
       <module name="common-utils" target="1.8" />
