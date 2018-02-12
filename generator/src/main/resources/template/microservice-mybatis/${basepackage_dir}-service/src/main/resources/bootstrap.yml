@@ -1,0 +1,44 @@
+spring:
+    application:
+        name: @project.artifactId@
+    profiles:
+        active: dev
+    cloud:
+        config:
+            label: master
+            discovery:
+                enabled: true
+                serviceId: ${basepackage}-service
+    aop:
+        proxyTargetClass: true
+    admin:
+        url: http://localhost:1000
+
+logging:
+    level:
+        root: info
+        org:
+            springframework:
+                security: DEBUG
+        com:
+            netflix:
+                discovery: 'OFF'
+
+management:
+    security:
+        enabled: false
+
+pagehelper:
+    helperDialect: mysql
+
+mybatis:
+    type-aliases-package: com.${basepackage}.model.po
+    mapper-locations: classpath:resource/mapper/*.xml
+
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    strategy: SEMAPHORE
+

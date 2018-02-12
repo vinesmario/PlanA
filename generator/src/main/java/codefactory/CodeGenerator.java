@@ -6,8 +6,7 @@ public class CodeGenerator {
 
     public static void main(String[] args) throws Exception {
         //模板路径
-		String templatePath = "D:\\project\\codeFactory\\src\\main\\resources\\template";
-//        String templatePath = "D:\\apache-maven-3.5.2\\repository\\com\\googlecode\\rapid-framework\\rapid-generator-template\\4.0.6\\generator\\template";
+		String templatePath = "D:\\project\\PlanA\\generator\\src\\main\\resources\\template";
 
         GeneratorFacade g = new GeneratorFacade();
         g.getGenerator().addTemplateRootDir(templatePath);
@@ -31,8 +30,9 @@ public class CodeGenerator {
 //		g.generateByTable("parking_stop_record");
 //		g.generateByTable("parking_online_settlement_record");
 //		g.generateByTable("parking_basic_info");
-        g.generateByTable("customer_basic_info");
+//        g.generateByTable("customer_basic_info");
 //		g.generateByTable("user_collect_parking");
+		g.generateByTable("account");
 
         // 自动搜索数据库中的所有表并生成文件,template为模板的根目录
         // g.generateByAllTable();

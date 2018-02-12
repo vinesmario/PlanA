@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.vinesmario</groupId>
-    <artifactId>zgenerator</artifactId>
+    <artifactId>generator</artifactId>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,41 +19,36 @@
     </properties>
 
     <dependencies>
-        <!-- 代码生成器 -->
-        <dependency>
-            <groupId>com.googlecode.rapid-framework</groupId>
-            <artifactId>rapid-generator</artifactId>
-            <version>4.0.6</version>
-        </dependency>
-
         <!-- mysql数据库 -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.34</version>
         </dependency>
-
-        <!-- freemarker -->
-        <dependency>
-            <groupId>org.freemarker</groupId>
-            <artifactId>freemarker</artifactId>
-            <version>2.3.16</version>
-        </dependency>
-
         <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <version>1.2.135</version>
         </dependency>
-
+        <!-- freemarker -->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.16</version>
+        </dependency>
+        <!-- 代码生成器 -->
+        <dependency>
+            <groupId>com.googlecode.rapid-framework</groupId>
+            <artifactId>rapid-generator</artifactId>
+            <version>4.0.6</version>
+        </dependency>
         <!-- 代码生成器模板,模板根目录通过 classpath:generator/template/rapid 可以引用 -->
         <dependency>
             <groupId>com.googlecode.rapid-framework</groupId>
             <artifactId>rapid-generator-template</artifactId>
             <version>4.0.6</version>
         </dependency>
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -63,7 +58,7 @@
     </dependencies>
 
     <build>
-        <finalName>codeFactory</finalName>
+        <finalName>generator</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
