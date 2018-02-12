@@ -1,10 +1,10 @@
 server:
     port: 1030
 
-eureka:
-    client:
-        serviceUrl:
-            defaultZone: http://localhost:8761/eureka/
+#eureka:
+#    client:
+#        serviceUrl:
+#            defaultZone: http://localhost:8761/eureka/
 
 spring:
     cloud:
@@ -13,11 +13,12 @@ spring:
 ##DATASOURCE（DataSourceAutoConfiguration＆DataSourceProperties）
 # 驱动配置信息
     datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+#        type: com.zaxxer.hikari.HikariDataSource  HikariCP
         url: jdbc:mysql://192.168.5.230/uaa1?autoReconnect=true&useSSL=false&characterEncoding=utf-8
         username: root
         password: d2K1q3
-        driverClassName: com.mysql.jdbc.Driver
-        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
         ##连接池属性配置
         initialSize: 5
         minIdle: 5
@@ -33,3 +34,4 @@ spring:
         maxPoolPreparedStatementPerConnectionSize: 20
         filters: stat,wall,log4j
         connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+

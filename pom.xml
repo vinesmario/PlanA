@@ -34,7 +34,6 @@
         <org.mapstruct.version>1.2.0.Final</org.mapstruct.version>
         <springfox.version>2.6.1</springfox.version>
         <spring-cloud.version>Dalston.SR5</spring-cloud.version>
-        <spring-boot.version>1.5.9.</spring-boot.version>
         <jjwt.version>0.7.0</jjwt.version>
         <org.mybatis.spring.boot.version>1.1.1</org.mybatis.spring.boot.version>
         <pagehelper.version>1.1.0</pagehelper.version>

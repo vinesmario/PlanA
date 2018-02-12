@@ -3,42 +3,46 @@ spring:
         name: @project.artifactId@
     profiles:
         active: dev
-    cloud:
-        config:
-            label: master
-            discovery:
-                enabled: true
-                serviceId: uaa-service
-    aop:
-        proxyTargetClass: true
-    admin:
-        url: http://localhost:1000
+#    cloud:
+#        config:
+#            label: master
+#            discovery:
+#                enabled: true
+#                serviceId: uaa-service
+#    aop:
+#        proxyTargetClass: true
+#    admin:
+#        url: http://localhost:1000
 
 logging:
     level:
         root: info
-        org:
-            springframework:
-                security: DEBUG
-        com:
-            netflix:
-                discovery: 'OFF'
+#        org:
+#            springframework:
+#                security: DEBUG
+#        com:
+#            netflix:
+#                discovery: 'OFF'
 
-management:
-    security:
-        enabled: false
+#management:
+#    security:
+#        enabled: false
 
+#hystrix:
+#    command:
+#        default:
+#            execution:
+#                isolation:
+#                    strategy: SEMAPHORE
+
+## 配置DataSourceConfig时，则要在代码中指定*Mapper.xml文件的路径。
+mybatis:
+    mapper-locations: classpath:mapper/*Mapper.xml
+    type-aliases-package: com.uaa.model.po
+
+#pagehelper
 pagehelper:
     helperDialect: mysql
-
-mybatis:
-    type-aliases-package: com.uaa.model.po
-    mapper-locations: classpath:resource/mapper/*.xml
-
-hystrix:
-    command:
-        default:
-            execution:
-                isolation:
-                    strategy: SEMAPHORE
-
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql

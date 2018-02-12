@@ -23,7 +23,6 @@ import lombok.Data;
  * @createTime:<#if now??>${now?string('yyyy-MM-dd HH:mm:ss')}</#if>
  */
 @Data
-@Alias("${classNameLower}")
 @Entity(name = "${table.sqlName}")
 public class ${className} extends CrudEntity {
 

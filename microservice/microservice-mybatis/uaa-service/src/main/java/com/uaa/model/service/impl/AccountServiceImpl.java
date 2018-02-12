@@ -5,6 +5,8 @@ import com.common.model.service.AbstractCrudServiceImpl;
 import com.common.utils.StringUtils;
 import com.uaa.model.dto.AccountDto;
 import com.uaa.model.dto.AccountQueryDto;
+import com.uaa.model.mapper.AccountMapper;
+import com.uaa.model.mapstruct.AccountMapStruct;
 import com.uaa.model.po.Account;
 import com.uaa.model.po.AccountExample;
 import org.springframework.stereotype.Service;
@@ -15,10 +17,9 @@ import org.springframework.stereotype.Service;
  */
 
 @Service("accountServiceImpl")
-public class AccountServiceImpl extends AbstractCrudServiceImpl<Account, Long, AccountExample,
-		AccountDto, AccountQueryDto> {
+public class AccountServiceImpl extends AbstractCrudServiceImpl<Account, Long, AccountExample, AccountMapper,
+		AccountDto, AccountMapStruct, AccountQueryDto> {
 
-	@Override
 	public AccountExample fromQueryDto2Example(AccountQueryDto queryDto) {
 		AccountExample example = new AccountExample();
 		AccountExample.Criteria criteria = example.createCriteria();
