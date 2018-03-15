@@ -16,8 +16,13 @@
     <dependencies>
         <dependency>
             <groupId>com.vinesmario</groupId>
-            <artifactId>common-utils</artifactId>
+            <artifactId>common-tools</artifactId>
             <version>${project.common.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
     </dependencies>

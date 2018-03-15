@@ -23,7 +23,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.34</version>
+            <version>5.1.45</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
         <dependency>
@@ -69,7 +69,7 @@
                 </configuration>
             </plugin>
 
-            <!--mybatis-generator:generate-->
+            <!--mvn mybatis-generator:generate-->
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>

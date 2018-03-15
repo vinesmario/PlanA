@@ -14,11 +14,11 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>common-model-jpa</module>
+        <module>common-model-hibernate</module>
         <module>common-model-mybatis</module>
         <module>common-model-netty</module>
         <module>common-mycat</module>
-        <module>common-utils</module>
+        <module>common-tools</module>
         <module>common-model</module>
     </modules>
 

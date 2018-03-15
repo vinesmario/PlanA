@@ -50,7 +50,7 @@ public class AuditingInterceptor implements Interceptor {
 
 		Date currentDate = new Date();
 		User currentUser = new User();
-		currentUser.setId(1L);
+		currentUser.setId(1);
 		if (SqlCommandType.UPDATE == sqlCommandType) {
 			for (Field field : fields) {
 				if (AnnotationUtils.getAnnotation(field, LastModifiedBy.class) != null) {

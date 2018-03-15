@@ -7,7 +7,7 @@ public class CrudQueryDto {
     /**
      * ID，主键
      */
-    private Long id;
+    private Integer id;
     /**
      * 名称
      */

@@ -1,14 +1,13 @@
 package com.common.model.mapper;
 
 import com.common.model.po.CrudEntity;
-import com.common.model.po.CrudEntityExample;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.data.repository.NoRepositoryBean;
 
 import java.io.Serializable;
 import java.util.List;
 
-public interface CrudMapper<T extends CrudEntity,
-		PK extends Serializable, EXAMPLE extends CrudEntityExample> {
+public interface CrudMapper<T extends CrudEntity, PK extends Serializable, EXAMPLE> {
 
 	List<T> selectByExample(EXAMPLE example);
 

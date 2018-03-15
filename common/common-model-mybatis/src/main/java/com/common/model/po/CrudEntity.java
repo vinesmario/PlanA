@@ -15,7 +15,7 @@ public class CrudEntity extends AbstractModifiableEntity {
     /**
      * ID，主键
      */
-    private Long id;
+    private Integer id;
     /**
      * 名称
      */

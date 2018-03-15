@@ -7,7 +7,7 @@ import java.util.List;
 @Data
 public class TreeCrudEntity<T extends CrudEntity> extends CrudEntity {
 
-    private Long parentId;
+    private Integer parentId;
 
     private String parentIds;
 

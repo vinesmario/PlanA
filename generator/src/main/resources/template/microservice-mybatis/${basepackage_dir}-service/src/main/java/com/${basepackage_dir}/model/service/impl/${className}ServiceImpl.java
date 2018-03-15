@@ -30,7 +30,7 @@ public class ${className}ServiceImpl extends AbstractCrudServiceImpl<${className
 		${className}Example.Criteria criteria = example.createCriteria();
 
 		if (null != queryDto) {
-			if (null != queryDto.getId() && queryDto.getId().compareTo(0L) > 0) {
+			if (null != queryDto.getId() && queryDto.getId().compareTo(0) > 0) {
 				criteria.andIdEqualTo(queryDto.getId());
 			}
 			if (StringUtils.isNotBlank(queryDto.getName())) {

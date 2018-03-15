@@ -12,7 +12,7 @@ spring:
                     # username: dev@eztcn.com
                     # password: Ezt20170301
 #                    uri: http://192.168.56.201:10080/vinesmario/spring-cloud-1.0.git
-#                    searchPaths: /config-repo
+#                    searchPaths: /config-repo/{application}/{profile}
 #                    username: vinesmario
 #                    password: 12345678
                 native:

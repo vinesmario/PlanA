@@ -16,7 +16,7 @@
     <dependencies>
         <dependency>
             <groupId>com.vinesmario</groupId>
-            <artifactId>common-utils</artifactId>
+            <artifactId>common-tools</artifactId>
             <version>${project.common.version}</version>
         </dependency>
     </dependencies>

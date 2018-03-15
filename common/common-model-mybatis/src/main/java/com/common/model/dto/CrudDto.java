@@ -8,17 +8,38 @@ import java.time.Instant;
 @Data
 public class CrudDto {
 
-    private Long id;
-
-    private String name;
-
-    private String createdBy;
-
-    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
-    private Instant createdDate;
-
-    private String lastModifiedBy;
-
-    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
-    private Instant lastModifiedDate;
+	/**
+	 * ID，主键
+	 */
+	private Integer id;
+	/**
+	 * 名称
+	 */
+	private String name;
+	/**
+	 * 备注
+	 */
+	private String memo;
+	/**
+	 * 删除标识
+	 */
+	private Byte delFlag;
+	/**
+	 * 创建者（用户ID）
+	 */
+	private String createdBy;
+	/**
+	 * 创建时间
+	 */
+	@JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
+	private Instant createdDate;
+	/**
+	 * 最后修改者（用户ID）
+	 */
+	private String lastModifiedBy;
+	/**
+	 * 最后修改时间
+	 */
+	@JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
+	private Instant lastModifiedDate;
 }

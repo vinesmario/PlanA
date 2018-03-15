@@ -27,8 +27,8 @@
 
     <entry key="java_typemapping.java.lang.Long">Long</entry>
     <entry key="java_typemapping.java.sql.Timestamp">java.util.Date</entry>  
-    <entry key="java_typemapping.java.sql.Date">java.util.Date</entry>  
-    <entry key="java_typemapping.java.sql.Time">java.util.Date</entry>    
+    <entry key="java_typemapping.java.sql.Date">java.time.LocalDateTime</entry>
+    <entry key="java_typemapping.java.sql.Time">java.time.Instant</entry>
     <entry key="java_typemapping.java.lang.Byte">Integer</entry>  
     <entry key="java_typemapping.java.lang.Short">Integer</entry>  
     <entry key="java_typemapping.java.math.BigDecimal">BigDecimal</entry>
@@ -38,11 +38,11 @@
     <entry key="jdbc.driver">org.h2.Driver</entry>  
     -->  
           
-    <entry key="jdbc_url">jdbc:mysql://192.168.5.230:3306/uaa1?useUnicode=true&amp;characterEncoding=UTF-8</entry>
+    <entry key="jdbc_url">jdbc:mysql://127.0.0.1:3306/uaa?useUnicode=true&amp;characterEncoding=UTF-8</entry>
     <entry key="jdbc_driver">com.mysql.jdbc.Driver</entry>
 
     <entry key="jdbc_username">root</entry>
-    <entry key="jdbc_password">d2K1q3</entry>
+    <entry key="jdbc_password">123456</entry>
   
     <!-- Oracle  jdbc:oracle:oci:@tnsname_devdb  
     <entry key="jdbc.url">jdbc:oracle:thin:@192.168.0.177:1521:[sid]</entry>  
