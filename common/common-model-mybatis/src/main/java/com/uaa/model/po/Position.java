@@ -21,6 +21,10 @@ public class Position extends TreeCrudEntity<Position> {
 	 */
 	private Integer departmentId;
 	/**
+	 * 角色ID
+	 */
+	private Integer roleId;
+	/**
 	 * 用户ID
 	 */
 	private Integer userId;

@@ -9,8 +9,10 @@ import lombok.Data;
 @Data
 public class Function extends TreeCrudEntity<Function> {
 
-    private String href;    // 链接
-    private String target;   // 目标
-    private String icon;    // 图标
-    private String permission; // 权限标识
+	private String httpMethod;//
+	private String uri;    // 链接，不包括http://host:port部分
+	private String target;   // 目标
+	private String icon;    // 图标
+	private String permission; // 权限标识
+
 }
