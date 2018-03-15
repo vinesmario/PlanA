@@ -13,9 +13,9 @@ import java.util.List;
 @Data
 public class Department extends TreeCrudEntity<Department> {
 	/**
-	 * 负责人
+	 * 简称
 	 */
-	private String representative;
+	private String shortName;
 	/**
 	 * 座机
 	 */
@@ -25,55 +25,68 @@ public class Department extends TreeCrudEntity<Department> {
 	 */
 	private String fax;
 	/**
-	 * 电子邮箱，用来创建超级管理员
+	 * 电子邮箱
 	 */
 	private String email;
-	/**
-	 * 联系人
-	 */
-	private String linkman;
-	/**
-	 * 联系人手机
-	 */
-	private String linkmanMobile;
-	/**
-	 * 网站主页
-	 */
-	private String homePage;
 	/**
 	 * 简介
 	 */
 	private String profile;
 	/**
-	 * 省级区域ID，可能为空
+	 * 租户ID
+	 */
+	private String tenantId;
+	/**
+	 * 主管职位ID
+	 */
+	private Integer chiefPositionId;
+	/**
+	 * 主管人员ID
+	 */
+	private Integer chiefUserId;
+	/**
+	 * 主管人员账号ID
+	 */
+	private Integer chiefAccountId;
+	/**
+	 * 省级区域ID
 	 */
 	private Integer provinceId;
 	/**
-	 * 地级区域ID，可能为空
+	 * 地级区域ID，省辖市
 	 */
 	private Integer cityId;
 	/**
-	 * 县级区域ID，可能为空
+	 * 县级区域ID，市辖区
 	 */
 	private Integer distinctId;
 	/**
-	 * 乡级区域ID，可能为空
+	 * 乡级区域ID，街道
 	 */
 	private Integer streetId;
 	/**
-	 * 乡级区域地址
+	 * 乡级区域地址，街道
 	 */
 	private String streetAddress;
 	/**
-	 * 村级及以下详细地址
+	 * 村级及以下详细地址，社区
 	 */
-	private String villageAddress;
+	private String communityAddress;
 	/**
-	 * 企业ID
+	 * 地图服务提供商
 	 */
-	private String organId;
+	private Integer mapProvider;
 	/**
-	 * 职工列表
+	 * 经度
+	 */
+	private Double longitude;
+	/**
+	 * 纬度
+	 */
+	private Double latitude;
+	/**
+	 * 职位列表
 	 */
 	List<Position> positionList;
+
 }

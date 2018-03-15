@@ -6,9 +6,14 @@ import lombok.Data;
 /**
  * 部门运营配置（信息技术服务相关）
  * 原则上无部门财务配置
+ * TODO 拆分到运营服务
  */
 @Data
 public class DepartmentOperation extends CrudEntity {
+	/**
+	 * 简称
+	 */
+	private String shortName;
 	/**
 	 * 网站主页
 	 */

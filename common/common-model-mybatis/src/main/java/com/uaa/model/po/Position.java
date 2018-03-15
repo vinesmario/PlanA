@@ -13,19 +13,19 @@ import lombok.Data;
 public class Position extends TreeCrudEntity<Position> {
 
 	/**
-	 * 租户ID，不能为空
+	 * 租户ID
 	 */
 	private Integer tenantId;
 	/**
-	 * 部门ID，不能为空
+	 * 部门ID
 	 */
 	private Integer departmentId;
 	/**
-	 * 用户ID，可能为空
+	 * 用户ID
 	 */
 	private Integer userId;
 	/**
-	 * 账户ID，可能为空
+	 * 账户ID
 	 */
 	private Integer accountId;
 
