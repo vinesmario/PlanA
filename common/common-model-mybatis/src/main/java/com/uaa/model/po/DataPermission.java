@@ -4,10 +4,10 @@ import com.common.model.po.CrudEntity;
 import lombok.Data;
 
 /**
- * 数据范围
+ * 数据权限
  */
 @Data
-public class DataScope extends CrudEntity {
+public class DataPermission extends CrudEntity {
 
 
 }
