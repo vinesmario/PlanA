@@ -21,7 +21,7 @@ import org.springframework.stereotype.Service;
  * @createTime:<#if now??>${now?string('yyyy-MM-dd HH:mm:ss')}</#if>
  */
 @Service
-public class ${className}Service extends AbstractCrudService<${className}, Long, ${className}Example,
+public class ${className}Service extends AbstractCrudService<${className}, Integer, ${className}Example,
 		${className}Dto, ${className}QueryDto> {
 
 	@Override
