@@ -1,6 +1,5 @@
 package com.biz.sale.model.po;
 
-import com.biz.provider.model.po.LogisticsOrder;
 import com.common.model.po.CrudEntity;
 import lombok.Data;
 
@@ -11,7 +10,7 @@ import java.util.List;
  * 销售订单
  */
 @Data
-public class SalesOrder extends CrudEntity {
+public class SaleOrder extends CrudEntity {
 
 	/**
 	 * 订单金额
@@ -42,16 +41,27 @@ public class SalesOrder extends CrudEntity {
 	 */
 	private Integer returnStatus;
 	/**
-	 * 销售订单详情
+	 * 销售订单产品详情，一对多
 	 */
-	private List<SalesOrderItem> itemlList;
+	private List<SaleOrderProduct> productList;
 	/**
-	 * 物流订单，一对多
+	 * 销售订单支付详情，一对多
 	 */
-	private List<LogisticsOrder> logisticsOrderList;
+	private List<SaleOrderPay> payList;
 	/**
-	 * 退货订单，一对多
+	 * 销售订单优惠详情，一对多
 	 */
-	private List<ReturnOrder> returnOrderList;
-
+	private List<SaleOrderDiscount> discountList;
+	/**
+	 * 销售订单发货详情，一对多
+	 */
+	private List<SaleOrderDeliver> deliverList;
+	/**
+	 * 销售订单退货详情，一对多
+	 */
+	private List<SaleOrderReturn> returnList;
+	/**
+	 * 销售订单退货详情，一对多
+	 */
+	private List<SaleOrderRefund> refundList;
 }

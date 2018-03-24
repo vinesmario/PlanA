@@ -4,6 +4,8 @@ import com.common.model.po.CrudEntity;
 import lombok.Data;
 
 /**
+ * 账户，处理登录业务
+ *
  * @author:vinesmario
  * @version:1.0
  * @since:1.0

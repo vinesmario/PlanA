@@ -10,6 +10,7 @@ import java.util.List;
  * 原则上是会计独立核算单位
  * 原则上通过控制、合营、联营或法定管理制度进行上下级关联
  * 原则上每个企业至少存在执行机关
+ * 供应商、客户、企业本身
  */
 @Data
 public class Tenant extends TreeCrudEntity<Tenant> {

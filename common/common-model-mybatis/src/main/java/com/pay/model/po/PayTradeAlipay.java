@@ -4,10 +4,10 @@ import com.common.model.po.CrudEntity;
 import lombok.Data;
 
 /**
- * 支付订单-支付宝支付
+ * 支付交易流水-支付宝支付
  */
 @Data
-public class PayOrderAlipay extends CrudEntity {
+public class PayTradeAlipay extends CrudEntity {
 
     //    @Column(name = "app_id")
     private String appId;

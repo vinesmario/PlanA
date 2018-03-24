@@ -8,6 +8,8 @@ import java.time.Instant;
 import java.time.LocalDate;
 
 /**
+ * 用户，自然人信息
+ *
  * @author:vinesmario
  * @version:1.0
  * @since:1.0
@@ -33,10 +35,6 @@ public class User extends CrudEntity {
 	 * 生日
 	 */
 	private String birthday;
-	/**
-	 * 企鹅号
-	 */
-	private String qq;
 	/**
 	 * 昵称
 	 */

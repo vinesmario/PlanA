@@ -4,12 +4,12 @@ import com.common.model.po.CrudEntity;
 import lombok.Data;
 
 /**
- * 退款订单-微信支付
+ * 退款交易流水-微信支付
  */
 //@Entity
 //@Table(name = "pay_order_wechat")
 @Data
-public class RefundOrderWechat extends CrudEntity {
+public class RefundTradeWechat extends CrudEntity {
 
     //    @Column(name = "appid")
     private String appid;

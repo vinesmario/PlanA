@@ -7,7 +7,7 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * 角色
+ * 角色，本质上是个权限组标识
  */
 @Data
 public class Role extends CrudEntity {

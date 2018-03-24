@@ -4,7 +4,7 @@ import com.common.model.po.TreeCrudEntity;
 import lombok.Data;
 
 /**
- * 功能
+ * 菜单、功能，数据的CRUD操作
  */
 @Data
 public class Function extends TreeCrudEntity<Function> {

@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * 部门、组织架构。
  * 不进行独立核算
- * 母子公司相同职能部门存在上下级关系
+ * 企业经营分部存在上下级关系
  */
 @Data
 public class Department extends TreeCrudEntity<Department> {

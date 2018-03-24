@@ -4,10 +4,10 @@ import com.common.model.po.CrudEntity;
 import lombok.Data;
 
 /**
- * 支付订单-银联支付
+ * 支付交易流水-银联支付
  */
 @Data
-public class PayOrderUnion extends CrudEntity {
+public class PayTradeUnion extends CrudEntity {
 
 
     /**
