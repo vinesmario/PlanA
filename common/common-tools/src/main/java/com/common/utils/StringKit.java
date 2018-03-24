@@ -1,9 +1,11 @@
 package com.common.utils;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class StringUtils extends org.apache.commons.lang3.StringUtils{
+public class StringKit{
 
     /**
      * 下划线转驼峰法

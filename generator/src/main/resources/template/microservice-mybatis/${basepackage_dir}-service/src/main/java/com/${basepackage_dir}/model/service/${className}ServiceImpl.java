@@ -1,9 +1,9 @@
 <#include "/java_copyright.include">
 <#assign className = table.className>
 <#assign classNameLower = className?uncap_first>
-package com.${basepackage}.model.service.impl;
+package com.${basepackage}.model.service;
 
-import com.common.model.service.AbstractCrudServiceImpl;
+import com.common.model.service.AbstractCrudService;
 import com.common.utils.StringUtils;
 import com.${basepackage}.model.dto.${className}Dto;
 import com.${basepackage}.model.dto.${className}QueryDto;
@@ -21,7 +21,7 @@ import org.springframework.stereotype.Service;
  * @createTime:<#if now??>${now?string('yyyy-MM-dd HH:mm:ss')}</#if>
  */
 @Service
-public class ${className}ServiceImpl extends AbstractCrudServiceImpl<${className}, Long, ${className}Example,
+public class ${className}Service extends AbstractCrudService<${className}, Long, ${className}Example,
 		${className}Dto, ${className}QueryDto> {
 
 	@Override

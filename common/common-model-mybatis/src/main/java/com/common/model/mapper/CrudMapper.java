@@ -9,13 +9,11 @@ import java.util.List;
 
 public interface CrudMapper<T extends CrudEntity, PK extends Serializable, EXAMPLE> {
 
+	Integer countByExample(EXAMPLE example);
+
 	List<T> selectByExample(EXAMPLE example);
 
 	T selectByPrimaryKey(PK primaryKey);
-
-	void deleteByPrimaryKey(PK primaryKey);
-
-	void deleteByExample(EXAMPLE example);
 
 	/**
 	 * xml中需要添加  useGeneratedKeys="true" keyProperty="id"
@@ -30,6 +28,10 @@ public interface CrudMapper<T extends CrudEntity, PK extends Serializable, EXAMP
 	 * @param entity
 	 */
 	void insertSelective(T entity);
+
+	void deleteByPrimaryKey(PK primaryKey);
+
+	void deleteByExample(EXAMPLE example);
 
 	void updateByPrimaryKey(T entity);
 

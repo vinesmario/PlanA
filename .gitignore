@@ -28,3 +28,4 @@ cache/
 logs/
 
 .gitignore
+!/common/common-tools/
