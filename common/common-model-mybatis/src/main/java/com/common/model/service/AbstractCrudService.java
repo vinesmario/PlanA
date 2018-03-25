@@ -30,8 +30,9 @@ public abstract class AbstractCrudService<T extends CrudEntity,
 		return new PageInfo<>(list);
 	}
 
-	public List<T> findList(QDTO queryDto) {
+	public List<T> findList(String orderByClause, QDTO queryDto) {
 		EXAMPLE example = fromQueryDto2Example(queryDto);
+		example.setOrderByClause(orderByClause);
 		return mapper.selectByExample(example);
 	}
 

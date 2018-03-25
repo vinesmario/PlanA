@@ -1,4 +1,4 @@
-package com.common.utils;
+package com.common.util;
 
 /**
  * @description 用于RC4加密，可将一个字符串，或一个字节数组加密，得到相同长度的密文

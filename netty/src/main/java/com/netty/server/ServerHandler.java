@@ -1,8 +1,8 @@
 package com.netty.server;
 
 import com.common.model.protobuf.Message;
-import com.common.utils.MacUtils;
-import com.common.utils.RC4EncryptUtil;
+import com.common.util.MacUtils;
+import com.common.util.RC4EncryptUtil;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
 import io.netty.channel.ChannelHandlerContext;

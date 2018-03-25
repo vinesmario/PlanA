@@ -1,11 +1,13 @@
-package com.uaa.model.web.rest.uaa;
+package com.uaa.model.web.rest;
 
-import com.common.web.utils.HeaderUtil;
-import com.common.web.utils.PaginationUtil;
+import com.common.util.PaginationUtil;
+import com.common.web.util.HeaderUtil;
 import com.github.pagehelper.PageInfo;
 import com.uaa.model.dto.AccountDto;
 import com.uaa.model.dto.AccountQueryDto;
-import com.uaa.model.service.impl.AccountServiceImpl;
+import com.uaa.model.mapstruct.AccountMapStruct;
+import com.uaa.model.po.Account;
+import com.uaa.model.service.AccountService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,66 +29,70 @@ import java.util.List;
 public class AccountResource {
 
 	@Autowired
-	AccountServiceImpl accountServiceImpl;
+	AccountService accountService;
+	@Autowired
+	AccountMapStruct accountMapStruct;
 
 	@GetMapping("/page")
 	public ResponseEntity<List<AccountDto>> page(@RequestParam("pageNum") Integer pageNum,
 												 @RequestParam("pageSize") Integer pageSize,
 												 @RequestParam(value = "orderByClause", required = false) String orderByClause) {
 		AccountQueryDto queryDto = new AccountQueryDto();
-		PageInfo<AccountDto> pageInfo = accountServiceImpl.findPage(pageNum, pageSize, orderByClause, queryDto);
+		PageInfo<Account> pageInfo = accountService.findPage(pageNum, pageSize, orderByClause, queryDto);
 		HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(pageInfo, "/api/v1/accounts/page");
 		return ResponseEntity.ok()
 				.headers(headers)
-				.body(pageInfo.getList());
+				.body(accountMapStruct.fromEntities2Dtos(pageInfo.getList()));
 	}
 
 	@GetMapping("/list")
 	public ResponseEntity<List<AccountDto>> list(@RequestParam(value = "orderByClause", required = false) String orderByClause) {
 		AccountQueryDto queryDto = new AccountQueryDto();
-		List<AccountDto> list = accountServiceImpl.findList(orderByClause, queryDto);
+		List<Account> list = accountService.findList(orderByClause, queryDto);
 		HttpHeaders headers = null;
 		return ResponseEntity.ok()
 				.headers(headers)
-				.body(list);
+				.body(accountMapStruct.fromEntities2Dtos(list));
 	}
 
 	@GetMapping("/{id}")
 	public ResponseEntity<AccountDto> get(@PathVariable("id") Integer id) {
-		AccountDto dto = accountServiceImpl.selectByPrimaryKey(id);
+		Account entity = accountService.selectByPrimaryKey(id);
 		HttpHeaders headers = null;
 		return ResponseEntity.ok()
-				.headers(HeaderUtil.createAlert("account.get", dto.getName()))
-				.body(dto);
+				.headers(HeaderUtil.createAlert("account.get", entity.getName()))
+				.body(accountMapStruct.fromEntity2Dto(entity));
 	}
 
 	@PostMapping("")
 	public ResponseEntity<AccountDto> add(@RequestBody AccountDto dto) throws URISyntaxException {
-		accountServiceImpl.insert(dto);
-		return ResponseEntity.created(new URI("/api/v1/accounts/" + dto.getId()))
-				.headers(HeaderUtil.createAlert("account.created", dto.getName()))
-				.body(dto);
+		Account entity = accountMapStruct.fromDto2Entity(dto);
+		accountService.insert(entity);
+		return ResponseEntity.created(new URI("/api/v1/accounts/" + entity.getId()))
+				.headers(HeaderUtil.createAlert("account.created", entity.getName()))
+				.body(accountMapStruct.fromEntity2Dto(entity));
 	}
 
 	// 需提交整个对象
 	@PutMapping("/{id}")
 	public ResponseEntity<AccountDto> update(@PathVariable("id") Integer id,
 											 @RequestBody AccountDto dto) throws URISyntaxException {
-		AccountDto dbDto = accountServiceImpl.selectByPrimaryKey(id);
-		BeanUtils.copyProperties(dto, dbDto);
-		accountServiceImpl.updateByPrimaryKey(dbDto);
-		return ResponseEntity.created(new URI("/api/users/" + dto.getId()))
-				.headers(HeaderUtil.createAlert("account.updated", dto.getName()))
-				.body(dto);
+		Account entity = accountMapStruct.fromDto2Entity(dto);
+		Account dbEntity = accountService.selectByPrimaryKey(id);
+		BeanUtils.copyProperties(entity, dbEntity);
+		accountService.updateByPrimaryKey(dbEntity);
+		return ResponseEntity.created(new URI("/api/users/" + dbEntity.getId()))
+				.headers(HeaderUtil.createAlert("account.updated", dbEntity.getName()))
+				.body(accountMapStruct.fromEntity2Dto(dbEntity));
 	}
 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> delete(@PathVariable("id") Integer id) {
 		log.debug("REST request to delete Account: {}", id);
-		AccountDto dbDto = accountServiceImpl.selectByPrimaryKey(id);
-		accountServiceImpl.deleteByPrimaryKey(id);
+		Account dbEntity = accountService.selectByPrimaryKey(id);
+		accountService.deleteByPrimaryKey(id);
 		return ResponseEntity.ok()
-				.headers(HeaderUtil.createAlert("account.deleted", dbDto.getName()))
+				.headers(HeaderUtil.createAlert("account.deleted", dbEntity.getName()))
 				.build();
 	}
 

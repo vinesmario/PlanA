@@ -1,10 +1,10 @@
-package com.uaa.model.web.rest.uaa;
+package com.uaa.model.web.rest;
 
 import com.common.web.HttpResponseDto;
 import com.github.pagehelper.PageInfo;
 import com.uaa.model.dto.UserDto;
 import com.uaa.model.dto.UserQueryDto;
-import com.uaa.model.service.impl.UserServiceImpl;
+import com.uaa.model.service.UserServiceImpl;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
