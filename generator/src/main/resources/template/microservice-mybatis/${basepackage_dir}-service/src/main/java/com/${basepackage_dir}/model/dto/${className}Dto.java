@@ -22,7 +22,7 @@ import java.time.Instant;
 @Data
 public class ${className}Dto extends CrudDto {
 
-    //@JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
+    //@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     <#list table.columns as column>
         <#if column.columnNameLower != 'id'
             && column.columnNameLower != 'name'
