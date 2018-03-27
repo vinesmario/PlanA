@@ -1,7 +1,7 @@
 <#include "/java_copyright.include">
 <#assign className = table.className>
 <#assign classNameLower = className?uncap_first>
-package com.${basepackage}.model.web.rest.uaa;
+package com.${basepackage}.model.web.rest;
 
 import com.common.web.HttpResponseDto;
 import com.github.pagehelper.PageInfo;
@@ -24,7 +24,7 @@ import java.util.List;
  * @since:1.0
  * @createTime:<#if now??>${now?string('yyyy-MM-dd HH:mm:ss')}</#if>
  */
-@Api(description = "${className}CRUD",tags = "${className}Resource",basePath = "/api/v1/${classNameLower}s")
+@Api(description = "${className}CRUD", tags = "${className}Resource", basePath = "/api/v1/${classNameLower}s")
 @RestController
 @RequestMapping("/api/v1/${classNameLower}s")
 public class ${className}Resource {
