@@ -24,11 +24,19 @@ public class ${className}Dto extends CrudDto {
 
     //@JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     <#list table.columns as column>
-        <#if column.remarks?exists && column.remarks != '' && column.remarks != 'null'>
+        <#if column.columnNameLower != 'id'
+            && column.columnNameLower != 'name'
+            && column.columnNameLower != 'createdBy'
+            && column.columnNameLower != 'createdDate'
+            && column.columnNameLower != 'lastModifiedBy'
+            && column.columnNameLower != 'lastModifiedDate'
+            && column.columnNameLower != 'memo'
+            && column.columnNameLower != 'delFlag'>
     /**
      * ${column.remarks}
      */
-        </#if>
     private ${column.simpleJavaType} ${column.columnNameLower};
+        </#if>
     </#list>
+
 }

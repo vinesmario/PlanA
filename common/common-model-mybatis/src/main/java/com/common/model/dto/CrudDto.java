@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.time.Instant;
+import java.util.Date;
 
 @Data
 public class CrudDto {
@@ -25,21 +26,21 @@ public class CrudDto {
 	 */
 	private Byte delFlag;
 	/**
-	 * 创建者（用户ID）
+	 * 创建者
 	 */
-	private String createdBy;
+	private Integer createdBy;
 	/**
 	 * 创建时间
 	 */
-	@JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
 	private Instant createdDate;
 	/**
 	 * 最后修改者（用户ID）
 	 */
-	private String lastModifiedBy;
+	private Integer lastModifiedBy;
 	/**
 	 * 最后修改时间
 	 */
-	@JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
 	private Instant lastModifiedDate;
 }
