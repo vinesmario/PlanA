@@ -35,6 +35,14 @@ public class ${className}QueryDto extends CrudQueryDto {
     /**
      * ${column.remarks}
      */
+            <#if column.simpleJavaType == 'LocalDateTime'>
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+            <#elseif column.simpleJavaType == 'LocalDate'>
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "GMT+8")
+            <#elseif column.simpleJavaType == 'LocalTime'>
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm:ss", timezone = "GMT+8")
+            <#else>
+            </#if>
     private ${column.simpleJavaType} ${column.columnNameLower};
         </#if>
     </#list>

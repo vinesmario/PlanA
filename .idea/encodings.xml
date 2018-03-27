@@ -23,6 +23,7 @@
     <file url="file://$PROJECT_DIR$/microservice/microservice-mybatis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice/microservice-mybatis/base-service-mybatis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice/microservice-mybatis/uaa-service-mybatis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis-generator-core-plus" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/netty" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test" charset="UTF-8" />
   </component>

@@ -25,12 +25,13 @@
       
     <!-- 数据库类型映射  -->
 
+    <entry key="java_typemapping.java.sql.Timestamp">java.time.LocalDateTime</entry>
+    <entry key="java_typemapping.java.sql.Date">java.time.LocalDate</entry>
+    <entry key="java_typemapping.java.sql.Time">java.time.LocalTime</entry>
     <entry key="java_typemapping.java.lang.Long">Long</entry>
-    <entry key="java_typemapping.java.sql.Timestamp">java.util.Date</entry>  
-    <entry key="java_typemapping.java.sql.Date">java.time.LocalDateTime</entry>
-    <entry key="java_typemapping.java.sql.Time">java.time.Instant</entry>
-    <entry key="java_typemapping.java.lang.Byte">Integer</entry>  
-    <entry key="java_typemapping.java.lang.Short">Integer</entry>  
+    <entry key="java_typemapping.java.lang.Integer">Integer</entry>
+    <entry key="java_typemapping.java.lang.Short">Integer</entry>
+    <entry key="java_typemapping.java.lang.Byte">Integer</entry>
     <entry key="java_typemapping.java.math.BigDecimal">BigDecimal</entry>
   
     <!-- H2 -->  

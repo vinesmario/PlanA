@@ -69,6 +69,7 @@
       <module name="model-mybatis" target="1.8" />
       <module name="model-netty" target="1.8" />
       <module name="mybatis" target="1.8" />
+      <module name="mybatis-generator-core-plus" target="1.8" />
       <module name="netty" target="1.8" />
       <module name="PlanA" target="1.8" />
       <module name="springcloud" target="1.8" />
