@@ -1,11 +1,11 @@
 package com.cloud.filter;
 
 
-import com.common.constant.ApiResultEnum;
+import com.domain.common.constant.ApiResultEnum;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.io.CharStreams;
-import com.common.web.HttpResponseDto;
+import com.domain.common.web.HttpResponseDto;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;

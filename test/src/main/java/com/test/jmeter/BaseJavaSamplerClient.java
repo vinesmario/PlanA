@@ -1,9 +1,9 @@
 package com.test.jmeter;
 
-import com.common.constant.OpCodeEnum;
-import com.common.model.protobuf.Message;
-import com.common.model.service.netty.A100MessageService;
-import com.common.model.service.netty.BaseMessageService;
+import com.domain.common.constant.OpCodeEnum;
+import com.domain.common.model.protobuf.Message;
+import com.domain.biz.model.service.netty.A100MessageService;
+import com.domain.biz.model.service.netty.BaseMessageService;
 import com.netty.client.NettyClient;
 import org.apache.jmeter.config.Arguments;
 import org.apache.jmeter.protocol.java.sampler.AbstractJavaSamplerClient;

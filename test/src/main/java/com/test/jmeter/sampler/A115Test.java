@@ -1,7 +1,7 @@
 package com.test.jmeter.sampler;
 
-import com.common.model.dto.netty.A115DTO;
-import com.common.model.service.netty.A115MessageService;
+import com.domain.biz.model.dto.netty.A115DTO;
+import com.domain.biz.model.service.netty.A115MessageService;
 import com.test.jmeter.BaseJavaSamplerClient;
 import org.apache.jmeter.protocol.java.sampler.JavaSamplerContext;
 import org.apache.jmeter.samplers.SampleResult;

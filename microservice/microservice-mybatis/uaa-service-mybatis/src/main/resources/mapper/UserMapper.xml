@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.uaa.model.mapper.UserMapper" >
-  <resultMap id="BaseResultMap" type="com.uaa.model.po.User" >
+<mapper namespace="com.domain.biz.uaa.mapper.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.domain.biz.uaa.po.User" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="identity_card_number" property="identityCardNumber" jdbcType="VARCHAR" />
@@ -92,7 +92,7 @@
     village_address, account_id, created_by, created_date, last_modified_by, last_modified_date, 
     memo, del_flag
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.uaa.model.po.UserExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.domain.biz.uaa.po.UserExample" >
     select
     <if test="distinct" >
       distinct
@@ -116,13 +116,13 @@
     delete from user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.uaa.model.po.UserExample" >
+  <delete id="deleteByExample" parameterType="com.domain.biz.uaa.po.UserExample" >
     delete from user
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.uaa.model.po.User" >
+  <insert id="insert" parameterType="com.domain.biz.uaa.po.User" >
     insert into user (id, name, identity_card_number, 
       gender, birth_date, birthday, 
       mobile, email, qq, 
@@ -142,7 +142,7 @@
       #{lastModifiedBy,jdbcType=INTEGER}, #{lastModifiedDate,jdbcType=TIMESTAMP}, #{memo,jdbcType=VARCHAR}, 
       #{delFlag,jdbcType=TINYINT})
   </insert>
-  <insert id="insertSelective" parameterType="com.uaa.model.po.User" >
+  <insert id="insertSelective" parameterType="com.domain.biz.uaa.po.User" >
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -299,7 +299,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.uaa.model.po.UserExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.domain.biz.uaa.po.UserExample" resultType="java.lang.Integer" >
     select count(*) from user
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -419,7 +419,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.uaa.model.po.User" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.domain.biz.uaa.po.User" >
     update user
     <set >
       <if test="name != null" >
@@ -497,7 +497,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.uaa.model.po.User" >
+  <update id="updateByPrimaryKey" parameterType="com.domain.biz.uaa.po.User" >
     update user
     set name = #{name,jdbcType=VARCHAR},
       identity_card_number = #{identityCardNumber,jdbcType=VARCHAR},

@@ -1,6 +1,6 @@
 package com.netty.client;
 
-import com.common.model.protobuf.Message;
+import com.domain.common.model.protobuf.Message;
 import com.google.common.collect.Maps;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;

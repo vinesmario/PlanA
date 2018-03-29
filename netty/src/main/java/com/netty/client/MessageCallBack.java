@@ -1,6 +1,6 @@
 package com.netty.client;
 
-import com.common.model.protobuf.Message;
+import com.domain.common.model.protobuf.Message;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;

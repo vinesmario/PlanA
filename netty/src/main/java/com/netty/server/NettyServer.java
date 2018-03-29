@@ -1,6 +1,6 @@
 package com.netty.server;
 
-import com.common.model.protobuf.Message;
+import com.domain.common.model.protobuf.Message;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
