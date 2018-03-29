@@ -19,15 +19,18 @@
         <module name="common-model-jpa" />
         <module name="common-model-mybatis" />
         <module name="common-model-netty" />
-        <module name="common-mycat" />
         <module name="common-tools" />
         <module name="common-utils" />
         <module name="generator" />
+        <module name="kafka" />
         <module name="microservice-jpa" />
         <module name="model-jpa" />
         <module name="model-mybatis" />
         <module name="model-netty" />
+        <module name="monitor-service" />
+        <module name="mycat" />
         <module name="netty" />
+        <module name="rabbitmq" />
         <module name="test" />
         <module name="uaa-service" />
         <module name="uaa-service-hibernate" />
@@ -59,19 +62,24 @@
       <module name="common-utils" target="1.8" />
       <module name="generator" target="1.8" />
       <module name="jpa" target="1.8" />
+      <module name="kafka" target="1.8" />
       <module name="microservice" target="1.8" />
       <module name="microservice-hibernate" target="1.8" />
       <module name="microservice-jpa" target="1.8" />
       <module name="microservice-mybatis" target="1.8" />
       <module name="microservicemybatis" target="1.8" />
+      <module name="middleware" target="1.8" />
       <module name="model" target="1.8" />
       <module name="model-jpa" target="1.8" />
       <module name="model-mybatis" target="1.8" />
       <module name="model-netty" target="1.8" />
+      <module name="monitor-service" target="1.8" />
       <module name="mybatis" target="1.8" />
       <module name="mybatis-generator-core-plus" target="1.8" />
+      <module name="mycat" target="1.8" />
       <module name="netty" target="1.8" />
       <module name="PlanA" target="1.8" />
+      <module name="rabbitmq" target="1.8" />
       <module name="springcloud" target="1.8" />
       <module name="test" target="1.8" />
       <module name="uaa-service" target="1.8" />

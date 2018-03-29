@@ -17,7 +17,6 @@
         <module>common-model-hibernate</module>
         <module>common-model-mybatis</module>
         <module>common-model-netty</module>
-        <module>common-mycat</module>
         <module>common-tools</module>
         <module>common-model</module>
     </modules>

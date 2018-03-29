@@ -13,7 +13,6 @@
     <artifactId>microservice</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>assist-service</module>
         <module>microservice-hibernate</module>
         <module>microservice-mybatis</module>
     </modules>
