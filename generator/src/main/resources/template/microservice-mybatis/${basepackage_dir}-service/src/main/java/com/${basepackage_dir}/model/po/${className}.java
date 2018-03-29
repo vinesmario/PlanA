@@ -4,6 +4,7 @@
 package com.${basepackage}.model.po;
 
 import com.common.model.po.CrudEntity;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.math.BigDecimal;

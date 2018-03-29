@@ -4,11 +4,11 @@
 package com.${basepackage}.model.service;
 
 import com.common.model.service.AbstractCrudService;
-import com.common.util.StringUtils;
-{basepackage}.model.dto.${className}Dto;
-{basepackage}.model.dto.${className}QueryDto;
-{basepackage}.model.po.${className};
-{basepackage}.model.po.${className}Example;
+import com.${basepackage}.model.dto.${className}QueryDto;
+import com.${basepackage}.model.mapper.${className}Mapper;
+import com.${basepackage}.model.po.${className};
+import com.${basepackage}.model.po.${className}Example;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 /**
@@ -21,8 +21,9 @@ import org.springframework.stereotype.Service;
  * @createTime:<#if now??>${now?string('yyyy-MM-dd HH:mm:ss')}</#if>
  */
 @Service
-public class ${className}Service extends AbstractCrudService<${className}, Integer, ${className}Example,
-		${className}Dto, ${className}QueryDto> {
+public class ${className}Service extends AbstractCrudService<${className},
+		Integer, ${className}Example,
+		${className}Mapper, ${className}QueryDto> {
 
 	@Override
 	public ${className}Example fromQueryDto2Example(${className}QueryDto queryDto) {

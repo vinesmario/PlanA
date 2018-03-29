@@ -16,7 +16,7 @@ public abstract class AbstractModifiableEntity extends AbstractAddibleEntity {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 最后修改者（用户ID）
+     * 最后修改者
      */
     @LastModifiedBy
     private Integer lastModifiedBy;

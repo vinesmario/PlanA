@@ -16,6 +16,6 @@ import com.${basepackage}.model.po.${className}Example;
  * @since:1.0
  * @createTime:<#if now??>${now?string('yyyy-MM-dd HH:mm:ss')}</#if>
  */
-public interface ${className}Mapper extends CrudMapper<${className}, Long, ${className}Example> {
+public interface ${className}Mapper extends CrudMapper<${className}, Integer, ${className}Example> {
 
 }

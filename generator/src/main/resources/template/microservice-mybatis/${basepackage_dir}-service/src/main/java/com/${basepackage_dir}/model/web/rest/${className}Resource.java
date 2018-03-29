@@ -3,14 +3,17 @@
 <#assign classNameLower = className?uncap_first>
 package com.${basepackage}.model.web.rest;
 
-import com.common.web.HttpResponseDto;
+import com.common.kit.StringKit;
 import com.github.pagehelper.PageInfo;
 import com.${basepackage}.model.dto.${className}Dto;
 import com.${basepackage}.model.dto.${className}QueryDto;
-import com.${basepackage}.model.service.impl.${className}ServiceImpl;
+import com.${basepackage}.model.mapstruct.${className}MapStruct;
+import com.${basepackage}.model.service.${className}Service;
+import com.${basepackage}.model.po.${className};
+import io.swagger.annotations.*;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,81 +33,88 @@ import java.util.List;
 public class ${className}Resource {
 
 	@Autowired
-	${className}ServiceImpl ${classNameLower}ServiceImpl;
+	${className}Service ${classNameLower}Service;
+
+	@Autowired
+	${className}MapStruct ${classNameLower}MapStruct;
 
 	@ApiOperation(value = "分页查询", notes = "")
-	@ApiResponse(code = HttpStatus.OK.value(), message = "", response = PageInfo.class)
+	@ApiResponse(code = 200, message = "", response = PageInfo.class)
 	@GetMapping("/page")
-	public HttpResponseDto<PageInfo<${className}Dto>> page(@RequestParam("pageNum") Integer pageNum,
-													  @RequestParam("pageSize") Integer pageSize,
-													  @RequestParam(value = "orderByClause", required = false) String orderByClause) {
-		HttpResponseDto responseDto = new HttpResponseDto(HttpStatus.OK.value(), HttpStatus.OK.name());
-		${className}QueryDto queryDto = new ${className}QueryDto();
-		PageInfo<${className}Dto> pageInfo = ${classNameLower}ServiceImpl.findPage(pageNum, pageSize, orderByClause, queryDto);
-		responseDto.setData(pageInfo);
-		return responseDto;
+	public PageInfo<${className}Dto> page(@RequestParam("pageNum") Integer pageNum,
+											@RequestParam("pageSize") Integer pageSize,
+											@RequestParam(value = "orderByColName", required = false) String orderByColName,
+											@RequestParam(value = "ascOrDesc",required = false) String ascOrDesc) {
+		String orderByClause = null;
+		if (StringUtils.isNotBlank(orderByColName)) {
+		orderByClause = StringKit.camel2Underline(orderByColName).toLowerCase() + " " + ascOrDesc;
+		}
+        ${className}QueryDto queryDto = new ${className}QueryDto();
+        PageInfo<${className}> page = ${classNameLower}Service.findPage(pageNum, pageSize, orderByClause, queryDto);
+
+		PageInfo<${className}Dto> dtoPage = new PageInfo<>();
+		BeanUtils.copyProperties(page, dtoPage);
+		dtoPage.setList(${classNameLower}MapStruct.fromEntities2Dtos(page.getList()));
+        return dtoPage;
 	}
 
 	@ApiOperation(value = "列表查询", notes = "")
-	@ApiResponse(code = HttpStatus.OK.value(), message = "", response = List.class)
+	@ApiResponse(code = 200, message = "", response = List.class)
 	@GetMapping("/list")
-	public HttpResponseDto<List<${className}Dto>> list(@RequestParam(value = "orderByClause", required = false) String orderByClause) {
-		HttpResponseDto responseDto = new HttpResponseDto(HttpStatus.OK.value(), HttpStatus.OK.name());
+	public List<${className}Dto> list(@RequestParam(value = "orderByColName", required = false) String orderByColName,
+										@RequestParam(value = "ascOrDesc",required = false) String ascOrDesc) {
+		String orderByClause = null;
+		if (StringUtils.isNotBlank(orderByColName)) {
+			orderByClause = StringKit.camel2Underline(orderByColName).toLowerCase() + " " + ascOrDesc;
+		}
 		${className}QueryDto queryDto = new ${className}QueryDto();
-		List<${className}Dto> list = ${classNameLower}ServiceImpl.findList(orderByClause, queryDto);
-		responseDto.setData(list);
-		return responseDto;
-	}
+        List<${className}> list = ${classNameLower}Service.findList(orderByClause, queryDto);
+        return ${classNameLower}MapStruct.fromEntities2Dtos(list);
+    }
 
-	@ApiOperation(value = "查找指定的${className}", notes = "")
+	@ApiOperation(value = "根据id查找指定的${className}", notes = "")
 	@ApiImplicitParams({
-			@ApiImplicitParam(name = "id", value = "id", required = true, defaultValue = "", dataType = "Long", paramType = "path"),
+			@ApiImplicitParam(name = "id", value = "id", required = true, defaultValue = "",dataType = "Integer",paramType = "path"),
 	})
 	@GetMapping("/{id}")
-	public HttpResponseDto<${className}Dto> get(@PathVariable("id") Long id) {
-		HttpResponseDto responseDto = new HttpResponseDto(HttpStatus.OK.value(), HttpStatus.OK.name());
-		${className}Dto dto = ${classNameLower}ServiceImpl.selectByPrimaryKey(id);
-		responseDto.setData(dto);
-		return responseDto;
+	public ${className}Dto get(@PathVariable("id") Integer id) {
+		${className} entity = ${classNameLower}Service.selectByPrimaryKey(id);
+		return ${classNameLower}MapStruct.fromEntity2Dto(entity);
 	}
 
 	@ApiOperation(value = "新增${className}", notes = "")
 	@ApiImplicitParams({
-
+			@ApiImplicitParam(name = "id", value = "id", required = true, defaultValue = "",dataType = "Integer",paramType = "path"),
 	})
 	@PostMapping(value = "")
-	public HttpResponseDto<${className}Dto> add(@RequestBody ${className}Dto dto) {
-		HttpResponseDto responseDto = new HttpResponseDto(HttpStatus.OK.value(), HttpStatus.OK.name());
-		${classNameLower}ServiceImpl.insert(dto);
-		responseDto.setData(dto);
-		return responseDto;
+	public ${className}Dto add(@RequestBody ${className}Dto dto) {
+		${className} entity = ${classNameLower}MapStruct.fromDto2Entity(dto);
+        ${classNameLower}Service.insert(entity);
+        return ${classNameLower}MapStruct.fromEntity2Dto(entity);
 	}
 
 	// 需提交整个对象
 	@ApiOperation(value = "更新指定的${className}", notes = "")
 	@ApiImplicitParams({
-			@ApiImplicitParam(name = "id", value = "id", required = true, defaultValue = "", dataType = "Long", paramType = "path"),
+			@ApiImplicitParam(name = "id", value = "id", required = true, defaultValue = "",dataType = "Integer",paramType = "path"),
 	})
 	@PutMapping("/{id}")
-	public HttpResponseDto<${className}Dto> update(@PathVariable("id") Long id,
-											  @RequestBody ${className}Dto dto) {
-		HttpResponseDto responseDto = new HttpResponseDto(HttpStatus.OK.value(), HttpStatus.OK.name());
-		${className}Dto dbDto = ${classNameLower}ServiceImpl.selectByPrimaryKey(id);
-		BeanUtils.copyProperties(dto, dbDto);
-		${classNameLower}ServiceImpl.updateByPrimaryKey(dbDto);
-		responseDto.setData(dbDto);
-		return responseDto;
+	public ${className}Dto update(@PathVariable("id") Integer id,
+									@RequestBody ${className}Dto dto) {
+		${className} entity = ${classNameLower}MapStruct.fromDto2Entity(dto);
+		${className} dbEntity = ${classNameLower}Service.selectByPrimaryKey(id);
+        BeanUtils.copyProperties(entity, dbEntity);
+        ${classNameLower}Service.updateByPrimaryKey(dbEntity);
+        return ${classNameLower}MapStruct.fromEntity2Dto(dbEntity);
 	}
 
-	@ApiOperation(value = "删除指定的${className}", notes = "")
+	@ApiOperation(value = "根据id删除指定的${className}", notes = "")
 	@ApiImplicitParams({
-			@ApiImplicitParam(name = "id", value = "id", required = true, defaultValue = "", dataType = "Long", paramType = "path"),
+			@ApiImplicitParam(name = "id", value = "id", required = true, defaultValue = "",dataType = "Integer",paramType = "path"),
 	})
 	@DeleteMapping("/{id}")
-	public HttpResponseDto delete(@PathVariable("id") Long id) {
-		HttpResponseDto responseDto = new HttpResponseDto(HttpStatus.OK.value(), HttpStatus.OK.name());
-		${classNameLower}ServiceImpl.deleteByPrimaryKey(id);
-		return responseDto;
+	public void delete(@PathVariable("id") Integer id) {
+		${classNameLower}Service.deleteByPrimaryKey(id);
 	}
 
 }

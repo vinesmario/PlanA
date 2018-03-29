@@ -34,7 +34,7 @@ public class CrudDto {
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
 	private Instant createdDate = Instant.now();
 	/**
-	 * 最后修改者（用户ID）
+	 * 最后修改者
 	 */
 	private Integer lastModifiedBy;
 	/**

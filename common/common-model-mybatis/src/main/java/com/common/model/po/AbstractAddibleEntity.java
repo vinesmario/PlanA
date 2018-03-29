@@ -15,7 +15,7 @@ public abstract class AbstractAddibleEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
     /**
-     * 创建者（用户ID）
+     * 创建者
      */
     @CreatedBy
     private Integer createdBy;

@@ -21,7 +21,7 @@ public class RetrieveVo {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 创建者（用户ID）
+     * 创建者
      */
     private Integer createdBy;
     /**
@@ -29,7 +29,7 @@ public class RetrieveVo {
      */
     private Instant createdDate;
     /**
-     * 最后修改者（用户ID）
+     * 最后修改者
      */
     private Integer lastModifiedBy;
     /**

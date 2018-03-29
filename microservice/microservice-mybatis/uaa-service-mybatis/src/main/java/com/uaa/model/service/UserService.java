@@ -12,12 +12,14 @@ import org.springframework.stereotype.Service;
  * @author:vinesmario
  * @version:1.0
  * @since:1.0
- * @createTime:2018-02-13 11:58:02
+ * @createTime:2018-03-29 16:11:11
  */
 @Service
-public class UserService extends AbstractCrudService<User, Long, UserExample,
+public class UserService extends AbstractCrudService<User,
+		Integer, UserExample,
 		UserMapper, UserQueryDto> {
 
+	@Override
 	public UserExample fromQueryDto2Example(UserQueryDto queryDto) {
 		UserExample example = new UserExample();
 		UserExample.Criteria criteria = example.createCriteria();

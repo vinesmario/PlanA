@@ -23,7 +23,7 @@ import java.time.Instant;
  * @createTime:<#if now??>${now?string('yyyy-MM-dd HH:mm:ss')}</#if>
  */
 @Data
-public class ${className}Dto extends RetrieveVo {
+public class ${className}Vo extends RetrieveVo {
 
     //@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
 

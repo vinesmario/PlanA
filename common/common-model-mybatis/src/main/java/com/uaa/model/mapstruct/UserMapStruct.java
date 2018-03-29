@@ -9,7 +9,7 @@ import org.mapstruct.Mapper;
  * @author:vinesmario
  * @version:1.0
  * @since:1.0
- * @createTime:2018-02-13 11:58:02
+ * @createTime:2018-03-29 15:24:20
  */
 @Mapper(componentModel = "spring")
 public interface UserMapStruct extends CrudMapStruct<User, UserDto> {

@@ -30,7 +30,7 @@
         <project.common.version>1.0-SNAPSHOT</project.common.version>
         <project.netty.version>1.0-SNAPSHOT</project.netty.version>
         <java.version>1.8</java.version>
-        <org.projectlombok.version>1.16.18</org.projectlombok.version>
+        <org.projectlombok.version>1.16.20</org.projectlombok.version>
         <org.slf4j.version>1.7.25</org.slf4j.version>
         <org.mapstruct.version>1.2.0.Final</org.mapstruct.version>
         <com.fasterxml.jackson>2.8.10</com.fasterxml.jackson>
@@ -42,6 +42,8 @@
         <jpa.spec>3.1.1</jpa.spec>
         <hibernate.version>5.0.12.Final</hibernate.version>
         <hibernate-validator.version>5.4.2.Final</hibernate-validator.version>
+        <io.springfox.version>2.8.0</io.springfox.version>
+        <com.github.pagehelper>1.2.3</com.github.pagehelper>
     </properties>
 
     <dependencyManagement>

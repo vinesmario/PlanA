@@ -8,8 +8,8 @@ import com.uaa.model.po.UserExample;
  * @author:vinesmario
  * @version:1.0
  * @since:1.0
- * @createTime:2018-02-13 11:58:02
+ * @createTime:2018-03-29 16:23:03
  */
-public interface UserMapper extends CrudMapper<User, Long, UserExample> {
+public interface UserMapper extends CrudMapper<User, Integer, UserExample> {
 
 }

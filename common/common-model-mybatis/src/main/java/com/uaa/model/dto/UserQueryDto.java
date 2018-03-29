@@ -5,24 +5,22 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.math.BigDecimal;
-import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.Instant;
 
 /**
  * @author:vinesmario
  * @version:1.0
  * @since:1.0
- * @createTime:2018-02-13 11:58:02
+ * @createTime:2018-03-29 15:24:20
  */
 @Data
 public class UserQueryDto extends CrudQueryDto {
 
-    //@JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
-    private Integer id;
-    /**
-     * 姓名
-     */
-    private String name;
+    //@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+
     /**
      * 身份证号
      */
@@ -34,6 +32,7 @@ public class UserQueryDto extends CrudQueryDto {
     /**
      * 出生日期
      */
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private LocalDate birthDate;
     /**
      * 生日
@@ -74,7 +73,7 @@ public class UserQueryDto extends CrudQueryDto {
     /**
      * 县级区域ID
      */
-    private Integer distinctId;
+    private Integer districtId;
     /**
      * 乡级区域ID
      */
@@ -87,8 +86,9 @@ public class UserQueryDto extends CrudQueryDto {
      * 村级及以下详细地址
      */
     private String villageAddress;
-
-
+    /**
+     * 
+     */
     private Integer accountId;
 
 }

@@ -1,13 +1,16 @@
 package com.uaa.model.web.rest;
 
-import com.common.web.HttpResponseDto;
+import com.common.kit.StringKit;
 import com.github.pagehelper.PageInfo;
 import com.uaa.model.dto.UserDto;
 import com.uaa.model.dto.UserQueryDto;
-import com.uaa.model.service.UserServiceImpl;
+import com.uaa.model.mapstruct.UserMapStruct;
+import com.uaa.model.service.UserService;
+import com.uaa.model.po.User;
+import io.swagger.annotations.*;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,89 +19,96 @@ import java.util.List;
  * @author:vinesmario
  * @version:1.0
  * @since:1.0
- * @createTime:2018-02-13 11:58:02
+ * @createTime:2018-03-29 16:23:03
  */
-//@Api(description = "UserCRUD",tags = "UserResource",basePath = "/api/v1/users")
+@Api(description = "UserCRUD", tags = "UserResource", basePath = "/api/v1/users")
 @RestController
 @RequestMapping("/api/v1/users")
 public class UserResource {
 
 	@Autowired
-	UserServiceImpl userServiceImpl;
+	UserService userService;
 
-//	@ApiOperation(value = "分页查询", notes = "")
-//	@ApiResponse(code = HttpStatus.OK.value(), message = "", response = PageInfo.class)
+	@Autowired
+	UserMapStruct userMapStruct;
+
+	@ApiOperation(value = "分页查询", notes = "")
+	@ApiResponse(code = 200, message = "", response = PageInfo.class)
 	@GetMapping("/page")
-	public HttpResponseDto<PageInfo<UserDto>> page(@RequestParam("pageNum") Integer pageNum,
-													  @RequestParam("pageSize") Integer pageSize,
-													  @RequestParam(value = "orderByClause", required = false) String orderByClause) {
-		HttpResponseDto responseDto = new HttpResponseDto(HttpStatus.OK.value(), HttpStatus.OK.name());
+	public PageInfo<UserDto> page(@RequestParam("pageNum") Integer pageNum,
+								  @RequestParam("pageSize") Integer pageSize,
+								  @RequestParam(value = "orderByColName", required = false) String orderByColName,
+								  @RequestParam(value = "ascOrDesc", required = false) String ascOrDesc) {
+		String orderByClause = null;
+		if (StringUtils.isNotBlank(orderByColName)) {
+			orderByClause = StringKit.camel2Underline(orderByColName).toLowerCase() + " " + ascOrDesc;
+		}
 		UserQueryDto queryDto = new UserQueryDto();
-		PageInfo<UserDto> pageInfo = userServiceImpl.findPage(pageNum, pageSize, orderByClause, queryDto);
-		responseDto.setData(pageInfo);
-		return responseDto;
+		PageInfo<User> page = userService.findPage(pageNum, pageSize, orderByClause, queryDto);
+
+		PageInfo<UserDto> dtoPage = new PageInfo<>();
+		BeanUtils.copyProperties(page, dtoPage);
+		dtoPage.setList(userMapStruct.fromEntities2Dtos(page.getList()));
+		return dtoPage;
 	}
 
-//	@ApiOperation(value = "列表查询", notes = "")
-//	@ApiResponse(code = HttpStatus.OK.value(), message = "", response = List.class)
+	@ApiOperation(value = "列表查询", notes = "")
+	@ApiResponse(code = 200, message = "", response = List.class)
 	@GetMapping("/list")
-	public HttpResponseDto<List<UserDto>> list(@RequestParam(value = "orderByClause", required = false) String orderByClause) {
-		HttpResponseDto responseDto = new HttpResponseDto(HttpStatus.OK.value(), HttpStatus.OK.name());
+	public List<UserDto> list(@RequestParam(value = "orderByColName", required = false) String orderByColName,
+							  @RequestParam(value = "ascOrDesc", required = false) String ascOrDesc) {
+		String orderByClause = null;
+		if (StringUtils.isNotBlank(orderByColName)) {
+			orderByClause = StringKit.camel2Underline(orderByColName).toLowerCase() + " " + ascOrDesc;
+		}
 		UserQueryDto queryDto = new UserQueryDto();
-		List<UserDto> list = userServiceImpl.findList(orderByClause, queryDto);
-		responseDto.setData(list);
-		return responseDto;
+		List<User> list = userService.findList(orderByClause, queryDto);
+		return userMapStruct.fromEntities2Dtos(list);
 	}
 
-//	@ApiOperation(value = "查找指定的User", notes = "")
-//	@ApiImplicitParams({
-//			@ApiImplicitParam(name = "id", value = "id", required = true, defaultValue = "", dataType = "Long", paramType = "path"),
-//	})
+	@ApiOperation(value = "根据id查找指定的User", notes = "")
+	@ApiImplicitParams({
+			@ApiImplicitParam(name = "id", value = "id", required = true, defaultValue = "", dataType = "Integer", paramType = "path"),
+	})
 	@GetMapping("/{id}")
-	public HttpResponseDto<UserDto> get(@PathVariable("id") Long id) {
-		HttpResponseDto responseDto = new HttpResponseDto(HttpStatus.OK.value(), HttpStatus.OK.name());
-		UserDto dto = userServiceImpl.selectByPrimaryKey(id);
-		responseDto.setData(dto);
-		return responseDto;
+	public UserDto get(@PathVariable("id") Integer id) {
+		User entity = userService.selectByPrimaryKey(id);
+		return userMapStruct.fromEntity2Dto(entity);
 	}
 
-//	@ApiOperation(value = "新增User", notes = "")
-//	@ApiImplicitParams({
-//
-//	})
+	@ApiOperation(value = "新增User", notes = "")
+	@ApiImplicitParams({
+			@ApiImplicitParam(name = "id", value = "id", required = true, defaultValue = "", dataType = "Integer", paramType = "path"),
+	})
 	@PostMapping(value = "")
-	public HttpResponseDto<UserDto> add(@RequestBody UserDto dto) {
-		HttpResponseDto responseDto = new HttpResponseDto(HttpStatus.OK.value(), HttpStatus.OK.name());
-		userServiceImpl.insert(dto);
-		responseDto.setData(dto);
-		return responseDto;
+	public UserDto add(@RequestBody UserDto dto) {
+		User entity = userMapStruct.fromDto2Entity(dto);
+		userService.insert(entity);
+		return userMapStruct.fromEntity2Dto(entity);
 	}
 
 	// 需提交整个对象
-//	@ApiOperation(value = "更新指定的User", notes = "")
-//	@ApiImplicitParams({
-//			@ApiImplicitParam(name = "id", value = "id", required = true, defaultValue = "", dataType = "Long", paramType = "path"),
-//	})
+	@ApiOperation(value = "更新指定的User", notes = "")
+	@ApiImplicitParams({
+			@ApiImplicitParam(name = "id", value = "id", required = true, defaultValue = "", dataType = "Integer", paramType = "path"),
+	})
 	@PutMapping("/{id}")
-	public HttpResponseDto<UserDto> update(@PathVariable("id") Long id,
-											  @RequestBody UserDto dto) {
-		HttpResponseDto responseDto = new HttpResponseDto(HttpStatus.OK.value(), HttpStatus.OK.name());
-		UserDto dbDto = userServiceImpl.selectByPrimaryKey(id);
-		BeanUtils.copyProperties(dto, dbDto);
-		userServiceImpl.updateByPrimaryKey(dbDto);
-		responseDto.setData(dbDto);
-		return responseDto;
+	public UserDto update(@PathVariable("id") Integer id,
+						  @RequestBody UserDto dto) {
+		User entity = userMapStruct.fromDto2Entity(dto);
+		User dbEntity = userService.selectByPrimaryKey(id);
+		BeanUtils.copyProperties(entity, dbEntity);
+		userService.updateByPrimaryKey(dbEntity);
+		return userMapStruct.fromEntity2Dto(dbEntity);
 	}
 
-//	@ApiOperation(value = "删除指定的User", notes = "")
-//	@ApiImplicitParams({
-//			@ApiImplicitParam(name = "id", value = "id", required = true, defaultValue = "", dataType = "Long", paramType = "path"),
-//	})
+	@ApiOperation(value = "根据id删除指定的User", notes = "")
+	@ApiImplicitParams({
+			@ApiImplicitParam(name = "id", value = "id", required = true, defaultValue = "", dataType = "Integer", paramType = "path"),
+	})
 	@DeleteMapping("/{id}")
-	public HttpResponseDto delete(@PathVariable("id") Long id) {
-		HttpResponseDto responseDto = new HttpResponseDto(HttpStatus.OK.value(), HttpStatus.OK.name());
-		userServiceImpl.deleteByPrimaryKey(id);
-		return responseDto;
+	public void delete(@PathVariable("id") Integer id) {
+		userService.deleteByPrimaryKey(id);
 	}
 
 }
