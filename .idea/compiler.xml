@@ -7,7 +7,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="assist-service" />
         <module name="base-service" />
         <module name="base-service-hibernate" />
         <module name="base-service-mybatis" />
@@ -18,19 +17,18 @@
         <module name="common-model-hibernate" />
         <module name="common-model-jpa" />
         <module name="common-model-mybatis" />
-        <module name="common-model-netty" />
         <module name="common-tools" />
         <module name="common-utils" />
         <module name="generator" />
+        <module name="hibernate-model" />
         <module name="kafka" />
         <module name="microservice-jpa" />
         <module name="model-jpa" />
         <module name="model-mybatis" />
         <module name="model-netty" />
-        <module name="monitor-service" />
+        <module name="mybatis-model" />
         <module name="mycat" />
         <module name="netty" />
-        <module name="rabbitmq" />
         <module name="test" />
         <module name="uaa-service" />
         <module name="uaa-service-hibernate" />
@@ -61,6 +59,7 @@
       <module name="common-tools" target="1.8" />
       <module name="common-utils" target="1.8" />
       <module name="generator" target="1.8" />
+      <module name="hibernate-model" target="1.8" />
       <module name="jpa" target="1.8" />
       <module name="kafka" target="1.8" />
       <module name="microservice" target="1.8" />
@@ -76,10 +75,12 @@
       <module name="monitor-service" target="1.8" />
       <module name="mybatis" target="1.8" />
       <module name="mybatis-generator-core-plus" target="1.8" />
+      <module name="mybatis-model" target="1.8" />
       <module name="mycat" target="1.8" />
       <module name="netty" target="1.8" />
       <module name="PlanA" target="1.8" />
       <module name="rabbitmq" target="1.8" />
+      <module name="redis" target="1.8" />
       <module name="springcloud" target="1.8" />
       <module name="test" target="1.8" />
       <module name="uaa-service" target="1.8" />

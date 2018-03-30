@@ -1,7 +1,7 @@
 package com.test.jmeter;
 
 import com.domain.common.constant.OpCodeEnum;
-import com.domain.common.model.protobuf.Message;
+import com.domain.biz.uaa.protobuf.Message;
 import com.domain.biz.model.service.netty.A100MessageService;
 import com.domain.biz.model.service.netty.BaseMessageService;
 import com.netty.client.NettyClient;

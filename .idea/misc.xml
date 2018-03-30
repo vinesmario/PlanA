@@ -15,7 +15,10 @@
         <option value="$PROJECT_DIR$/microservice/jpa/pom.xml" />
         <option value="$PROJECT_DIR$/microservice/mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/microservice/mybatis/uaas-ervice/pom.xml" />
+        <option value="$PROJECT_DIR$/middleware/assist-service/pom.xml" />
         <option value="$PROJECT_DIR$/middleware/pom.xml" />
+        <option value="$PROJECT_DIR$/middleware/rabbitmq/pom.xml" />
+        <option value="$PROJECT_DIR$/middleware/redis/pom.xml" />
         <option value="$PROJECT_DIR$/model-mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/model/model-jpa/pom.xml" />
         <option value="$PROJECT_DIR$/model/pom.xml" />

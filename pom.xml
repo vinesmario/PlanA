@@ -20,7 +20,6 @@
         <module>cloud</module>
         <module>microservice</module>
         <module>middleware</module>
-        <!--<module>netty</module>-->
         <!--<module>test</module>-->
         <!--<module>generator</module>-->
     </modules>

@@ -1,7 +1,7 @@
 package com.domain.common.exception;
 
-import com.domain.common.web.HttpResponseDto;
 import lombok.Data;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 /**
@@ -13,7 +13,7 @@ public class ApiException extends RuntimeException {
 
 	private ResponseEntity result;
 
-	public ApiException(int code, String message) {
-		this.result = new ResponseEntity(code, message);
+	public ApiException(HttpStatus code, String message) {
+		this.result = new ResponseEntity(message, code);
 	}
 }

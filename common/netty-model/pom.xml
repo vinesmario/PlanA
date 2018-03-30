@@ -3,25 +3,21 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>life-service</artifactId>
+        <artifactId>common</artifactId>
         <groupId>com.vinesmario</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.vinesmario</groupId>
-    <artifactId>middleware</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>mycat</module>
-        <module>kafka</module>
-    </modules>
+    <artifactId>netty-model</artifactId>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-            <version>${spring-boot.version}</version>
+            <groupId>com.vinesmario</groupId>
+            <artifactId>common-tools</artifactId>
+            <version>${project.common.version}</version>
         </dependency>
     </dependencies>
 
