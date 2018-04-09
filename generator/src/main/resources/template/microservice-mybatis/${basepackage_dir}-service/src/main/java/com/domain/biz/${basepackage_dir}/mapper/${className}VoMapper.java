@@ -3,9 +3,9 @@
 <#assign classNameLower = className?uncap_first>
 package com.domain.biz.${basepackage}.mapper;
 
-import com.domain.biz.model.mapper.CrudEntityMapper;
-import com.domain.biz.${basepackage}.po.${className};
-import com.domain.biz.${basepackage}.po.${className}Example;
+import com.domain.biz.model.mapper.RetrieveVoMapper;
+import com.domain.biz.${basepackage}.vo.${className}Vo;
+import com.domain.biz.${basepackage}.vo.${className}VoExample;
 
 /**
  <#if table.remarks?exists && table.remarks != '' && table.remarks != 'null'>
@@ -16,6 +16,6 @@ import com.domain.biz.${basepackage}.po.${className}Example;
  * @since:1.0
  * @createTime:<#if now??>${now?string('yyyy-MM-dd HH:mm:ss')}</#if>
  */
-public interface ${className}Mapper extends CrudEntityMapper<${className}, Integer, ${className}Example> {
+public interface ${className}VoMapper extends RetrieveVoMapper<${className}Vo, Integer, ${className}VoExample> {
 
 }

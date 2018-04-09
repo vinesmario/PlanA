@@ -3,11 +3,11 @@
 <#assign classNameLower = className?uncap_first>
 package com.domain.biz.${basepackage}.service;
 
-import com.domain.biz.model.service.AbstractCrudEntityService;
+import com.domain.biz.model.service.AbstractRetrieveVoService;
 import com.domain.biz.${basepackage}.dto.${className}QueryDto;
-import com.domain.biz.${basepackage}.mapper.${className}Mapper;
-import com.domain.biz.${basepackage}.po.${className};
-import com.domain.biz.${basepackage}.po.${className}Example;
+import com.domain.biz.${basepackage}.mapper.${className}VoMapper;
+import com.domain.biz.${basepackage}.vo.${className}Vo;
+import com.domain.biz.${basepackage}.vo.${className}VoExample;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
@@ -21,14 +21,14 @@ import org.springframework.stereotype.Service;
  * @createTime:<#if now??>${now?string('yyyy-MM-dd HH:mm:ss')}</#if>
  */
 @Service
-public class ${className}Service extends AbstractCrudEntityService<${className},
-		Integer, ${className}Example,
-		${className}Mapper, ${className}QueryDto> {
+public class ${className}Service extends AbstractRetrieveVoService<${className}Vo,
+		Integer, ${className}VoExample,
+		${className}VoMapper, ${className}QueryDto> {
 
 	@Override
-	public ${className}Example fromQueryDto2Example(${className}QueryDto queryDto) {
-		${className}Example example = new ${className}Example();
-		${className}Example.Criteria criteria = example.createCriteria();
+	public ${className}VoExample fromQueryDto2Example(${className}QueryDto queryDto) {
+		${className}VoExample example = new ${className}VoExample();
+		${className}VoExample.Criteria criteria = example.createCriteria();
 
 		if (null != queryDto) {
 			if (null != queryDto.getId() && queryDto.getId().compareTo(0) > 0) {

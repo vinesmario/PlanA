@@ -3,9 +3,9 @@
 <#assign classNameLower = className?uncap_first>
 package com.domain.biz.${basepackage}.mapstruct;
 
-import com.domain.biz.model.mapstruct.CrudEntityMapStruct;
+import com.domain.biz.model.mapstruct.RetrieveVoMapStruct;
 import com.domain.biz.${basepackage}.dto.${className}Dto;
-import com.domain.biz.${basepackage}.po.${className};
+import com.domain.biz.${basepackage}.vo.${className}Vo;
 import org.mapstruct.Mapper;
 
 /**
@@ -18,6 +18,6 @@ import org.mapstruct.Mapper;
  * @createTime:<#if now??>${now?string('yyyy-MM-dd HH:mm:ss')}</#if>
  */
 @Mapper(componentModel = "spring")
-public interface ${className}MapStruct extends CrudEntityMapStruct<${className}, ${className}Dto> {
+public interface ${className}VoMapStruct extends RetrieveVoMapStruct<${className}Vo, ${className}Dto> {
 
 }
