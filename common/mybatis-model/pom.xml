@@ -16,7 +16,7 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>common-tools</artifactId>
+            <artifactId>common-model</artifactId>
             <version>${project.common.version}</version>
         </dependency>
 
@@ -48,7 +48,7 @@
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper-spring-boot-starter</artifactId>
-            <version>${com.github.pagehelper}</version>
+            <version>${com.github.pagehelper.version}</version>
         </dependency>
 
 

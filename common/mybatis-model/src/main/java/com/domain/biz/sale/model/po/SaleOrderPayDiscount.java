@@ -7,7 +7,7 @@ import lombok.Data;
  * 销售订单优惠详情
  */
 @Data
-public class SaleOrderDiscount extends CrudEntity {
+public class SaleOrderPayDiscount extends CrudEntity {
 
     /**
      * 销售订单ID

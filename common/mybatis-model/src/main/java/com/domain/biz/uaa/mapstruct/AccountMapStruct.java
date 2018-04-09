@@ -1,6 +1,6 @@
 package com.domain.biz.uaa.mapstruct;
 
-import com.domain.biz.model.mapstruct.CrudMapStruct;
+import com.domain.biz.model.mapstruct.CrudEntityMapStruct;
 import com.domain.biz.uaa.dto.AccountDto;
 import com.domain.biz.uaa.po.Account;
 import org.mapstruct.Mapper;
@@ -12,6 +12,6 @@ import org.mapstruct.Mapper;
  * @createTime:2018-02-13 11:18:56
  */
 @Mapper(componentModel = "spring")
-public interface AccountMapStruct extends CrudMapStruct<Account, AccountDto> {
+public interface AccountMapStruct extends CrudEntityMapStruct<Account, AccountDto> {
 
 }

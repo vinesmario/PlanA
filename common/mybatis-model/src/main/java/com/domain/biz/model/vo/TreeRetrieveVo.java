@@ -7,7 +7,7 @@ import java.util.List;
 @Data
 public class TreeRetrieveVo<T extends RetrieveVo> extends RetrieveVo {
 
-    private Long parentId;
+    private Integer parentId;
 
     private String parentIds;
 

@@ -1,7 +1,7 @@
 package com.domain.biz.model.service;
 
 import com.domain.biz.model.dto.CrudQueryDto;
-import com.domain.biz.model.mapper.CrudMapper;
+import com.domain.biz.model.mapper.CrudEntityMapper;
 import com.domain.biz.model.po.CrudEntity;
 import com.domain.biz.model.po.CrudEntityExample;
 import com.github.pagehelper.PageHelper;
@@ -13,9 +13,9 @@ import java.io.Serializable;
 import java.util.List;
 
 @Service
-public abstract class AbstractCrudService<T extends CrudEntity,
+public abstract class AbstractCrudEntityService<T extends CrudEntity,
 		PK extends Serializable, EXAMPLE extends CrudEntityExample,
-		MAPPER extends CrudMapper<T, PK, EXAMPLE>,
+		MAPPER extends CrudEntityMapper<T, PK, EXAMPLE>,
 		QDTO extends CrudQueryDto> {
 
 	@Autowired

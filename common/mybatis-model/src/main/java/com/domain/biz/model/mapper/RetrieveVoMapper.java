@@ -6,7 +6,7 @@ import com.domain.biz.model.vo.RetrieveVoExample;
 import java.io.Serializable;
 import java.util.List;
 
-public interface RetrieveMapper<VO extends RetrieveVo,
+public interface RetrieveVoMapper<VO extends RetrieveVo,
         PK extends Serializable, EXAMPLE extends RetrieveVoExample> {
 
     List<VO> selectByExample(EXAMPLE example);

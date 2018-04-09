@@ -5,7 +5,7 @@ import com.domain.biz.model.po.CrudEntity;
 
 import java.util.List;
 
-public interface CrudMapStruct<T extends CrudEntity, DTO extends CrudDto> {
+public interface CrudEntityMapStruct<T extends CrudEntity, DTO extends CrudDto> {
 
     DTO fromEntity2Dto(T entity);
 

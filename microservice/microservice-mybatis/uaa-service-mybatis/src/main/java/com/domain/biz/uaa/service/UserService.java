@@ -1,6 +1,6 @@
 package com.domain.biz.uaa.service;
 
-import com.domain.biz.model.service.AbstractCrudService;
+import com.domain.biz.model.service.AbstractCrudEntityService;
 import com.domain.biz.uaa.dto.UserQueryDto;
 import com.domain.biz.uaa.mapper.UserMapper;
 import com.domain.biz.uaa.po.User;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
  * @createTime:2018-03-29 18:09:51
  */
 @Service
-public class UserService extends AbstractCrudService<User,
+public class UserService extends AbstractCrudEntityService<User,
 		Integer, UserExample,
 		UserMapper, UserQueryDto> {
 

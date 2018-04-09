@@ -51,7 +51,7 @@ public class SaleOrder extends CrudEntity {
 	/**
 	 * 销售订单优惠详情，一对多
 	 */
-	private List<SaleOrderDiscount> discountList;
+	private List<SaleOrderPayDiscount> discountList;
 	/**
 	 * 销售订单发货详情，一对多
 	 */

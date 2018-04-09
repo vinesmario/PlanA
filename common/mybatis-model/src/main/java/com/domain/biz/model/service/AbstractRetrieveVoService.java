@@ -1,7 +1,7 @@
 package com.domain.biz.model.service;
 
-import com.domain.biz.model.dto.RetrieveQueryDto;
-import com.domain.biz.model.mapper.RetrieveMapper;
+import com.domain.biz.model.dto.CrudQueryDto;
+import com.domain.biz.model.mapper.RetrieveVoMapper;
 import com.domain.biz.model.vo.RetrieveVo;
 import com.domain.biz.model.vo.RetrieveVoExample;
 import com.github.pagehelper.PageHelper;
@@ -13,10 +13,10 @@ import java.io.Serializable;
 import java.util.List;
 
 @Service
-public abstract class AbstractRetrieveService<VO extends RetrieveVo,
+public abstract class AbstractRetrieveVoService<VO extends RetrieveVo,
 		PK extends Serializable, EXAMPLE extends RetrieveVoExample,
-		MAPPER extends RetrieveMapper<VO, PK, EXAMPLE>,
-		QDTO extends RetrieveQueryDto> {
+		MAPPER extends RetrieveVoMapper<VO, PK, EXAMPLE>,
+		QDTO extends CrudQueryDto> {
 
 	@Autowired
 	MAPPER mapper;

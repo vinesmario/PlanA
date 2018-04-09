@@ -20,7 +20,7 @@
     <dependencies>
         <dependency>
             <groupId>com.vinesmario</groupId>
-            <artifactId>common-model-mybatis</artifactId>
+            <artifactId>mybatis-model</artifactId>
             <version>${project.common.version}</version>
         </dependency>
         <!-- mybatis -->

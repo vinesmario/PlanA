@@ -18,18 +18,18 @@ public class CrudEntityExample {
         this.orderByClause = orderByClause;
     }
 
-    public String getOrderByClause() {
-        return orderByClause;
-    }
-
-    public void setDistinct(boolean distinct) {
-        this.distinct = distinct;
-    }
-
-    public boolean isDistinct() {
-        return distinct;
-    }
-
+//    public String getOrderByClause() {
+//        return orderByClause;
+//    }
+//
+//    public void setDistinct(boolean distinct) {
+//        this.distinct = distinct;
+//    }
+//
+//    public boolean isDistinct() {
+//        return distinct;
+//    }
+//
 //    public List<Criteria> getOredCriteria() {
 //        return oredCriteria;
 //    }

@@ -9,7 +9,7 @@ import java.util.List;
 
 public abstract class AbstractTreeCrudService<T extends TreeCrudEntity<T>,
 		PK extends Serializable, EXAMPLE extends CrudEntityExample,
-		QDTO extends CrudQueryDto> extends AbstractCrudService {
+		QDTO extends CrudQueryDto> extends AbstractCrudEntityService {
 
 	public T findChild() {
 		return null;

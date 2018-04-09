@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import java.io.Serializable;
 import java.util.List;
 
-public interface CrudMapper<T extends CrudEntity, PK extends Serializable, EXAMPLE> {
+public interface CrudEntityMapper<T extends CrudEntity, PK extends Serializable, EXAMPLE> {
 
 	Integer countByExample(EXAMPLE example);
 

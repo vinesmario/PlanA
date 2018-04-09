@@ -1,7 +1,7 @@
 package com.domain.biz.sale.model.po;
 
-import com.biz.provider.model.po.LogisticsOrder;
 import com.domain.biz.model.po.CrudEntity;
+import com.domain.biz.provider.model.po.LogisticsOrder;
 import lombok.Data;
 
 import java.util.List;

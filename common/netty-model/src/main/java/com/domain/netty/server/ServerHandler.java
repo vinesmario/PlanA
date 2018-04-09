@@ -24,11 +24,11 @@ public class ServerHandler extends SimpleChannelInboundHandler<Message.Head> {
             log.info(mac);
             log.info(head.getMac());
             log.error("MAC校验失败");
-            sendErrMsg(ctx, head, 0xF3);//失败，数据校验失败！
+//            sendErrMsg(ctx, head, 0xF3);//失败，数据校验失败！
             return;
         }
 
-        bytes = RC4EncryptUtil.rc4(encryptionKey, bytes);
+//        bytes = RC4EncryptUtil.rc4(encryptionKey, bytes);
         log.debug("After  RC4 Decode:{}", Arrays.toString(bytes));
 
         /*for(byte item:bytes){
@@ -41,8 +41,8 @@ public class ServerHandler extends SimpleChannelInboundHandler<Message.Head> {
         try {
             base = Message.Base.parseFrom(ByteString.copyFrom(bytes));
         } catch (InvalidProtocolBufferException e) {
-            log.error("使用key[{}]解密后反序列化异常", encryptionKey);
-            sendErrMsg(ctx, message, 0xF2);//失败，数据解析出错。
+//            log.error("使用key[{}]解密后反序列化异常", encryptionKey);
+//            sendErrMsg(ctx, message, 0xF2);//失败，数据解析出错。
             ctx.close();
             return;
         }

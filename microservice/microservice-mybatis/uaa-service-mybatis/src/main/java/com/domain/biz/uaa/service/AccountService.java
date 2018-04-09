@@ -1,7 +1,7 @@
 package com.domain.biz.uaa.service;
 
 
-import com.domain.biz.model.service.AbstractCrudService;
+import com.domain.biz.model.service.AbstractCrudEntityService;
 import com.domain.biz.uaa.dto.AccountQueryDto;
 import com.domain.biz.uaa.mapper.AccountMapper;
 import com.domain.biz.uaa.po.Account;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class AccountService extends AbstractCrudService<Account, Integer, AccountExample, AccountMapper,
+public class AccountService extends AbstractCrudEntityService<Account, Integer, AccountExample, AccountMapper,
 		AccountQueryDto> {
 
 	public AccountExample fromQueryDto2Example(AccountQueryDto queryDto) {

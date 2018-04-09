@@ -29,6 +29,7 @@
         <module name="mybatis-model" />
         <module name="mycat" />
         <module name="netty" />
+        <module name="netty-model" />
         <module name="test" />
         <module name="uaa-service" />
         <module name="uaa-service-hibernate" />
@@ -78,6 +79,7 @@
       <module name="mybatis-model" target="1.8" />
       <module name="mycat" target="1.8" />
       <module name="netty" target="1.8" />
+      <module name="netty-model" target="1.8" />
       <module name="PlanA" target="1.8" />
       <module name="rabbitmq" target="1.8" />
       <module name="redis" target="1.8" />
