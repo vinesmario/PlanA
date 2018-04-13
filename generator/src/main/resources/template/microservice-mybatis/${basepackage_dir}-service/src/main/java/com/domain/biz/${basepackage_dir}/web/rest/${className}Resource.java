@@ -38,39 +38,55 @@ public class ${className}Resource {
 	@Autowired
 	${className}MapStruct ${classNameLower}MapStruct;
 
+	@ModelAttribute("${classNameLower}QueryDto")
+	public ${className}QueryDto getQueryDto(@RequestParam(value = "pageNum", required = false) Integer pageNum,
+											@RequestParam(value = "pageSize", required = false) Integer pageSize,
+											@RequestParam(value = "orderByColName", required = false) String orderByColName,
+											@RequestParam(value = "ascOrDesc", required = false) String ascOrDesc) {
+			${className}QueryDto queryDto = new ${className}QueryDto();
+			queryDto.setPageNum(pageNum);
+			queryDto.setPageSize(pageSize);
+			queryDto.setOrderByColName(orderByColName);
+			queryDto.setAscOrDesc(ascOrDesc);
+
+			return queryDto;
+	}
+
 	@ApiOperation(value = "分页查询", notes = "")
 	@ApiResponse(code = 200, message = "", response = PageInfo.class)
 	@GetMapping("/page")
-	public PageInfo<${className}Dto> page(@RequestParam("pageNum") Integer pageNum,
-											@RequestParam("pageSize") Integer pageSize,
-											@RequestParam(value = "orderByColName", required = false) String orderByColName,
-											@RequestParam(value = "ascOrDesc",required = false) String ascOrDesc) {
-		String orderByClause = null;
-		if (StringUtils.isNotBlank(orderByColName)) {
-		orderByClause = StringKit.camel2Underline(orderByColName).toLowerCase() + " " + ascOrDesc;
+	public PageInfo<${className}Dto> page(@ModelAttribute("${classNameLower}QueryDto") ${className}QueryDto queryDto) {
+		if (null == queryDto.getPageNum() || queryDto.getPageNum().compareTo(0) <= 0) {
+			//TODO 需要返回参数错误
+			queryDto.setPageNum(1);
 		}
-        ${className}QueryDto queryDto = new ${className}QueryDto();
-        PageInfo<${className}> page = ${classNameLower}Service.findPage(pageNum, pageSize, orderByClause, queryDto);
+		if (null == queryDto.getPageSize() || queryDto.getPageSize().compareTo(0) <= 0) {
+			//TODO 返回参需要数错误
+			queryDto.setPageSize(20);
+		}
+		String orderByClause = null;
+		if (StringUtils.isNotBlank(queryDto.getOrderByColName())) {
+			orderByClause = StringKit.camel2Underline(queryDto.getOrderByColName()).toLowerCase() + " " + queryDto.getAscOrDesc();
+		}
+		PageInfo<${className}> page = ${classNameLower}Service.findPage(queryDto.getPageNum(), queryDto.getPageSize(), orderByClause, queryDto);
 
 		PageInfo<${className}Dto> dtoPage = new PageInfo<>();
 		BeanUtils.copyProperties(page, dtoPage);
 		dtoPage.setList(${classNameLower}MapStruct.fromEntities2Dtos(page.getList()));
-        return dtoPage;
+		return dtoPage;
 	}
 
 	@ApiOperation(value = "列表查询", notes = "")
 	@ApiResponse(code = 200, message = "", response = List.class)
 	@GetMapping("/list")
-	public List<${className}Dto> list(@RequestParam(value = "orderByColName", required = false) String orderByColName,
-										@RequestParam(value = "ascOrDesc",required = false) String ascOrDesc) {
+	public List<${className}Dto> list(@ModelAttribute("${classNameLower}QueryDto") ${className}QueryDto queryDto) {
 		String orderByClause = null;
-		if (StringUtils.isNotBlank(orderByColName)) {
-			orderByClause = StringKit.camel2Underline(orderByColName).toLowerCase() + " " + ascOrDesc;
+		if (StringUtils.isNotBlank(queryDto.getOrderByColName())) {
+			orderByClause = StringKit.camel2Underline(queryDto.getOrderByColName()).toLowerCase() + " " + queryDto.getAscOrDesc();
 		}
-		${className}QueryDto queryDto = new ${className}QueryDto();
-        List<${className}> list = ${classNameLower}Service.findList(orderByClause, queryDto);
-        return ${classNameLower}MapStruct.fromEntities2Dtos(list);
-    }
+		List<${className}> list = ${classNameLower}Service.findList(orderByClause, queryDto);
+		return ${classNameLower}MapStruct.fromEntities2Dtos(list);
+	}
 
 	@ApiOperation(value = "根据id查找指定的${className}", notes = "")
 	@ApiImplicitParams({

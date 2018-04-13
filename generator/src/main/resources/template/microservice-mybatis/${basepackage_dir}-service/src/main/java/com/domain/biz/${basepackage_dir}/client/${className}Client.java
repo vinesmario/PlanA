@@ -16,31 +16,27 @@ import org.springframework.cloud.netflix.feign.FeignClient;
  * @since:1.0
  * @createTime:<#if now??>${now?string('yyyy-MM-dd HH:mm:ss')}</#if>
  */
-@FeignClient(name = "uaa-service", path = "/api/v1/accounts")
-public interface ${className}Client extends CrudClient<${className}Dto, Long> {
+@FeignClient(name = "uaa-service", path = "/api/v1/${table.sqlName")
+public interface ${className}Client extends CrudClient<${className}Dto, Integer, ${className}QueryDto> {
 
-//	@GetMapping("/page")
-//	HttpResponseDto<PageInfo<AccountDto>> page(@RequestParam("pageNum") Integer pageNum,
-//											   @RequestParam("pageSize") Integer pageSize,
-//											   @RequestParam(value = "orderByClause", required = false) String orderByClause);
-//
-//
-//	@GetMapping("/list")
-//	HttpResponseDto<List<AccountDto>> list(@RequestParam(value = "orderByClause", required = false) String orderByClause);
-//
-//	@GetMapping("/{id}")
-//	HttpResponseDto<AccountDto> get(@PathVariable("id") Long id);
-//
-//	@PostMapping(value = "")
-//	HttpResponseDto<AccountDto> add(@RequestBody AccountDto dto);
-//
-//	// 需提交整个对象
-//	@PutMapping("/{id}")
-//	HttpResponseDto<AccountDto> update(@PathVariable("id") Long id,
-//									   @RequestBody AccountDto dto);
-//
-//	@DeleteMapping("/{id}")
-//	HttpResponseDto delete(@PathVariable("id") Long id);
+	@GetMapping("/page")
+	HttpResponseDto<PageInfo<AccountDto>> page(${className}QueryDto queryDto);
+
+	@GetMapping("/list")
+	HttpResponseDto<List<AccountDto>> list(${className}QueryDto queryDto);
+
+	@GetMapping("/{id}")
+	HttpResponseDto<AccountDto> get(@PathVariable("id") Long id);
+
+	@PostMapping(value = "")
+	HttpResponseDto<AccountDto> add(@RequestBody AccountDto dto);
+
+	@PutMapping("/{id}")
+	HttpResponseDto<AccountDto> update(@PathVariable("id") Long id,
+									   @RequestBody AccountDto dto);
+
+	@DeleteMapping("/{id}")
+	HttpResponseDto delete(@PathVariable("id") Long id);
 
 
 }

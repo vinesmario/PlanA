@@ -25,7 +25,7 @@ public class SaleOrder extends CrudEntity {
 	 */
 	private Byte payChannel;
 	/**
-	 * 状态 1-已下单；2-已支付；3-已发货；4-已收货
+	 * 状态 1-已创建；2-已支付；3-已发货；4-已收货
 	 * 21-取消订单；22-支付超时；
 	 * 31-缺货；32-撤单退款（转退款订单查看状态）；
 	 * 41-货物丢失；

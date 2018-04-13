@@ -1,6 +1,7 @@
 package com.domain.biz.model.client;
 
 import com.domain.biz.model.dto.CrudDto;
+import com.domain.biz.model.dto.QueryDto;
 import com.github.pagehelper.PageInfo;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -8,16 +9,13 @@ import org.springframework.web.bind.annotation.*;
 import java.io.Serializable;
 import java.util.List;
 
-public interface CrudClient<DTO extends CrudDto, PK extends Serializable> {
+public interface CrudClient<DTO extends CrudDto, PK extends Serializable, QDTO extends QueryDto> {
 
 	@GetMapping("/page")
-	ResponseEntity<PageInfo<DTO>> page(@RequestParam("pageNum") Integer pageNum,
-									   @RequestParam("pageSize") Integer pageSize,
-									   @RequestParam(value = "orderByClause", required = false) String orderByClause);
-
+	ResponseEntity<PageInfo<DTO>> page(QDTO queryDto);
 
 	@GetMapping("/list")
-	ResponseEntity<List<DTO>> list(@RequestParam(value = "orderByClause", required = false) String orderByClause);
+	ResponseEntity<List<DTO>> list(QDTO queryDto);
 
 	@GetMapping("/{id}")
 	ResponseEntity<DTO> get(@PathVariable("id") PK id);
@@ -25,7 +23,6 @@ public interface CrudClient<DTO extends CrudDto, PK extends Serializable> {
 	@PostMapping(value = "")
 	ResponseEntity<DTO> add(@RequestBody DTO dto);
 
-	// 需提交整个对象
 	@PutMapping("/{id}")
 	ResponseEntity<DTO> update(@PathVariable("id") PK id,
 							   @RequestBody DTO dto);

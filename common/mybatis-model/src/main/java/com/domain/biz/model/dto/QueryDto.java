@@ -6,7 +6,7 @@ import lombok.Data;
 import java.time.Instant;
 
 @Data
-public class CrudQueryDto {
+public class QueryDto {
 
     /**
      * ID，主键
