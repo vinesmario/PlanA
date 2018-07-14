@@ -6,7 +6,7 @@ package com.domain.common.enums;
 public enum MapChannel {
 
     baidu(1, "百度地图"),
-    tecent(2, "腾讯地图"),
+    tencent(2, "腾讯地图"),
     amap(3, "高德地图"),
     apple(4, "苹果地图"),
     google(5, "谷歌地图"),

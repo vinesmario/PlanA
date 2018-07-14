@@ -3,8 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>life-service</artifactId>
         <groupId>com.vinesmario</groupId>
+        <artifactId>life-service</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -12,6 +12,7 @@
     <groupId>com.vinesmario</groupId>
     <artifactId>cloud</artifactId>
     <packaging>pom</packaging>
+
     <modules>
         <module>cloud-eureka-server</module>
         <module>cloud-config-server</module>
@@ -24,13 +25,8 @@
             <artifactId>common-tools</artifactId>
             <version>${project.common.version}</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>com.vinesmario</groupId>-->
-            <!--<artifactId>common-model-jpa</artifactId>-->
-            <!--<version>${parent.version}</version>-->
-        <!--</dependency>-->
         <dependency>
-            <groupId>com.vinesmario</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>common-model</artifactId>
             <version>${project.common.version}</version>
         </dependency>

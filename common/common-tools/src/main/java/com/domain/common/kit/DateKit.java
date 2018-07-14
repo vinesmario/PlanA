@@ -1,6 +1,7 @@
 package com.domain.common.kit;
 
 import com.domain.common.util.RegexUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -21,11 +22,15 @@ public class DateKit {
 	public enum DatePattern {
 		ISO_SECOND("yyyy-MM-dd'T'HH:mm:ss", "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}$"),
 		ISO_MINUTE("yyyy-MM-dd'T'HH:mm", "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}$"),
-		DATE_TIME("yyyy-MM-dd HH:mm:ss", "^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$"),
 		DATE_TIME_FULL("yyyy-MM-dd HH:mm:ss,SSS", "^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2},\\d{3}$"),
+		DATE_TIME("yyyy-MM-dd HH:mm:ss", "^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$"),
 		DATE_ONLY("yyyy-MM-dd", "^\\d{4}-\\d{2}-\\d{2}$"),
 		TIME_ONLY("HH:mm:ss", "^\\d{2}:\\d{2}:\\d{2}$"),
-		YEAR_MONTH("yyyy-MM", "^\\d{4}-\\d{2}$");
+		YEAR_MONTH("yyyy-MM", "^\\d{4}-\\d{2}$"),
+		MONTH_DAY("MM-dd", "^\\d{2}-\\d{2}$"),
+		HOUR_MINUTE("HH:mm", "^\\d{2}:\\d{2}$"),
+		DATE_TIME_YMDHMS("yyyyMMddHHmmss", "^\\d{4}\\d{2}\\d{2}\\d{2}\\d{2}\\d{2}$"),
+		DATE_TIME_YMD("yyyyMMdd", "^\\d{4}\\d{2}\\d{2}$");
 
 		DatePattern(String pattern, String regex) {
 			this.pattern = pattern;
@@ -60,6 +65,334 @@ public class DateKit {
 	}
 
 	/**
+	 * 获取系统当前时间字符串（"yyyy-MM-dd HH:mm:ss"）
+	 *
+	 * @return
+	 */
+	public static String nowToString() {
+		return nowToString(DatePattern.DATE_TIME);
+	}
+
+	/**
+	 * 获取系统当前时间，指定格式
+	 *
+	 * @return
+	 */
+	public static String nowToString(DatePattern pattern) {
+		return localDateTimeToString(LocalDateTime.now(), pattern);
+	}
+
+	/**
+	 * 获取系统当前日期 字符串（"yyyy-MM-dd"）
+	 *
+	 * @return
+	 */
+	public static String todayToString() {
+		return todayToString(DatePattern.DATE_ONLY);
+	}
+
+	/**
+	 * 获取系统当前日期，指定格式
+	 *
+	 * @return
+	 */
+	public static String todayToString(DatePattern pattern) {
+		return localDateToString(LocalDate.now(), pattern);
+	}
+
+	/**
+	 * 获取昨日 字符串（"yyyy-MM-dd"）
+	 *
+	 * @return
+	 */
+	public static String yesterdayToString() {
+		return yesterdayToString(DatePattern.DATE_ONLY);
+	}
+
+	/**
+	 * 获取昨日，指定格式
+	 *
+	 * @return
+	 */
+	public static String yesterdayToString(DatePattern pattern) {
+		return localDateToString(LocalDate.now().minusDays(1), pattern);
+	}
+
+	// TODO JDK8 time
+
+	/**
+	 * 把字符串转换为LocalDateTime类型
+	 *
+	 * @param dateStr 格式必须为：“yyyy-MM-dd HH:mm:ss”
+	 * @return
+	 */
+	public static LocalDateTime stringToLocalDateTime(String dateStr) {
+		return stringToLocalDateTime(dateStr, DatePattern.DATE_TIME);
+	}
+
+	/**
+	 * 把字符串转换为LocalDateTime类型
+	 *
+	 * @param dateStr
+	 * @param pattern
+	 * @return
+	 */
+	public static LocalDateTime stringToLocalDateTime(String dateStr, DatePattern pattern) {
+		if (StringUtils.isBlank(dateStr)) {
+			return null;
+		}
+		final DateTimeFormatter df = DateTimeFormatter.ofPattern(pattern.getPattern());
+		return LocalDateTime.parse(dateStr, df);
+	}
+
+	/**
+	 * 转换long类型的timestamp为LocalDateTime类型
+	 *
+	 * @param timestamp
+	 * @return LocalDateTime
+	 */
+	public static LocalDateTime timestampToLocalDateTime(long timestamp) {
+		return LocalDateTime.ofInstant(Instant.ofEpochSecond(timestamp), TimeZone.getDefault().toZoneId());
+	}
+
+	/**
+	 * 把字符串转换为YearMonth类型
+	 *
+	 * @param dateStr 格式必须为：“yyyy-MM”
+	 * @return
+	 */
+	public static YearMonth stringToYearMonth(String dateStr) {
+		return stringToYearMonth(dateStr, DatePattern.YEAR_MONTH);
+	}
+
+	/**
+	 * 把字符串转换为YearMonth类型
+	 *
+	 * @param dateStr
+	 * @param pattern
+	 * @return
+	 */
+	public static YearMonth stringToYearMonth(String dateStr, DatePattern pattern) {
+		if (StringUtils.isBlank(dateStr)) {
+			return null;
+		}
+		final DateTimeFormatter df = DateTimeFormatter.ofPattern(pattern.getPattern());
+		return YearMonth.parse(dateStr, df);
+	}
+
+	/**
+	 * 把字符串转换为MonthDay类型
+	 *
+	 * @param dateStr 格式必须为：“MM-dd”
+	 * @return
+	 */
+	public static MonthDay stringToMonthDay(String dateStr) {
+		return stringToMonthDay(dateStr, DatePattern.MONTH_DAY);
+	}
+
+	/**
+	 * 把字符串转换为YearMonth类型
+	 *
+	 * @param dateStr
+	 * @param pattern
+	 * @return
+	 */
+	public static MonthDay stringToMonthDay(String dateStr, DatePattern pattern) {
+		if (StringUtils.isBlank(dateStr)) {
+			return null;
+		}
+		final DateTimeFormatter df = DateTimeFormatter.ofPattern(pattern.getPattern());
+		return MonthDay.parse(dateStr, df);
+	}
+
+	/**
+	 * 把字符串转换为LocalDate类型
+	 *
+	 * @param dateStr 格式必须为：“yyyy-MM-dd”
+	 * @return
+	 */
+	public static LocalDate stringToLocalDate(String dateStr) {
+		return stringToLocalDate(dateStr, DatePattern.DATE_ONLY);
+	}
+
+	/**
+	 * 把字符串转换为LocalDate类型
+	 *
+	 * @param dateStr
+	 * @param pattern
+	 * @return
+	 */
+	public static LocalDate stringToLocalDate(String dateStr, DatePattern pattern) {
+		if (StringUtils.isBlank(dateStr)) {
+			return null;
+		}
+		final DateTimeFormatter df = DateTimeFormatter.ofPattern(pattern.getPattern());
+		return LocalDate.parse(dateStr, df);
+	}
+
+	/**
+	 * 转换long类型的timestamp为LocalDate类型
+	 *
+	 * @param timestamp
+	 * @return LocalDate
+	 */
+	public static LocalDate timestampToLocalDate(long timestamp) {
+		return timestampToLocalDateTime(timestamp).toLocalDate();
+	}
+
+	/**
+	 * 把字符串转换为LocalDateTime类型
+	 *
+	 * @param dateStr 格式必须为：“HH:mm:ss”
+	 * @return
+	 */
+	public static LocalTime stringToLocalTime(String dateStr) {
+		return stringToLocalTime(dateStr, DatePattern.TIME_ONLY);
+	}
+
+	/**
+	 * 把字符串转换为LocalDateTime类型
+	 *
+	 * @param dateStr
+	 * @param pattern
+	 * @return
+	 */
+	public static LocalTime stringToLocalTime(String dateStr, DatePattern pattern) {
+		if (StringUtils.isBlank(dateStr)) {
+			return null;
+		}
+		final DateTimeFormatter df = DateTimeFormatter.ofPattern(pattern.getPattern());
+		return LocalTime.parse(dateStr, df);
+	}
+
+
+	/**
+	 * 把字符串转换为Instant类型
+	 *
+	 * @param dateStr 格式必须为：“yyyy-MM-dd HH:mm:ss”
+	 * @return
+	 */
+	public static Instant stringToInstant(String dateStr) {
+		return stringToInstant(dateStr, DatePattern.DATE_TIME);
+	}
+
+	/**
+	 * 把字符串转换为Instant类型
+	 *
+	 * @param dateStr
+	 * @param pattern
+	 * @return
+	 */
+	public static Instant stringToInstant(String dateStr, DatePattern pattern) {
+		LocalDateTime localDateTime = stringToLocalDateTime(dateStr, pattern);
+		if (null == localDateTime) {
+			return null;
+		}
+		return localDateTime.atZone(Clock.systemDefaultZone().getZone()).toInstant();
+	}
+
+	/**
+	 * 把为LocalDateTime类型转换为字符串
+	 *
+	 * @param localDateTime
+	 * @return
+	 */
+	public static String localDateTimeToString(LocalDateTime localDateTime) {
+		return localDateTimeToString(localDateTime, DatePattern.DATE_TIME);
+	}
+
+	/**
+	 * 把为LocalDateTime类型转换为字符串
+	 *
+	 * @param localDateTime
+	 * @param pattern
+	 * @return
+	 */
+	public static String localDateTimeToString(LocalDateTime localDateTime, DatePattern pattern) {
+		if (null == localDateTime) {
+			return null;
+		}
+		final DateTimeFormatter df = DateTimeFormatter.ofPattern(pattern.getPattern());
+		return localDateTime.format(df);
+	}
+
+	/**
+	 * 把LocalDate类型转换为字符串
+	 *
+	 * @param localDate 格式必须为：“2016-05-31”
+	 * @return
+	 */
+	public static String localDateToString(LocalDate localDate) {
+		return localDateToString(localDate, DatePattern.DATE_ONLY);
+	}
+
+	/**
+	 * 把为LocalDate类型转换为字符串
+	 *
+	 * @param localDate
+	 * @param pattern
+	 * @return
+	 */
+	public static String localDateToString(LocalDate localDate, DatePattern pattern) {
+		if (null == localDate) {
+			return null;
+		}
+		final DateTimeFormatter df = DateTimeFormatter.ofPattern(pattern.getPattern());
+		return localDate.format(df);
+	}
+
+	/**
+	 * 把为LocalDateTime类型转换为字符串
+	 *
+	 * @param localTime
+	 * @return
+	 */
+	public static String localTimeToString(LocalTime localTime) {
+		return localTimeToString(localTime, DatePattern.TIME_ONLY);
+	}
+
+	/**
+	 * 把为LocalDateTime类型转换为字符串
+	 *
+	 * @param localTime
+	 * @param pattern
+	 * @return
+	 */
+	public static String localTimeToString(LocalTime localTime, DatePattern pattern) {
+		if (localTime == null) {
+			return null;
+		}
+		final DateTimeFormatter df = DateTimeFormatter.ofPattern(pattern.getPattern());
+		return localTime.format(df);
+	}
+
+	/**
+	 * 把为Instant类型转换为字符串
+	 *
+	 * @param instant
+	 * @return
+	 */
+	public static String instantToString(Instant instant) {
+		return instantToString(instant, DatePattern.DATE_TIME);
+	}
+
+	/**
+	 * 把为Instant类型转换为字符串
+	 *
+	 * @param instant
+	 * @param pattern
+	 * @return
+	 */
+	public static String instantToString(Instant instant, DatePattern pattern) {
+		if (instant == null) {
+			return null;
+		}
+		final DateTimeFormatter df = DateTimeFormatter.ofPattern(pattern.getPattern());
+		return instant.atZone(ZoneId.systemDefault()).format(df);
+	}
+
+	// TODO Date
+	/**
 	 * 字符串转换为Date对象，自动匹配日期格式
 	 *
 	 * @param dateStr 日期字符串
@@ -84,40 +417,6 @@ public class DateKit {
 			e.printStackTrace();
 			return null;
 		}
-	}
-
-	/**
-	 * 把字符串转换为LocalDate类型
-	 *
-	 * @param dateStr 格式必须为：“2016-05-31”
-	 * @return
-	 */
-	public static LocalDate stringToLocalDate(String dateStr) {
-		return LocalDate.parse(dateStr);
-	}
-
-	/**
-	 * 把字符串转换为LocalDate类型
-	 *
-	 * @param dateStr
-	 * @param pattern
-	 * @return
-	 */
-	public static LocalDate stringToLocalDate(String dateStr, DatePattern pattern) {
-		final DateTimeFormatter df = DateTimeFormatter.ofPattern(pattern.getPattern());
-		return LocalDate.parse(dateStr, df);
-	}
-
-	/**
-	 * 把字符串转换为LocalDateTime类型
-	 *
-	 * @param dateStr
-	 * @param pattern
-	 * @return
-	 */
-	public static LocalDateTime stringToLocalDateTime(String dateStr, DatePattern pattern) {
-		final DateTimeFormatter df = DateTimeFormatter.ofPattern(pattern.getPattern());
-		return LocalDateTime.parse(dateStr, df);
 	}
 
 	/**
@@ -160,10 +459,6 @@ public class DateKit {
 		return df.format(date);
 	}
 
-	/*public static String localDateToString(LocalDate date) {
-		return date.toString();
-	}*/
-
 	/**
 	 * 将long时间戳转换成日期
 	 *
@@ -187,45 +482,6 @@ public class DateKit {
 		Date date = timestampToDate(timestamp);
 		SimpleDateFormat df = new SimpleDateFormat(pattern);
 		return df.format(date);
-	}
-
-	/**
-	 * 转换long类型的timestamp为LocalDateTime类型
-	 *
-	 * @param timestamp
-	 * @return LocalDateTime
-	 */
-	public static LocalDateTime timestampToLocalDateTime(long timestamp) {
-		return LocalDateTime.ofInstant(Instant.ofEpochSecond(timestamp), TimeZone.getDefault().toZoneId());
-	}
-
-	/**
-	 * 转换long类型的timestamp为LocalDate类型
-	 *
-	 * @param timestamp
-	 * @return LocalDate
-	 */
-	public static LocalDate timestampToLocalDate(long timestamp) {
-		return timestampToLocalDateTime(timestamp).toLocalDate();
-	}
-
-	/**
-	 * 获取系统当前时间字符串（"yyyy-MM-dd HH:mm:ss"）
-	 *
-	 * @return
-	 */
-	public static String nowToString() {
-		return nowToString(DatePattern.DATE_TIME);
-	}
-
-	/**
-	 * 获取系统当前时间，指定格式
-	 *
-	 * @return
-	 */
-	public static String nowToString(DatePattern pattern) {
-		SimpleDateFormat df = new SimpleDateFormat(pattern.getPattern());
-		return df.format(new Date());
 	}
 
 	/**

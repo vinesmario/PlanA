@@ -4,8 +4,12 @@ package com.domain.common.enums;
  * 支付渠道
  */
 public enum PayChannel {
-    cash(0, "现金支付"),
-    unionpay(1, "银联支付"),
+
+    CASH(0, "现金支付"),
+    WECHAT(1,"微信支付"),
+    ALIPAY(2,"支付宝支付"),
+    UNIONPAY(10, "银联支付"),
+
     wechat_app(21, "微信支付"),
     wechat_jsapi(22, "微信公众号（jsapi）支付"),
     wechat_h5(23, "微信H5支付"),

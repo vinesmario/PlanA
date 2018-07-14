@@ -58,9 +58,10 @@ public class StringKit {
 
     public static void main(String[] args) {
         String line = "I_HAVE_AN_IPANG3_PIG";
-        String camel = underline2Camel(line, true);
-        System.out.println(camel);
-        System.out.println(camel2Underline(camel));
+        //String camel = underline2Camel(line, true);
+        //System.out.println(camel);
+        String  value =  "create_date  ";
+        System.out.println(camel2Underline(value).toLowerCase());
     }
 
 }
