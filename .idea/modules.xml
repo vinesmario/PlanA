@@ -13,19 +13,19 @@
       <module fileurl="file://$PROJECT_DIR$/generator/generator.iml" filepath="$PROJECT_DIR$/generator/generator.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/hibernate-model/hibernate-model.iml" filepath="$PROJECT_DIR$/common/hibernate-model/hibernate-model.iml" />
       <module fileurl="file://$PROJECT_DIR$/middleware/kafka/kafka.iml" filepath="$PROJECT_DIR$/middleware/kafka/kafka.iml" />
-      <module fileurl="file://$PROJECT_DIR$/microservice/microservice.iml" filepath="$PROJECT_DIR$/microservice/microservice.iml" />
-      <module fileurl="file://$PROJECT_DIR$/microservice/microservice-hibernate/microservice-hibernate.iml" filepath="$PROJECT_DIR$/microservice/microservice-hibernate/microservice-hibernate.iml" />
-      <module fileurl="file://$PROJECT_DIR$/microservice/microservice-mybatis/microservice-mybatis.iml" filepath="$PROJECT_DIR$/microservice/microservice-mybatis/microservice-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-hibernate/microservice-hibernate.iml" filepath="$PROJECT_DIR$/microservice-hibernate/microservice-hibernate.iml" />
       <module fileurl="file://$PROJECT_DIR$/middleware/middleware.iml" filepath="$PROJECT_DIR$/middleware/middleware.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/mybatis-model/mybatis-model.iml" filepath="$PROJECT_DIR$/common/mybatis-model/mybatis-model.iml" />
       <module fileurl="file://$PROJECT_DIR$/middleware/mycat/mycat.iml" filepath="$PROJECT_DIR$/middleware/mycat/mycat.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/netty-model/netty-model.iml" filepath="$PROJECT_DIR$/common/netty-model/netty-model.iml" />
-      <module fileurl="file://$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-base/service-base-mybatis.iml" filepath="$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-base/service-base-mybatis.iml" />
-      <module fileurl="file://$PROJECT_DIR$/microservice/microservice-hibernate/service-hibernate-base/service-hibernate-base.iml" filepath="$PROJECT_DIR$/microservice/microservice-hibernate/service-hibernate-base/service-hibernate-base.iml" />
-      <module fileurl="file://$PROJECT_DIR$/microservice/microservice-hibernate/service-hibernate-uaa/service-hibernate-uaa.iml" filepath="$PROJECT_DIR$/microservice/microservice-hibernate/service-hibernate-uaa/service-hibernate-uaa.iml" />
-      <module fileurl="file://$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-base/service-mybatis-base.iml" filepath="$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-base/service-mybatis-base.iml" />
-      <module fileurl="file://$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-pay-channel/service-mybatis-pay-channel.iml" filepath="$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-pay-channel/service-mybatis-pay-channel.iml" />
-      <module fileurl="file://$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-uaa/service-mybatis-uaa.iml" filepath="$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-uaa/service-mybatis-uaa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-hibernate/service-hibernate-base-parent/service-hibernate-base-parent.iml" filepath="$PROJECT_DIR$/microservice-hibernate/service-hibernate-base-parent/service-hibernate-base-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-hibernate/service-hibernate-uaa-parent/service-hibernate-uaa-parent.iml" filepath="$PROJECT_DIR$/microservice-hibernate/service-hibernate-uaa-parent/service-hibernate-uaa-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-mybatis/service-mybatis-base-parent/service-mybatis-base-parent.iml" filepath="$PROJECT_DIR$/microservice-mybatis/service-mybatis-base-parent/service-mybatis-base-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-mybatis/service-mybatis-pay-channel-parent/service-mybatis-pay-channel-client/service-mybatis-pay-channel-client.iml" filepath="$PROJECT_DIR$/microservice-mybatis/service-mybatis-pay-channel-parent/service-mybatis-pay-channel-client/service-mybatis-pay-channel-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-mybatis/service-mybatis-pay-channel-parent/service-mybatis-pay-channel-common/service-mybatis-pay-channel-common.iml" filepath="$PROJECT_DIR$/microservice-mybatis/service-mybatis-pay-channel-parent/service-mybatis-pay-channel-common/service-mybatis-pay-channel-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-mybatis/service-mybatis-pay-channel-parent/service-mybatis-pay-channel-parent.iml" filepath="$PROJECT_DIR$/microservice-mybatis/service-mybatis-pay-channel-parent/service-mybatis-pay-channel-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-mybatis/service-mybatis-pay-channel-parent/service-mybatis-pay-channel-server/service-mybatis-pay-channel-server.iml" filepath="$PROJECT_DIR$/microservice-mybatis/service-mybatis-pay-channel-parent/service-mybatis-pay-channel-server/service-mybatis-pay-channel-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-mybatis/service-mybatis-uaa-parent/service-mybatis-uaa-parent.iml" filepath="$PROJECT_DIR$/microservice-mybatis/service-mybatis-uaa-parent/service-mybatis-uaa-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
     </modules>
   </component>

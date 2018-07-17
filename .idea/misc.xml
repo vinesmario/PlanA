@@ -13,8 +13,12 @@
         <option value="$PROJECT_DIR$/microservice-jpa/pom.xml" />
         <option value="$PROJECT_DIR$/microservice-mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/microservice/jpa/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-pay-channel-parent/service-mybatis-pay-channel-client/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-pay-channel-parent/service-mybatis-pay-channel-common/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-pay-channel-parent/service-mybatis-pay-channel-server/pom.xml" />
         <option value="$PROJECT_DIR$/microservice/mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/microservice/mybatis/uaas-ervice/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice/pom.xml" />
         <option value="$PROJECT_DIR$/middleware/assist-service/pom.xml" />
         <option value="$PROJECT_DIR$/middleware/pom.xml" />
         <option value="$PROJECT_DIR$/middleware/rabbitmq/pom.xml" />

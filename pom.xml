@@ -3,8 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
+        <groupId>org.springframework.boot</groupId>
         <version>2.0.0.RELEASE</version>
         <relativePath/>
     </parent>
@@ -18,7 +18,8 @@
     <modules>
         <module>common</module>
         <module>cloud</module>
-        <module>microservice</module>
+        <module>microservice-hibernate</module>
+        <module>microservice-mybatis</module>
         <module>middleware</module>
         <!--<module>test</module>-->
         <!--<module>generator</module>-->

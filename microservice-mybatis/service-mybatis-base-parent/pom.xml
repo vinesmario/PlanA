@@ -9,10 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.vinesmario</groupId>
-    <artifactId>uaa-service</artifactId>
-    <packaging>jar</packaging>
-    <description>uaa服务</description>
+    <artifactId>service-mybatis-base-parent</artifactId>
 
     <dependencies>
 

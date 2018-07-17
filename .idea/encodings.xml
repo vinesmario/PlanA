@@ -15,13 +15,19 @@
     <file url="file://$PROJECT_DIR$/generator" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/generator/src" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/microservice/microservice-hibernate" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/microservice/microservice-hibernate/service-hibernate-base" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/microservice/microservice-hibernate/service-hibernate-uaa" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/microservice/microservice-mybatis" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-base" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-pay-channel" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-uaa" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-hibernate" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-hibernate/service-hibernate-base-parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-hibernate/service-hibernate-uaa-parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-mybatis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-mybatis/service-mybatis-base-parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-mybatis/service-mybatis-pay-channel-parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-mybatis/service-mybatis-pay-channel-parent/service-mybatis-pay-channel-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-mybatis/service-mybatis-pay-channel-parent/service-mybatis-pay-channel-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-mybatis/service-mybatis-pay-channel-parent/service-mybatis-pay-channel-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-mybatis/service-mybatis-pay-channel-parent/service-mybatis-pay-channel-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-mybatis/service-mybatis-pay-channel-parent/service-mybatis-pay-channel-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-mybatis/service-mybatis-pay-channel-parent/service-mybatis-pay-channel-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice-mybatis/service-mybatis-uaa-parent" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/middleware" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/middleware/kafka" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/middleware/kafka/src/main/resources/application.yml" charset="UTF-8" />

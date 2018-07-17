@@ -30,26 +30,20 @@
         <module name="netty" />
         <module name="netty-model" />
         <module name="service-base-mybatis" />
-        <module name="service-mybatis-base" />
+        <module name="service-hibernate-base-parent" />
+        <module name="service-hibernate-uaa-parent" />
+        <module name="service-mybatis-base-parent" />
         <module name="service-mybatis-pay-channel" />
+        <module name="service-mybatis-pay-channel-client" />
+        <module name="service-mybatis-pay-channel-common" />
+        <module name="service-mybatis-pay-channel-server" />
         <module name="service-mybatis-uaa" />
+        <module name="service-mybatis-uaa-parent" />
         <module name="test" />
         <module name="uaa-service" />
         <module name="uaa-service-hibernate" />
         <module name="utils" />
         <module name="zgenerator" />
-      </profile>
-      <profile name="Annotation profile for service-hibernate-uaa" enabled="true">
-        <sourceOutputDir name="../uaa-service-hibernate/target/generated-sources/annotations" />
-        <sourceTestOutputDir name="../uaa-service-hibernate/target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="service-hibernate-uaa" />
-      </profile>
-      <profile name="Annotation profile for life-service" enabled="true">
-        <sourceOutputDir name="../base-service-hibernate/target/generated-sources/annotations" />
-        <sourceTestOutputDir name="../base-service-hibernate/target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="service-hibernate-base" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -99,10 +93,18 @@
       <module name="redis" target="1.8" />
       <module name="service-base-mybatis" target="1.8" />
       <module name="service-hibernate-base" target="1.8" />
+      <module name="service-hibernate-base-parent" target="1.8" />
       <module name="service-hibernate-uaa" target="1.8" />
+      <module name="service-hibernate-uaa-parent" target="1.8" />
       <module name="service-mybatis-base" target="1.8" />
+      <module name="service-mybatis-base-parent" target="1.8" />
       <module name="service-mybatis-pay-channel" target="1.8" />
+      <module name="service-mybatis-pay-channel-client" target="1.8" />
+      <module name="service-mybatis-pay-channel-common" target="1.8" />
+      <module name="service-mybatis-pay-channel-parent" target="1.8" />
+      <module name="service-mybatis-pay-channel-server" target="1.8" />
       <module name="service-mybatis-uaa" target="1.8" />
+      <module name="service-mybatis-uaa-parent" target="1.8" />
       <module name="springcloud" target="1.8" />
       <module name="test" target="1.8" />
       <module name="uaa-service" target="1.8" />
