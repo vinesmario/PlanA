@@ -6,11 +6,11 @@ import org.apache.ibatis.annotations.Param;
 import java.io.Serializable;
 import java.util.List;
 
-public interface CrudEntityMapper<T extends CrudEntity, PK extends Serializable, EXAMPLE> {
+public interface CrudEntityMapper<T extends CrudEntity, PK extends Serializable> {
 
-	Integer countByExample(EXAMPLE example);
+	Integer countByExample(Example example);
 
-	List<T> selectByExample(EXAMPLE example);
+	List<T> selectByExample(Example example);
 
 	T selectByPrimaryKey(PK primaryKey);
 
@@ -30,14 +30,14 @@ public interface CrudEntityMapper<T extends CrudEntity, PK extends Serializable,
 
 	void deleteByPrimaryKey(PK primaryKey);
 
-	void deleteByExample(EXAMPLE example);
+	void deleteByExample(Example example);
 
 	void updateByPrimaryKey(T entity);
 
 	void updateByPrimaryKeySelective(T entity);
 
-	void updateByExample(@Param("record") T record, @Param("example") EXAMPLE example);
+	void updateByExample(@Param("record") T record, @Param("example") Example example);
 
-	void updateByExampleSelective(@Param("record") T record, @Param("example") EXAMPLE example);
+	void updateByExampleSelective(@Param("record") T record, @Param("example") Example example);
 
 }

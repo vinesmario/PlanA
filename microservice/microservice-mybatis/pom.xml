@@ -13,8 +13,9 @@
     <artifactId>microservice-mybatis</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>uaa-service-mybatis</module>
-        <module>base-service-mybatis</module>
+        <module>service-mybatis-uaa</module>
+        <module>service-mybatis-base</module>
+        <module>service-mybatis-pay-channel</module>
     </modules>
 
     <dependencies>

@@ -3,8 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/PlanA.iml" filepath="$PROJECT_DIR$/.idea/PlanA.iml" />
-      <module fileurl="file://$PROJECT_DIR$/microservice/microservice-hibernate/base-service-hibernate/base-service-hibernate.iml" filepath="$PROJECT_DIR$/microservice/microservice-hibernate/base-service-hibernate/base-service-hibernate.iml" />
-      <module fileurl="file://$PROJECT_DIR$/microservice/microservice-mybatis/base-service-mybatis/base-service-mybatis.iml" filepath="$PROJECT_DIR$/microservice/microservice-mybatis/base-service-mybatis/base-service-mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud/cloud.iml" filepath="$PROJECT_DIR$/cloud/cloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud/cloud-api-gateway/cloud-api-gateway.iml" filepath="$PROJECT_DIR$/cloud/cloud-api-gateway/cloud-api-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud/cloud-config-server/cloud-config-server.iml" filepath="$PROJECT_DIR$/cloud/cloud-config-server/cloud-config-server.iml" />
@@ -22,9 +20,13 @@
       <module fileurl="file://$PROJECT_DIR$/common/mybatis-model/mybatis-model.iml" filepath="$PROJECT_DIR$/common/mybatis-model/mybatis-model.iml" />
       <module fileurl="file://$PROJECT_DIR$/middleware/mycat/mycat.iml" filepath="$PROJECT_DIR$/middleware/mycat/mycat.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/netty-model/netty-model.iml" filepath="$PROJECT_DIR$/common/netty-model/netty-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-base/service-base-mybatis.iml" filepath="$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-base/service-base-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice/microservice-hibernate/service-hibernate-base/service-hibernate-base.iml" filepath="$PROJECT_DIR$/microservice/microservice-hibernate/service-hibernate-base/service-hibernate-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice/microservice-hibernate/service-hibernate-uaa/service-hibernate-uaa.iml" filepath="$PROJECT_DIR$/microservice/microservice-hibernate/service-hibernate-uaa/service-hibernate-uaa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-base/service-mybatis-base.iml" filepath="$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-base/service-mybatis-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-pay-channel/service-mybatis-pay-channel.iml" filepath="$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-pay-channel/service-mybatis-pay-channel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-uaa/service-mybatis-uaa.iml" filepath="$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-uaa/service-mybatis-uaa.iml" />
       <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/microservice/microservice-hibernate/uaa-service-hibernate/uaa-service-hibernate.iml" filepath="$PROJECT_DIR$/microservice/microservice-hibernate/uaa-service-hibernate/uaa-service-hibernate.iml" />
-      <module fileurl="file://$PROJECT_DIR$/microservice/microservice-mybatis/uaa-service-mybatis/uaa-service-mybatis.iml" filepath="$PROJECT_DIR$/microservice/microservice-mybatis/uaa-service-mybatis/uaa-service-mybatis.iml" />
     </modules>
   </component>
 </project>

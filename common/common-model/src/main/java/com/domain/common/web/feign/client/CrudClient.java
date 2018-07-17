@@ -1,7 +1,8 @@
 package com.domain.common.web.feign.client;
 
-import com.cwgj.common.model.dto.CrudDto;
-import com.cwgj.common.model.dto.query.QueryDto;
+
+import com.domain.common.model.mybatis.dto.CrudDto;
+import com.domain.common.model.mybatis.dto.query.QueryDto;
 
 import java.io.Serializable;
 

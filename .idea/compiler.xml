@@ -9,7 +9,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="base-service" />
         <module name="base-service-hibernate" />
-        <module name="base-service-mybatis" />
         <module name="cloud-api-gateway" />
         <module name="cloud-config-server" />
         <module name="cloud-eureka-server" />
@@ -30,12 +29,27 @@
         <module name="mycat" />
         <module name="netty" />
         <module name="netty-model" />
+        <module name="service-base-mybatis" />
+        <module name="service-mybatis-base" />
+        <module name="service-mybatis-pay-channel" />
+        <module name="service-mybatis-uaa" />
         <module name="test" />
         <module name="uaa-service" />
         <module name="uaa-service-hibernate" />
-        <module name="uaa-service-mybatis" />
         <module name="utils" />
         <module name="zgenerator" />
+      </profile>
+      <profile name="Annotation profile for service-hibernate-uaa" enabled="true">
+        <sourceOutputDir name="../uaa-service-hibernate/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../uaa-service-hibernate/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="service-hibernate-uaa" />
+      </profile>
+      <profile name="Annotation profile for life-service" enabled="true">
+        <sourceOutputDir name="../base-service-hibernate/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../base-service-hibernate/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="service-hibernate-base" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -83,6 +97,12 @@
       <module name="PlanA" target="1.8" />
       <module name="rabbitmq" target="1.8" />
       <module name="redis" target="1.8" />
+      <module name="service-base-mybatis" target="1.8" />
+      <module name="service-hibernate-base" target="1.8" />
+      <module name="service-hibernate-uaa" target="1.8" />
+      <module name="service-mybatis-base" target="1.8" />
+      <module name="service-mybatis-pay-channel" target="1.8" />
+      <module name="service-mybatis-uaa" target="1.8" />
       <module name="springcloud" target="1.8" />
       <module name="test" target="1.8" />
       <module name="uaa-service" target="1.8" />

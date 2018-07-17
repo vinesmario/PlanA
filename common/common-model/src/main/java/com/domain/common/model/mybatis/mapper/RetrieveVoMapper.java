@@ -1,17 +1,17 @@
 package com.domain.common.model.mybatis.mapper;
 
-import com.cwgj.common.model.vo.RetrieveVo;
-import com.cwgj.common.model.vo.example.RetrieveVoExample;
+
+import com.domain.common.model.mybatis.vo.RetrieveVo;
 
 import java.io.Serializable;
 import java.util.List;
 
 public interface RetrieveVoMapper<VO extends RetrieveVo,
-		PK extends Serializable, EXAMPLE extends RetrieveVoExample> {
+		PK extends Serializable> {
 
-	Integer countByExample(EXAMPLE example);
+	Integer countByExample(Example example);
 
-	List<VO> selectByExample(EXAMPLE example);
+	List<VO> selectByExample(Example example);
 
 	VO selectByPrimaryKey(PK primaryKey);
 

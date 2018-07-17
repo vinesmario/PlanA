@@ -16,20 +16,16 @@
     <file url="file://$PROJECT_DIR$/generator/src" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice/microservice-hibernate" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/microservice/microservice-hibernate/base-service-hibernate" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/microservice/microservice-hibernate/uaa-service-hibernate" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice/microservice-hibernate/service-hibernate-base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice/microservice-hibernate/service-hibernate-uaa" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice/microservice-mybatis" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/microservice/microservice-mybatis/base-service-mybatis" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/microservice/microservice-mybatis/uaa-service-mybatis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-pay-channel" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-uaa" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/middleware" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/middleware/assist-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/middleware/kafka" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/middleware/kafka/src/main/resources/application.yml" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/middleware/monitor-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/middleware/mycat" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/middleware/rabbitmq" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/middleware/redis" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/netty" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test" charset="UTF-8" />
   </component>
 </project>
