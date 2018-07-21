@@ -1,6 +1,6 @@
 package com.domain.common.model.mybatis.mapper;
 
-import com.domain.common.model.mybatis.entity.CrudEntity;
+import com.domain.common.model.entity.CrudEntity;
 import org.apache.ibatis.annotations.Param;
 
 import java.io.Serializable;

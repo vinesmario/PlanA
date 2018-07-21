@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/PlanA.iml" filepath="$PROJECT_DIR$/.idea/PlanA.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud/cloud.iml" filepath="$PROJECT_DIR$/cloud/cloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud/cloud-api-gateway/cloud-api-gateway.iml" filepath="$PROJECT_DIR$/cloud/cloud-api-gateway/cloud-api-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud/cloud-config-server/cloud-config-server.iml" filepath="$PROJECT_DIR$/cloud/cloud-config-server/cloud-config-server.iml" />
@@ -10,10 +9,12 @@
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common-model/common-model.iml" filepath="$PROJECT_DIR$/common/common-model/common-model.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common-tools/common-tools.iml" filepath="$PROJECT_DIR$/common/common-tools/common-tools.iml" />
-      <module fileurl="file://$PROJECT_DIR$/generator/generator.iml" filepath="$PROJECT_DIR$/generator/generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/common-web/common-web.iml" filepath="$PROJECT_DIR$/common/common-web/common-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/hibernate-model/hibernate-model.iml" filepath="$PROJECT_DIR$/common/hibernate-model/hibernate-model.iml" />
       <module fileurl="file://$PROJECT_DIR$/middleware/kafka/kafka.iml" filepath="$PROJECT_DIR$/middleware/kafka/kafka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/life-service.iml" filepath="$PROJECT_DIR$/life-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/microservice-hibernate/microservice-hibernate.iml" filepath="$PROJECT_DIR$/microservice-hibernate/microservice-hibernate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-mybatis/microservice-mybatis.iml" filepath="$PROJECT_DIR$/microservice-mybatis/microservice-mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/middleware/middleware.iml" filepath="$PROJECT_DIR$/middleware/middleware.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/mybatis-model/mybatis-model.iml" filepath="$PROJECT_DIR$/common/mybatis-model/mybatis-model.iml" />
       <module fileurl="file://$PROJECT_DIR$/middleware/mycat/mycat.iml" filepath="$PROJECT_DIR$/middleware/mycat/mycat.iml" />
@@ -26,7 +27,6 @@
       <module fileurl="file://$PROJECT_DIR$/microservice-mybatis/service-mybatis-pay-channel-parent/service-mybatis-pay-channel-parent.iml" filepath="$PROJECT_DIR$/microservice-mybatis/service-mybatis-pay-channel-parent/service-mybatis-pay-channel-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/microservice-mybatis/service-mybatis-pay-channel-parent/service-mybatis-pay-channel-server/service-mybatis-pay-channel-server.iml" filepath="$PROJECT_DIR$/microservice-mybatis/service-mybatis-pay-channel-parent/service-mybatis-pay-channel-server/service-mybatis-pay-channel-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/microservice-mybatis/service-mybatis-uaa-parent/service-mybatis-uaa-parent.iml" filepath="$PROJECT_DIR$/microservice-mybatis/service-mybatis-uaa-parent/service-mybatis-uaa-parent.iml" />
-      <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
     </modules>
   </component>
 </project>

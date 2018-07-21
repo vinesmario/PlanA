@@ -19,6 +19,7 @@
         <module>hibernate-model</module>
         <module>mybatis-model</module>
         <module>netty-model</module>
+        <module>common-web</module>
     </modules>
 
     <dependencies>

@@ -4,29 +4,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/zgenerator/src/pom.xml" />
       </list>
-    </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/common/common-client/pom.xml" />
-        <option value="$PROJECT_DIR$/microservice-jpa/pom.xml" />
-        <option value="$PROJECT_DIR$/microservice-mybatis/pom.xml" />
-        <option value="$PROJECT_DIR$/microservice/jpa/pom.xml" />
-        <option value="$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-pay-channel-parent/service-mybatis-pay-channel-client/pom.xml" />
-        <option value="$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-pay-channel-parent/service-mybatis-pay-channel-common/pom.xml" />
-        <option value="$PROJECT_DIR$/microservice/microservice-mybatis/service-mybatis-pay-channel-parent/service-mybatis-pay-channel-server/pom.xml" />
-        <option value="$PROJECT_DIR$/microservice/mybatis/pom.xml" />
-        <option value="$PROJECT_DIR$/microservice/mybatis/uaas-ervice/pom.xml" />
-        <option value="$PROJECT_DIR$/microservice/pom.xml" />
-        <option value="$PROJECT_DIR$/middleware/assist-service/pom.xml" />
-        <option value="$PROJECT_DIR$/middleware/pom.xml" />
-        <option value="$PROJECT_DIR$/middleware/rabbitmq/pom.xml" />
-        <option value="$PROJECT_DIR$/middleware/redis/pom.xml" />
-        <option value="$PROJECT_DIR$/model-mybatis/pom.xml" />
-        <option value="$PROJECT_DIR$/model/model-jpa/pom.xml" />
-        <option value="$PROJECT_DIR$/model/pom.xml" />
-      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK" />

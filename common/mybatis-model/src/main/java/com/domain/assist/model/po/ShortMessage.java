@@ -1,6 +1,6 @@
 package com.domain.assist.model.po;
 
-import com.domain.common.mybatis.annotation.AuditEnable;
+import com.domain.common.model.mybatis.annotation.AuditEnable;
 import com.domain.biz.model.po.CrudEntity;
 import lombok.Data;
 
