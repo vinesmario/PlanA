@@ -1,6 +1,8 @@
 package com.domain.common.model.mybatis.entity;
 
+import lombok.Builder;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 /**
  * Base abstract class for entities which will
@@ -9,6 +11,8 @@ import lombok.Data;
  * Update existing records
  * Delete existing records.
  */
+@Accessors(chain = true)
+@Builder
 @Data
 public class CrudEntity extends AbstractModifiableEntity {
 

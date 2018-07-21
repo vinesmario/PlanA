@@ -1,6 +1,8 @@
 package com.domain.common.model.mybatis.entity;
 
+import lombok.Builder;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -8,6 +10,8 @@ import java.time.Instant;
 /**
  * Base abstract class for entities which will hold definitions for created and created by date.
  */
+@Accessors(chain = true)
+@Builder
 @Data
 public abstract class AbstractAddibleEntity implements Serializable {
 

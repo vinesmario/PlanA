@@ -1,10 +1,14 @@
 package com.domain.common.model.mybatis.dto.query;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Builder;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import java.time.Instant;
 
+@Accessors(chain = true)
+@Builder
 @Data
 public class QueryDto {
 

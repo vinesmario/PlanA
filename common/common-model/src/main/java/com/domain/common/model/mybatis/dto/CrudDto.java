@@ -1,11 +1,15 @@
 package com.domain.common.model.mybatis.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Builder;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 import java.time.Instant;
 
+@Accessors(chain = true)
+@Builder
 @Data
 public class CrudDto implements Serializable {
 

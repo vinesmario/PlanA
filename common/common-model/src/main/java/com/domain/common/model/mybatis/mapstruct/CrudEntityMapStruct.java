@@ -1,7 +1,8 @@
 package com.domain.common.model.mybatis.mapstruct;
 
-import com.cwgj.common.model.dto.CrudDto;
-import com.cwgj.common.model.entity.CrudEntity;
+
+import com.domain.common.model.mybatis.dto.CrudDto;
+import com.domain.common.model.mybatis.entity.CrudEntity;
 
 import java.util.List;
 
