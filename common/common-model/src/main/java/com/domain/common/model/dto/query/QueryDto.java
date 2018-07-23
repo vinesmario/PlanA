@@ -12,22 +12,6 @@ import java.time.Instant;
 @Data
 public class QueryDto {
 
-//	/**
-//	 * 当前页
-//	 */
-//	private Integer pageNum;
-//	/**
-//	 * 每页的数量
-//	 */
-//	private Integer pageSize;
-//	/**
-//	 * 排序字段
-//	 */
-//	private String orderByColName;
-//	/**
-//	 * 排序顺序
-//	 */
-//	private String ascOrDesc;
 	/**
 	 * ID，主键
 	 */

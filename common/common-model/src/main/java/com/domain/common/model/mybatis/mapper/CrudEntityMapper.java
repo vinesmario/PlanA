@@ -8,9 +8,9 @@ import java.util.List;
 
 public interface CrudEntityMapper<T extends CrudEntity, PK extends Serializable> {
 
-	Integer countByExample(Example example);
+	Integer countByExample(CrudExample example);
 
-	List<T> selectByExample(Example example);
+	List<T> selectByExample(CrudExample example);
 
 	T selectByPrimaryKey(PK primaryKey);
 
@@ -30,14 +30,14 @@ public interface CrudEntityMapper<T extends CrudEntity, PK extends Serializable>
 
 	void deleteByPrimaryKey(PK primaryKey);
 
-	void deleteByExample(Example example);
+	void deleteByExample(CrudExample example);
 
 	void updateByPrimaryKey(T entity);
 
 	void updateByPrimaryKeySelective(T entity);
 
-	void updateByExample(@Param("record") T record, @Param("example") Example example);
+	void updateByExample(@Param("record") T record, @Param("example") CrudExample example);
 
-	void updateByExampleSelective(@Param("record") T record, @Param("example") Example example);
+	void updateByExampleSelective(@Param("record") T record, @Param("example") CrudExample example);
 
 }

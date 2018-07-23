@@ -10,7 +10,6 @@ import lombok.experimental.Accessors;
  * Base class for value object which can retrieve only.
  */
 @Accessors(chain = true)
-@Builder
 @Data
 public class CrudVo extends CrudEntity {
 

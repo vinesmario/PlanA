@@ -9,15 +9,10 @@ import java.util.List;
 public interface CrudVoMapper<VO extends CrudVo,
 		PK extends Serializable> {
 
-	Integer countByExample(Example example);
+	Integer countByExample(CrudExample example);
 
-	List<VO> selectByExample(Example example);
+	List<VO> selectByExample(CrudExample example);
 
 	VO selectByPrimaryKey(PK primaryKey);
 
-	void insert(VO entity);
-
-	void deleteByPrimaryKey(PK primaryKey);
-
-	void updateByPrimaryKey(VO entity);
 }

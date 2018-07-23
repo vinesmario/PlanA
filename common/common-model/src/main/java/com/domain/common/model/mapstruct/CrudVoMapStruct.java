@@ -9,6 +9,9 @@ public interface CrudVoMapStruct<VO extends CrudVo, DTO extends CrudDto> {
 
 	DTO fromVo2Dto(VO vo);
 
+	VO fromDto2Vo(DTO dto);
+
 	List<DTO> fromVos2Dtos(List<VO> vos);
 
+	List<VO> fromDtos2Vos(List<DTO> dtos);
 }

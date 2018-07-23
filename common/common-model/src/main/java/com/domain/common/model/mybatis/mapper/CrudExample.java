@@ -3,14 +3,14 @@ package com.domain.common.model.mybatis.mapper;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Example {
+public class CrudExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public Example() {
+    public CrudExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 

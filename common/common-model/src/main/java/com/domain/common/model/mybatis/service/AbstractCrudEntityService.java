@@ -4,7 +4,8 @@ package com.domain.common.model.mybatis.service;
 import com.domain.common.model.dto.query.QueryDto;
 import com.domain.common.model.entity.CrudEntity;
 import com.domain.common.model.mybatis.mapper.CrudEntityMapper;
-import com.domain.common.model.mybatis.mapper.Example;
+import com.domain.common.model.mybatis.mapper.CrudExample;
+import com.domain.common.model.mybatis.mapper.CrudExample;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.google.common.collect.Lists;
@@ -16,6 +17,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Iterator;
 import java.util.List;
 
@@ -30,14 +32,14 @@ public abstract class AbstractCrudEntityService<T extends CrudEntity,
 	MAPPER mapper;
 
 	public Integer countByExample(QDTO queryDto) {
-		Example example = fromQueryDto2Example(queryDto);
+		CrudExample example = fromQueryDto2Example(queryDto);
 		return mapper.countByExample(example);
 	}
 
 	public PageInfo<T> findPage(QDTO queryDto, Pageable pageable) {
 		// 超过最大pageNum数，返回空。
 		PageHelper.startPage(pageable.getPageNumber(), pageable.getPageSize(), true, false, false);
-		Example example = fromQueryDto2Example(queryDto);
+		CrudExample example = fromQueryDto2Example(queryDto);
 
 		if (null != pageable.getSort()) {
 			List<String> orderByClauseList = Lists.newArrayList();
@@ -62,7 +64,7 @@ public abstract class AbstractCrudEntityService<T extends CrudEntity,
 	}
 
 	public List<T> findList(QDTO queryDto, Sort sort) {
-		Example example = fromQueryDto2Example(queryDto);
+		CrudExample example = fromQueryDto2Example(queryDto);
 
 		if (null != sort) {
 			List<String> orderByClauseList = Lists.newArrayList();
@@ -86,10 +88,14 @@ public abstract class AbstractCrudEntityService<T extends CrudEntity,
 	}
 
 	public void insert(T entity) {
+		entity.setCreatedDate(LocalDateTime.now())
+				.setLastModifiedDate(LocalDateTime.now());
 		mapper.insert(entity);
 	}
 
 	public void insertSelective(T entity) {
+		entity.setCreatedDate(LocalDateTime.now())
+				.setLastModifiedDate(LocalDateTime.now());
 		mapper.insertSelective(entity);
 	}
 
@@ -98,28 +104,32 @@ public abstract class AbstractCrudEntityService<T extends CrudEntity,
 	}
 
 	public void deleteByExample(QDTO queryDto) {
-		Example example = fromQueryDto2Example(queryDto);
+		CrudExample example = fromQueryDto2Example(queryDto);
 		mapper.deleteByExample(example);
 	}
 
 	public void updateByPrimaryKey(T entity) {
+		entity.setLastModifiedDate(LocalDateTime.now());
 		mapper.updateByPrimaryKey(entity);
 	}
 
 	public void updateByPrimaryKeySelective(T entity) {
+		entity.setLastModifiedDate(LocalDateTime.now());
 		mapper.updateByPrimaryKeySelective(entity);
 	}
 
 	public void updateByExample(T entity, QDTO queryDto) {
-		Example example = fromQueryDto2Example(queryDto);
+		CrudExample example = fromQueryDto2Example(queryDto);
+		entity.setLastModifiedDate(LocalDateTime.now());
 		mapper.updateByExample(entity, example);
 	}
 
 	public void updateByExampleSelective(T entity, QDTO queryDto) {
-		Example example = fromQueryDto2Example(queryDto);
+		CrudExample example = fromQueryDto2Example(queryDto);
+		entity.setLastModifiedDate(LocalDateTime.now());
 		mapper.updateByExampleSelective(entity, example);
 	}
 
-	public abstract Example fromQueryDto2Example(QDTO queryDto);
+	public abstract CrudExample fromQueryDto2Example(QDTO queryDto);
 
 }

@@ -1,8 +1,8 @@
 package com.domain.common.model.mybatis.service;
 
 import com.domain.common.model.dto.query.QueryDto;
+import com.domain.common.model.mybatis.mapper.CrudExample;
 import com.domain.common.model.mybatis.mapper.CrudVoMapper;
-import com.domain.common.model.mybatis.mapper.Example;
 import com.domain.common.model.vo.CrudVo;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -29,7 +29,7 @@ public abstract class AbstractCrudVoService<VO extends CrudVo,
 	MAPPER mapper;
 
 	public Integer countByExample(QDTO queryDto) {
-		Example example = fromQueryDto2Example(queryDto);
+		CrudExample example = fromQueryDto2Example(queryDto);
 		return mapper.countByExample(example);
 	}
 
@@ -40,7 +40,7 @@ public abstract class AbstractCrudVoService<VO extends CrudVo,
 	public PageInfo<VO> findPage(QDTO queryDto, Pageable pageable) {
 		// 超过最大pageNum数，返回空。
 		PageHelper.startPage(pageable.getPageNumber(), pageable.getPageSize(), true, false, false);
-		Example example = fromQueryDto2Example(queryDto);
+		CrudExample example = fromQueryDto2Example(queryDto);
 
 		if (null != pageable.getSort()) {
 			List<String> orderByClauseList = Lists.newArrayList();
@@ -64,7 +64,7 @@ public abstract class AbstractCrudVoService<VO extends CrudVo,
 	}
 
 	public List<VO> findList(QDTO queryDto, Sort sort) {
-		Example example = fromQueryDto2Example(queryDto);
+		CrudExample example = fromQueryDto2Example(queryDto);
 
 		if (null != sort) {
 			List<String> orderByClauseList = Lists.newArrayList();
@@ -87,5 +87,11 @@ public abstract class AbstractCrudVoService<VO extends CrudVo,
 		return mapper.selectByPrimaryKey(primaryKey);
 	}
 
-	public abstract Example fromQueryDto2Example(QDTO queryDto);
+	public abstract void insert(VO vo);
+
+	public abstract void delete(VO vo);
+
+	public abstract void update(VO vo);
+
+	public abstract CrudExample fromQueryDto2Example(QDTO queryDto);
 }
