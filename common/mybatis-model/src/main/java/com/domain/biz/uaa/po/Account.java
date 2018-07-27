@@ -1,7 +1,9 @@
 package com.domain.biz.uaa.po;
 
-import com.domain.biz.model.po.CrudEntity;
+import com.domain.common.model.entity.CrudEntity;
 import lombok.Data;
+
+import java.io.Serializable;
 
 /**
  * 账户，处理登录业务
@@ -12,7 +14,7 @@ import lombok.Data;
  * @createTime:2018-02-13 11:18:56
  */
 @Data
-public class Account extends CrudEntity {
+public class Account extends CrudEntity<Integer> {
 
 	//@JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
 	/**

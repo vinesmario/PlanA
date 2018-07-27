@@ -490,7 +490,7 @@ public class DateKit {
 	 * @return long 时间戳，单位：秒
 	 */
 	public static long nowToTimestamp() {
-		long timestamp = new Date().getTime();
+		long timestamp = Instant.now().toEpochMilli();
 		return timestamp / 1000;
 	}
 

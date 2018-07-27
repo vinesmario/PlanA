@@ -1,13 +1,10 @@
 package com.domain.biz.uaa.po;
 
-import com.domain.biz.model.po.CrudEntity;
+import com.domain.common.model.entity.CrudEntity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 /**
  * @author:vinesmario
@@ -16,7 +13,7 @@ import java.time.LocalTime;
  * @createTime:2018-03-29 18:12:40
  */
 @Data
-public class User extends CrudEntity {
+public class User extends CrudEntity<Integer> {
 
 	//@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
 
@@ -86,7 +83,7 @@ public class User extends CrudEntity {
 	 */
 	private String villageAddress;
 	/**
-	 * 
+	 *
 	 */
 	private Integer accountId;
 

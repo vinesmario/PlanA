@@ -3,6 +3,7 @@ package com.domain.common.model.entity;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
@@ -14,12 +15,12 @@ import java.time.LocalDateTime;
  */
 @Accessors(chain = true)
 @Data
-public class CrudEntity {
+public class CrudEntity<PK extends Serializable> {
 
 	/**
 	 * ID，主键
 	 */
-	private Integer id;
+	private PK id;
 	/**
 	 * 名称
 	 */

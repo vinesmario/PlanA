@@ -1,14 +1,12 @@
 package com.domain.common.model.dto.query;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Accessors(chain = true)
-@Builder
 @Data
 public class QueryDto {
 
@@ -44,7 +42,7 @@ public class QueryDto {
 	 * 创建时间
 	 */
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-	private Instant createdDate;
+	private LocalDateTime createdDate;
 	/**
 	 * 最后修改者
 	 */
@@ -53,6 +51,6 @@ public class QueryDto {
 	 * 最后修改时间
 	 */
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-	private Instant lastModifiedDate;
+	private LocalDateTime lastModifiedDate;
 
 }

@@ -1,10 +1,8 @@
 package com.domain.common.model.mybatis.service;
 
-
 import com.domain.common.model.dto.query.QueryDto;
 import com.domain.common.model.entity.CrudEntity;
 import com.domain.common.model.mybatis.mapper.CrudEntityMapper;
-import com.domain.common.model.mybatis.mapper.CrudExample;
 import com.domain.common.model.mybatis.mapper.CrudExample;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -23,20 +21,18 @@ import java.util.List;
 
 @Data
 @Service
-public abstract class AbstractCrudEntityService<T extends CrudEntity,
-		PK extends Serializable,
-		MAPPER extends CrudEntityMapper<T, PK>,
-		QDTO extends QueryDto> {
+public abstract class AbstractCrudEntityService<T extends CrudEntity<PK>, PK extends Serializable,
+		MAPPER extends CrudEntityMapper<T, PK>> {
 
 	@Autowired
 	MAPPER mapper;
 
-	public Integer countByExample(QDTO queryDto) {
+	public Integer countByExample(QueryDto queryDto) {
 		CrudExample example = fromQueryDto2Example(queryDto);
 		return mapper.countByExample(example);
 	}
 
-	public PageInfo<T> findPage(QDTO queryDto, Pageable pageable) {
+	public PageInfo<T> findPage(QueryDto queryDto, Pageable pageable) {
 		// 超过最大pageNum数，返回空。
 		PageHelper.startPage(pageable.getPageNumber(), pageable.getPageSize(), true, false, false);
 		CrudExample example = fromQueryDto2Example(queryDto);
@@ -59,11 +55,11 @@ public abstract class AbstractCrudEntityService<T extends CrudEntity,
 		return new PageInfo<>(list);
 	}
 
-	public List<T> findList(QDTO queryDto) {
+	public List<T> findList(QueryDto queryDto) {
 		return findList(queryDto, null);
 	}
 
-	public List<T> findList(QDTO queryDto, Sort sort) {
+	public List<T> findList(QueryDto queryDto, Sort sort) {
 		CrudExample example = fromQueryDto2Example(queryDto);
 
 		if (null != sort) {
@@ -103,7 +99,7 @@ public abstract class AbstractCrudEntityService<T extends CrudEntity,
 		mapper.deleteByPrimaryKey(primaryKey);
 	}
 
-	public void deleteByExample(QDTO queryDto) {
+	public void deleteByExample(QueryDto queryDto) {
 		CrudExample example = fromQueryDto2Example(queryDto);
 		mapper.deleteByExample(example);
 	}
@@ -118,18 +114,18 @@ public abstract class AbstractCrudEntityService<T extends CrudEntity,
 		mapper.updateByPrimaryKeySelective(entity);
 	}
 
-	public void updateByExample(T entity, QDTO queryDto) {
+	public void updateByExample(T entity, QueryDto queryDto) {
 		CrudExample example = fromQueryDto2Example(queryDto);
 		entity.setLastModifiedDate(LocalDateTime.now());
 		mapper.updateByExample(entity, example);
 	}
 
-	public void updateByExampleSelective(T entity, QDTO queryDto) {
+	public void updateByExampleSelective(T entity, QueryDto queryDto) {
 		CrudExample example = fromQueryDto2Example(queryDto);
 		entity.setLastModifiedDate(LocalDateTime.now());
 		mapper.updateByExampleSelective(entity, example);
 	}
 
-	public abstract CrudExample fromQueryDto2Example(QDTO queryDto);
+	public abstract CrudExample fromQueryDto2Example(QueryDto queryDto);
 
 }

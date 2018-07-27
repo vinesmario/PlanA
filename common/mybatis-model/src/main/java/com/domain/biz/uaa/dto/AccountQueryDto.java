@@ -1,6 +1,6 @@
 package com.domain.biz.uaa.dto;
 
-import com.domain.biz.model.dto.CrudQueryDto;
+import com.domain.common.model.dto.query.QueryDto;
 import lombok.Data;
 
 /**
@@ -10,7 +10,7 @@ import lombok.Data;
  * @createTime:2018-02-13 11:18:56
  */
 @Data
-public class AccountQueryDto extends CrudQueryDto {
+public class AccountQueryDto extends QueryDto {
 
 	//@JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
 	/**

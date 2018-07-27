@@ -1,11 +1,12 @@
 package com.domain.biz.uaa.service;
 
 
-import com.domain.biz.model.service.AbstractCrudEntityService;
 import com.domain.biz.uaa.dto.AccountQueryDto;
 import com.domain.biz.uaa.mapper.AccountMapper;
 import com.domain.biz.uaa.po.Account;
-import com.domain.biz.uaa.po.AccountExample;
+import com.domain.common.model.dto.query.QueryDto;
+import com.domain.common.model.mybatis.mapper.CrudExample;
+import com.domain.common.model.mybatis.service.AbstractCrudEntityService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
@@ -15,18 +16,20 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class AccountService extends AbstractCrudEntityService<Account, Integer, AccountExample, AccountMapper,
-		AccountQueryDto> {
+public class AccountService extends AbstractCrudEntityService<Account, Integer, AccountMapper> {
 
-	public AccountExample fromQueryDto2Example(AccountQueryDto queryDto) {
-		AccountExample example = new AccountExample();
-		AccountExample.Criteria criteria = example.createCriteria();
+	public CrudExample fromQueryDto2Example(QueryDto queryDto) {
+		AccountQueryDto accountQueryDto = (AccountQueryDto) queryDto;
+
+		CrudExample example = new CrudExample();
+		CrudExample.Criteria criteria = example.createCriteria();
 
 		if (null != queryDto) {
-			if (null != queryDto.getId() && queryDto.getId().compareTo(0) > 0) {
-				criteria.andIdEqualTo(queryDto.getId());
+			if (null != accountQueryDto.getId() && accountQueryDto.getId().compareTo(0) > 0) {
+				criteria.addCriterion("id =", accountQueryDto.getId(), "id");
+//				criteria.andIdEqualTo(accountQueryDto.getId());
 			}
-			if (StringUtils.isNotBlank(queryDto.getName())) {
+			if (StringUtils.isNotBlank(accountQueryDto.getName())) {
 //                criteria.and
 			}
 		}
